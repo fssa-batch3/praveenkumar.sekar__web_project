@@ -1,0 +1,35 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.product-container {
+    max-width: 1080px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.product-container h2 {
+    margin-top: 30px;
+}
+
+.products {
+    display: flex;
+    max-width: 1080px;
+}
+
+.product {
+    flex-basis: 25%;
+    padding: 10px;
+    min-width: 200px;
+    margin-bottom: 50px;
+}
+
+.product img {
+    margin-left: 20px;
+}
+
+.product p,h3 {
+    text-align: center;
+}
