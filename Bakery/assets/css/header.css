@@ -1,12 +1,14 @@
-h2 {
-    text-align: center;
-}
-
 header {
-    max-width: 1300px;
-    margin: auto;
     padding-left:25px;
     padding-right:25px;
+    font-family: 'Dancing Script';
+    font-style: bold;
+    background-color: #85603F;
+}
+
+header h1 {
+    color:#ffe88f;
+    font-size: 25px;
 }
 
 .container {
@@ -19,6 +21,7 @@ header {
 nav {
     flex: 1;
     text-align: right;
+    font-size: 25px;
 }
 
 nav ul {
@@ -27,10 +30,14 @@ nav ul {
 
 nav ul li {
     display: inline; 
-    margin: 20px;
+    margin: 0px 20px;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: gray;
+    color: #ffe88f;
+}
+
+nav ul li a img {
+    margin-top: 3px;
 }

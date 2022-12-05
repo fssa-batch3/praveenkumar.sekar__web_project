@@ -1,0 +1,124 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-image: url(../Images/bakery-products-baking-print-pastry-seamless-pattern-cute-kitchen-background-bakery-products-baking-print-pastry-seamless-pattern-151734509-transformed.jpeg);
+}
+
+.cart {
+    margin: 50px auto 50px auto;
+    background-color: #85603F;
+    max-width: 1080px;
+    color: #ffe88f;
+    border-radius: 10px;
+}
+
+table {
+    margin: auto;
+    width: 70%;
+    border-collapse: collapse;
+}
+
+.cart-info {
+    display: flex;
+    flex-wrap: wrap;   
+}
+
+th {
+    text-align: left;
+    padding: 5px;
+    padding-top: 50PX;
+    color: "#ffffff";
+    font-family: 'Kumbh Sans';
+    font-size: 20px;
+}
+
+.cart table td {
+    font-size: 22px;
+    padding: 30px 5px;
+    border-top: #ffe88f 2px solid;
+    border-bottom: #ffe88f 2px solid;
+
+}
+
+td input {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    background:transparent;
+    border-radius: 10px;
+    border:#ffe88f solid 2px;
+    color:#ffe88f;
+}
+
+td a {
+    color: #ffe2e2;
+    font-size: 12px;
+    font-family: 'Kumbh Sans';
+    text-decoration: none;
+}
+
+td img {
+    margin-right: 10px;
+    border-radius: 10px ;
+}
+
+.price {
+    font-family: 'Kumbh Sans';
+}
+
+.details {
+    margin-top: 70px;
+}
+
+.details p {
+    font-family: 'Dancing Script';
+    font-size: 30px;
+}
+
+.details small {
+    font-family: 'Kumbh Sans';
+}
+
+.cart div:nth-of-type(1) td {
+    border-top: none;
+}
+
+.total-price {
+    display: flex;
+    justify-content:flex-end;
+    margin-left: 43%;
+    font-family: 'Kumbh Sans';
+}
+
+.total-price table {
+    border-top:none;
+    width: 100%;
+    max-width: 300px;
+}
+
+td:last-child {
+    text-align: right;
+}
+
+th:last-child {
+    text-align: right;
+}
+
+.checkout button {
+    position: relative;
+    left: 64%;
+    padding: 10px 50px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    border-style: solid;
+    border-color: #ffe88f;
+    color: #ffe88f;
+    border-radius: 20px;
+    background-color: #85603F;
+}
+
+
+

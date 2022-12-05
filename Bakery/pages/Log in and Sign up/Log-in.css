@@ -1,0 +1,59 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-image: url(../../assets/Images/bakery-products-baking-print-pastry-seamless-pattern-cute-kitchen-background-bakery-products-baking-print-pastry-seamless-pattern-151734509-transformed.jpeg);
+}
+
+form {
+    width: 450px;
+    height: 400px;
+    border-radius: 10px;
+    position: relative;
+    margin: 10% auto auto auto;
+    background: #85603F;
+    padding: 5px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+form h1 {
+    text-align: center;
+    font-family: 'Dancing Script';
+    color: #ffe88f;
+}
+
+form label {
+    color:#ffe88f;
+    font-family: 'Kumbh sans';
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 37px;
+}
+
+form input {
+    margin: 10px 0 0 37px ;
+    border-radius: 20px;
+    border: none;
+    width: 365px;
+    padding: 5px;
+}
+
+form button {
+    border-style: solid;
+    border-color: #ffe88f;
+    border-radius: 20px;
+    margin-left: 40%;
+    margin-bottom: 10px;;
+    padding: 7px 10px;
+    background-color: #85603F;
+}
+
+form a {
+    font-family: 'Kumbh Sans';
+    text-align: center;
+    padding-top: 10px;
+    text-decoration: none;
+    color: #ffe88f;
+}
