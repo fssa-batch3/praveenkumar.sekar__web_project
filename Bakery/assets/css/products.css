@@ -3,111 +3,148 @@
     margin: 0;
 }
 
-body {
-    background-image: url(../Images/istockphoto-486752730-612x612.jpg);
-}
-
 .product-container {
-    width: 1080px;
-    margin: auto;
-    padding-left: 25px;
-    padding-right: 25px;
-    background-color:   white;
+    margin-top: 5%;
 }
 
-body div:nth-of-type(1){
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+.product-container h1 {
+    font-family: 'Catamaran';
+    text-align: left; 
+    font-size: 50px;  
+    margin-left: 5%;
+    padding-top: 2%;
 }
 
-body div.product-container:nth-of-type(3){
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;   
-    margin-bottom: 50px;
+/* Category */
+
+.categories{
+    margin-top: 10px;
 }
 
-body div.product-container:nth-of-type(1){
+.categories h1 {
+    font-family: 'Catamaran';
+    text-align: left; 
+    font-size: 50px;  
+    margin-left: 5%;
+    padding-top: 2%;
+}
+
+.categories {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 30px 0;
+}
+
+.categories div {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.148);
     margin-top: 50px;
 }
 
-.product-container h2 {
-    color: #8c897d;
-    font-family: 'Kumbh Sans';
-    margin-top: 10px;
-    margin-bottom: 20px;
-    padding-left: 10px;
+.categories p {
+    font-family: 'Catamaran';
+    font-size: 50px;
+    width: 400px;
+    height: 400px;
     text-align: center;
+    color:white;
+    position:relative;
+    }
+
+.categories div:nth-of-type(1){
+    background-image: url(../Images/Categories/assortment-pieces-cake\ \(1\).jpg);
+    background-size: contain;
+    border-radius: 500px;
+}
+
+.categories div:nth-of-type(2){
+    background-image: url(../Images/Categories/close-up-view-black-bread-slices-nude-color-towel-spikes-flower-cutting-boards-mixed-colors-background\ \(1\).jpg);
+    background-size: contain;
+    border-radius: 500px;
+}
+
+.categories div:nth-of-type(3){
+    background-image: url(../Images/Categories/croissant-flat-lay-food-photography.jpg);
+    background-size: contain;
+    border-radius: 500px;
+}
+
+.categories div:nth-of-type(1) p{
+    top: 40%;
+}
+
+.categories div:nth-of-type(2) p{
+    top: 40%;
+}
+
+.categories div:nth-of-type(3) p{
+    top: 40%;
+}
+
+.category-section {
+    padding-top: 2%;
+    padding-bottom: 7%;
+    background-color: aliceblue;
+}
+
+/* Cakes */
+
+.products h1 {
+    margin-top: 5%;
 }
 
 .products {
-    display: flex;
-    max-width: 1080px;
+    display:flex;
     justify-content: space-evenly;
 }
 
-.card {
-    flex-basis: 25%;
-    width: 260px;
-    height: 262.708;
-    padding-bottom: 30px;
-    margin-bottom: 50px;
-    margin-left: 10px;
+.product {
+    margin-top: 50px;
+    background-color: rgb(238, 218, 182);
     border-radius: 10px;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    overflow: hidden;
-    position: relative;
+    padding: 30px 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
-.card-img {
-    margin-left: 30px;
+.product h2 {
+    font-family: 'Catamaran';
 }
 
-.card-body {
-    width: 100%;
-    height: 100%;
-    top: -100%;
-    right: 0;
-    bottom:0;
-    left: 0;
-    position: absolute;
-    background:#85603fcc;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    transition: 0.5s;
-    color: white;  
-}
-
-.card:hover .card-body {
-    top:0 ;
-}
-
-.card-body p{
-    text-align: center;
-    font-family: 'Kumbh Sans';
-    font-style: italic;
-}
-
-.card h3 {
-    text-align: center;
-    font-family: 'Kumbh Sans';
-    color: #7a692b;
-}   
-
-
-.product a {
-    text-decoration: none;
-    color: black;
-}
-
-.category-img{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.price {
-    color: #f0d155;
-    font-weight: 700;
+.product p {
     margin-top: 10px;
+    font-family: 'Telex';
+    font-size: 20px;
 }
+
+.product .buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.product .buttons button {
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-family:'Catamaran';
+    font-size: 16px;
+    font-weight: 700;;
+}
+
+.product .buttons button:nth-child(1) {
+    border: none;
+    transition: 0.1s;
+}
+
+.product .buttons button:nth-child(1):hover {
+    border: 2px solid black;
+}
+
+.product .buttons button:nth-child(2) {
+    background: none;
+    transition: 0.1s;
+}
+
+.product .buttons button:nth-child(2):hover {
+    background: white;
+}
+
+

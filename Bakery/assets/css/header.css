@@ -1,43 +1,52 @@
 header {
-    padding-left:25px;
-    padding-right:25px;
-    font-family: 'Dancing Script';
-    font-style: bold;
-    background-color: #85603F;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    color: black;
+    background-color: rgba(221, 194, 146, 0.504);
+    z-index: 10;
+    height: 62.250px;
 }
 
 header h1 {
-    color:#ffe88f;
     font-size: 25px;
+    font-family:'Catamaran';
 }
 
 .container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content: space-evenly;
     align-items: center;
+    align-content: center;
+}
 
+.container div:nth-of-type(2) {
+    flex: 1;
 }
 
 nav {
-    flex: 1;
-    text-align: right;
     font-size: 25px;
+    font-family: 'Catamaran';
+    width:100%;
 }
 
 nav ul {
+    display: flex;
     list-style:none;
+    margin-left: auto;
+    justify-content: flex-end;
 }
 
 nav ul li {
-    display: inline; 
-    margin: 0px 20px;
+    margin: 0px 30px;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #ffe88f;
+    color: black;
 }
 
-nav ul li a img {
-    margin-top: 3px;
+.container div:nth-of-type(3) img {
+    margin-right: 20px;
 }
