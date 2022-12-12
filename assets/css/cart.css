@@ -1,0 +1,144 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: aliceblue;
+}
+
+header {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    background-color: white;
+}
+
+.cart {
+    margin: 50px auto 50px auto;
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart h1 {
+    color: black;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Catamaran';
+}
+
+table {
+    margin: auto;
+    margin-top:5%;
+    width: 70%;
+    border-collapse: collapse;
+}
+
+.cart-info {
+    display: flex;
+    flex-wrap: wrap;   
+}
+
+th {
+    text-align: left;
+    padding: 5px;
+    padding-top: 50PX;
+    color: "#ffffff";
+    font-family: 'Catamaran';
+    font-size: 30px;
+}
+
+.cart table td {
+    font-size: 22px;
+    padding: 30px 5px;
+    border-top: black 2px solid;
+    border-bottom: black 2px solid;
+
+}
+
+td input {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    background:transparent;
+    border-radius: 10px;
+    border:black solid 2px;
+    color:black;
+}
+
+td a {
+    color:rgb(60, 64, 67);
+    font-size: 12px;
+    font-family: 'Telex';
+}
+
+td img {
+    margin-right: 10px;
+    border-radius: 10px ;
+}
+
+.price {
+    font-family: 'Telex';
+}
+
+.details {
+    margin-top: 70px;
+}
+
+.details p {
+    font-family: 'Catamaran';
+    font-size: 30px;
+}
+
+.details small {
+    font-family: 'Telex';
+}
+
+.cart div:nth-of-type(1) td {
+    border-top: none;
+}
+
+.total-price {
+    display: flex;
+    justify-content:flex-end;
+    margin-left: 43%;
+    font-family: 'Telex';
+}
+
+.total-price table {
+    border-top:none;
+    width: 100%;
+    max-width: 300px;
+}
+
+td:last-child {
+    text-align: right;
+}
+
+th:last-child {
+    text-align: right;
+}
+
+.checkout button {
+    position: relative;
+    left: 65.5%;
+    padding: 10px 50px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    font-family: 'Telex';
+    border-style: solid;
+    border-color: black;
+    color: black;
+    border-radius: 20px;
+    background-color: white;
+    transition: 0.2s;
+}
+
+.checkout button:hover {
+    background-color: black;
+    color: white;
+}
+
+
+

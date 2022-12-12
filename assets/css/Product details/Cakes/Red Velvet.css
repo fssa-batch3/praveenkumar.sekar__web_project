@@ -1,0 +1,262 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: aliceblue;
+}
+
+header {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    background-color: white;
+}
+
+/*---------- main---------- */
+
+.whole{
+    width: 1200px;
+    display: flex;
+    margin:auto;
+    margin-top: 10%;
+    padding-bottom: 5%;
+    border-bottom: 1px black solid;
+}
+
+.main {
+    margin: 130px 70px 70px 70px;
+    width: 50%;
+}
+
+.main img {
+    border-radius: 20px;
+    border: 2px black solid;
+    background-color: white;
+}
+
+
+.thumbnail img {
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+/* --------side-------- */
+
+.side{
+    width: 40%;
+    margin-top: 7%;
+}
+
+.side_para h1 {
+    font-family: 'Catamaran';
+    color: black;
+    font-size: 40px;
+    margin-top: 10px;
+}
+
+.side_para .para {
+    font-family: 'Telex';
+    line-height: 25px;
+    width: 450px;
+    font-size: 20px;
+    text-align: justify;
+    text-justify: inter-word;
+    color:black;
+    margin-top: 10px;
+}
+
+.price1 {
+    font-family:'Telex';
+    color:black;
+    margin-top: 20px;
+}
+
+.price1 p {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.price1 p span{
+    position:relative;
+    bottom:5px;
+    font-size: 16px;
+    margin-left: 10px;
+    padding: 3px 10px;
+    margin-bottom: 10px;
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+}
+
+.price2 {
+    margin-top: 10px;
+    color:black;
+    font-family: 'Telex';
+}
+
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    color: black;
+}
+
+.amount button {
+    font-weight: bold;
+    letter-spacing: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 10px;
+    margin-right: 20px;
+    border:2px solid black;
+    border-radius: 30px;
+    background-color: white;
+    font-family:'Telex';
+}
+
+.add button {
+    color:hsl(0, 0%, 0%);
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-right: 20px;
+    border:2px solid black;
+    border-radius: 20px;
+    background-color: black;
+    color: white;
+    font-family:'Telex';
+    transition: 0.2s;   
+}
+
+.add button:hover {
+    color :black;
+    background-color: white;
+
+}
+
+.spec {
+    margin: 20px 0;
+}
+
+.spec h2 {
+    font-family: 'Catamaran';
+}
+
+.spec-buttons {
+    display: inline-flex;
+    margin: 20px 0;
+    font-family:'Telex';
+}
+
+.spec-buttons button {
+    padding: 20px 30px;
+    outline: none;
+    border: none;
+    background-color: black;
+    color: white;
+    transition: 0.3s;
+    border-right: 1px white solid;
+}
+
+.spec-buttons button:hover {
+    color:black;
+    background-color: white;
+}
+
+.spec-buttons button:nth-of-type(1) {
+    border-top-left-radius: 30px ;
+    border-bottom-left-radius: 30px;
+    border: 2px black solid;
+    border-right: 1px white solid;
+}
+
+.spec-buttons button:nth-of-type(2) {
+    border: 2px black solid;
+    border-right: 1px white solid;
+    border-left: none;
+}
+
+.spec-buttons button:nth-of-type(3) {
+    border-top-right-radius: 30px ;
+    border-bottom-right-radius: 30px;
+    border: 2px black solid;
+    border-left: none;
+}
+
+/* you may also like */
+
+.suggest{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.like {
+    font-family: 'Catamaran';
+    margin-left: 5%;
+}
+
+.products {
+    display:flex;
+    justify-content: space-evenly;
+}
+
+.product {
+    margin-top: 50px;
+    background-color: rgb(238, 218, 182);
+    border-radius: 10px;
+    padding: 30px 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    transition: 0.2s;
+}
+
+.product:hover {
+    background-color:rgb(229, 196, 134) ;
+}
+
+.product h2 {
+    font-family: 'Catamaran';
+}
+
+.product p {
+    margin-top: 10px;
+    font-family: 'Telex';
+    font-size: 20px;
+}
+
+.product .buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.product .buttons button {
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-family:'Catamaran';
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.product a:nth-of-type(1) button {
+    border: none;
+    transition: 0.1s;
+    background-color: white;
+}
+
+.product a:nth-of-type(1) button:hover {
+    border: 2px solid black;
+}
+
+.product a:nth-of-type(2) button {
+    background: none;
+    transition: 0.1s;
+}
+
+.product a:nth-of-type(2) button:hover {
+    background: white;
+}
+

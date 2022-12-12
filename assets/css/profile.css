@@ -1,0 +1,86 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: aliceblue;
+}
+
+header {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    background-color: white;
+}
+
+caption{
+    font-size: 25px;
+}
+
+.table-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+.sub-container {
+    margin: auto;
+    margin-top: 10%;
+    background-color: #FFFEFA;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    border-radius: 10px;
+    padding-top: 30px;
+}
+
+tr td:nth-of-type(2) {
+    padding-left: 70px; 
+}
+
+td {
+    padding: 50px;
+    font-family: 'Telex';
+    font-size: 20px;
+    border-bottom: 1px solid black;
+}
+
+caption{
+    display: table-caption;
+    text-align: center; 
+    font-family: 'Catamaran';
+}
+
+.buttons {
+    margin-top: 5%;
+    margin-left: 19%;
+    margin-bottom: 5%;
+}
+
+.buttons button {
+    padding: 15px 30px;
+    margin: 5px;
+    font-family: 'Telex';
+    transition: 0.2s;
+}
+
+.buttons a:nth-of-type(1) button {
+    border-radius: 30px;
+    background-color: white;
+    color: black;
+}
+
+.buttons a:nth-of-type(1) button:hover {
+    border-radius: 30px;
+    background-color:black;
+    color: white;
+}
+
+.buttons a:nth-of-type(2) button {
+    border-radius: 30px;
+    background-color:black;
+    color: white;
+}
+
+.buttons a:nth-of-type(2) button:hover {
+    border-radius: 30px;
+    background-color:white;
+    color: black;
+}
