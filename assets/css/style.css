@@ -4,6 +4,22 @@
     scroll-behavior: smooth;
 }
 
+h1 {
+    font-family: 'Catamran', sans-serif;
+}
+
+h2 {
+    font-family: 'Catamaran', sans-serif;
+}
+
+p {
+    font-family: 'Telex', sans-serif;
+}
+
+a {
+    font-family: 'Telex', sans-serif;
+}
+
 body {
     background-color: aliceblue;
 }
@@ -29,12 +45,11 @@ header{
     font-size: 70px;
     font-weight: 500;
     text-align: center;
-    font-family:'Catamaran';
     color: whitesmoke;
 }
 
 .para {
-    font-family:'Telex';
+    
     font-style: italic;
     font-size: 23px;
     text-align: center;
@@ -47,7 +62,6 @@ header{
     margin: auto;
     border: none;
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.148);
     padding: 0 20px 20px 20px;
 }
 
@@ -69,7 +83,7 @@ header{
 
 .content button a {
     text-decoration: none;
-    font-family:'Telex';
+    
     font-style: bold;
     font-weight: 600;
 }
@@ -83,16 +97,14 @@ header{
     margin-top: 20px;
 }
 
-.heading-2 h1 {
-    font-family: 'Catamaran';
+.heading-2 h1 {     
     text-align: left; 
     font-size: 50px;  
     margin-left: 5%;
     padding-top: 2%;
 }
 
-.heading-2 p {
-    font-family: 'Telex';
+.heading-2 p {    
     text-align: left;
     margin-left: 5%;
     font-size: 20px;
@@ -123,13 +135,8 @@ header{
     background-color:rgb(229, 196, 134) ;
 }
 
-.product h2 {
-    font-family: 'Catamaran';
-}
-
 .product p {
-    margin-top: 10px;
-    font-family: 'Telex';
+    margin-top: 10px;     
     font-size: 20px;
 }
 
@@ -141,9 +148,8 @@ header{
 .product .buttons button {
     padding: 15px 30px;
     border-radius: 30px;
-    font-family:'Catamaran';
     font-size: 16px;
-    font-weight: 700;;
+    font-weight: 700;
 }
 
 .product .buttons button:nth-child(1) {
@@ -181,17 +187,17 @@ header{
     width:50%;
     margin-left:50%;
     position: relative;
-    top: 5%;
+    top: 15%;
 }
 
 .about-para h1 {
-    font-family:'Catamaran';
+    
     font-size: 60px;
 }
 
 .about-para p {
     margin-top: 40px;
-    font-family:'Telex';
+    
     width: 90%;
     font-size: 22px;
     line-height: 40px;
@@ -206,16 +212,14 @@ header{
     margin-top: 20px;
 }
 
-.categories-head h1 {
-    font-family: 'Catamaran';
+.categories-head h1 {     
     text-align: left; 
     font-size: 50px;  
     margin-left: 5%;
     padding-top: 2%;
 }
 
-.categories-head p {
-    font-family: 'Telex';
+.categories-head p {     
     text-align: left;
     margin-left: 5%;
     font-size: 20px;
@@ -238,8 +242,7 @@ header{
 }
 
 
-.categories p {
-    font-family: 'Catamaran';
+.categories p {     
     font-size: 50px;
     width: 400px;
     height: 400px;
@@ -295,13 +298,13 @@ header{
 }
 
 .meet-para h1 {
-    font-family:'Catamaran';
+    
     font-size: 60px;
 }
 
 .meet-para p {
     margin-top: 40px;
-    font-family:'Telex';
+    
     width: 90%;
     font-size: 22px;
     line-height: 40px;

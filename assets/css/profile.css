@@ -3,6 +3,26 @@
     margin: 0;
 }
 
+h1 {
+    font-family: 'Catamran', sans-serif;
+}
+
+h2 {
+    font-family: 'Catamaran', sans-serif;
+}
+
+p {
+    font-family: 'Telex', sans-serif;
+}
+
+th {
+    font-family: 'Catamran', sans-serif;
+}
+
+td {
+    font-family: 'Telex', sans-serif;
+}
+
 body {
     background-color: aliceblue;
 }
@@ -36,16 +56,14 @@ tr td:nth-of-type(2) {
 }
 
 td {
-    padding: 50px;
-    font-family: 'Telex';
+    padding: 50px;     
     font-size: 20px;
     border-bottom: 1px solid black;
 }
 
 caption{
     display: table-caption;
-    text-align: center; 
-    font-family: 'Catamaran';
+    text-align: center;      
 }
 
 .buttons {
@@ -56,8 +74,7 @@ caption{
 
 .buttons button {
     padding: 15px 30px;
-    margin: 5px;
-    font-family: 'Telex';
+    margin: 5px;     
     transition: 0.2s;
 }
 

@@ -3,6 +3,18 @@
     margin: 0;
 }
 
+h1 {
+    font-family: 'Catamran', sans-serif;
+}
+
+h2 {
+    font-family: 'Catamaran', sans-serif;
+}
+
+p {
+    font-family: 'Telex', sans-serif;
+}
+
 body {
     background-color: aliceblue;
 }
@@ -24,8 +36,7 @@ header {
     color: black;
     margin-top: 10%;
     margin-left: auto;
-    margin-right: auto;
-    font-family: 'Catamaran';
+    margin-right: auto; 
 }
 
 table {
@@ -44,9 +55,9 @@ th {
     text-align: left;
     padding: 5px;
     padding-top: 50PX;
-    color: "#ffffff";
-    font-family: 'Catamaran';
+    color: "#ffffff";     
     font-size: 30px;
+    font-family: 'Catamaran', sans-serif;
 }
 
 .cart table td {
@@ -54,7 +65,6 @@ th {
     padding: 30px 5px;
     border-top: black 2px solid;
     border-bottom: black 2px solid;
-
 }
 
 td input {
@@ -69,8 +79,7 @@ td input {
 
 td a {
     color:rgb(60, 64, 67);
-    font-size: 12px;
-    font-family: 'Telex';
+    font-size: 12px;     
 }
 
 td img {
@@ -78,21 +87,12 @@ td img {
     border-radius: 10px ;
 }
 
-.price {
-    font-family: 'Telex';
-}
-
 .details {
     margin-top: 70px;
 }
 
-.details p {
-    font-family: 'Catamaran';
+.details p {     
     font-size: 30px;
-}
-
-.details small {
-    font-family: 'Telex';
 }
 
 .cart div:nth-of-type(1) td {
@@ -102,8 +102,7 @@ td img {
 .total-price {
     display: flex;
     justify-content:flex-end;
-    margin-left: 43%;
-    font-family: 'Telex';
+    margin-left: 43%;     
 }
 
 .total-price table {
@@ -125,8 +124,7 @@ th:last-child {
     left: 65.5%;
     padding: 10px 50px;
     margin-bottom: 30px;
-    margin-top: 30px;
-    font-family: 'Telex';
+    margin-top: 30px;    
     border-style: solid;
     border-color: black;
     color: black;

@@ -51,14 +51,14 @@ header {
 }
 
 .side_para h1 {
-    font-family: 'Catamaran';
+     
     color: black;
     font-size: 40px;
     margin-top: 10px;
 }
 
 .side_para .para {
-    font-family: 'Telex';
+     
     line-height: 25px;
     width: 450px;
     font-size: 20px;
@@ -69,7 +69,7 @@ header {
 }
 
 .price1 {
-    font-family:'Telex';
+    
     color:black;
     margin-top: 20px;
 }
@@ -94,7 +94,7 @@ header {
 .price2 {
     margin-top: 10px;
     color:black;
-    font-family: 'Telex';
+     
 }
 
 .buttons {
@@ -114,11 +114,11 @@ header {
     border:2px solid black;
     border-radius: 30px;
     background-color: white;
-    font-family:'Telex';
+    
 }
 
 .add button {
-    color:hsl(0, 0%, 0%);
+    color:(0, 0%, 0%);
     font-weight: bold;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -129,7 +129,7 @@ header {
     border-radius: 20px;
     background-color: black;
     color: white;
-    font-family:'Telex';
+    
     transition: 0.2s;   
 }
 
@@ -144,13 +144,13 @@ header {
 }
 
 .spec h2 {
-    font-family: 'Catamaran';
+     
 }
 
 .spec-buttons {
     display: inline-flex;
     margin: 20px 0;
-    font-family:'Telex';
+    
 }
 
 .spec-buttons button {
@@ -196,7 +196,7 @@ header {
 }
 
 .like {
-    font-family: 'Catamaran';
+     
     margin-left: 5%;
 }
 
@@ -219,12 +219,12 @@ header {
 }
 
 .product h2 {
-    font-family: 'Catamaran';
+     
 }
 
 .product p {
     margin-top: 10px;
-    font-family: 'Telex';
+     
     font-size: 20px;
 }
 
@@ -236,7 +236,7 @@ header {
 .product .buttons button {
     padding: 15px 30px;
     border-radius: 30px;
-    font-family:'Catamaran';
+    
     font-size: 16px;
     font-weight: 700;
 }
