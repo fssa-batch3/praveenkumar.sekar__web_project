@@ -3,16 +3,8 @@
     margin: 0;
 }
 
-th {
-    font-family: 'Catamran', sans-serif;
-}
-
 h2 {
     font-family: 'Catamaran', sans-serif;
-}
-
-td {
-    font-family: 'Telex', sans-serif;
 }
 
 small {
@@ -62,13 +54,15 @@ th {
     color: "#ffffff";
     border-bottom: 2px solid black;     
     font-size: 20px;
+    font-family: 'Catamran', sans-serif;
 }
 
 td {
     font-size: 22px;
     text-align: center;
     padding: 30px;
-    border-bottom: 2px solid black;    
+    border-bottom: 2px solid black;
+    font-family: 'Telex', sans-serif;    
 }
 
 th:nth-of-type(4){

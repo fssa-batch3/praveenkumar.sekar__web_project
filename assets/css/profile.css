@@ -19,10 +19,6 @@ th {
     font-family: 'Catamran', sans-serif;
 }
 
-td {
-    font-family: 'Telex', sans-serif;
-}
-
 body {
     background-color: aliceblue;
 }
@@ -59,6 +55,7 @@ td {
     padding: 50px;     
     font-size: 20px;
     border-bottom: 1px solid black;
+    font-family: 'Telex', sans-serif;
 }
 
 caption{
