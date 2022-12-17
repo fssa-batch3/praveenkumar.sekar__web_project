@@ -50,15 +50,13 @@ header {
     margin-top: 15%;
 }
 
-.side_para h1 {
-     
+.side_para h1 {     
     color: black;
     font-size: 40px;
     margin-top: 10px;
 }
 
-.side_para .para {
-     
+.side_para .para { 
     line-height: 25px;
     width: 450px;
     font-size: 20px;
@@ -118,7 +116,6 @@ header {
 }
 
 .add button {
-    color:(0, 0%, 0%);
     font-weight: bold;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -128,9 +125,8 @@ header {
     border:2px solid black;
     border-radius: 20px;
     background-color: black;
-    color: white;
-    
-    transition: 0.2s;   
+    transition: 0.2s;
+    color:white;   
 }
 
 .add button:hover {
@@ -143,14 +139,9 @@ header {
     margin: 20px 0;
 }
 
-.spec h2 {
-     
-}
-
 .spec-buttons {
     display: inline-flex;
-    margin: 20px 0;
-    
+    margin: 20px 0;   
 }
 
 .spec-buttons button {
@@ -195,8 +186,7 @@ header {
     margin-bottom: 5%;
 }
 
-.like {
-     
+.like {     
     margin-left: 5%;
 }
 
@@ -223,13 +213,9 @@ header {
     background-color:rgb(229, 196, 134) ;
 }
 
-.product h2 {
-     
-}
 
 .product p {
-    margin-top: 10px;
-     
+    margin-top: 10px;     
     font-size: 20px;
 }
 
@@ -241,7 +227,6 @@ header {
 .product .buttons button {
     padding: 15px 30px;
     border-radius: 30px;
-    
     font-size: 16px;
     font-weight: 700;
 }
