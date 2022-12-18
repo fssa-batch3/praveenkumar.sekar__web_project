@@ -30,6 +30,8 @@ header {
 
 caption{
     font-size: 25px;
+    display: table-caption;
+    text-align: center;
 }
 
 .table-container {
@@ -56,11 +58,6 @@ td {
     font-size: 20px;
     border-bottom: 1px solid black;
     font-family: 'Telex', sans-serif;
-}
-
-caption{
-    display: table-caption;
-    text-align: center;      
 }
 
 .buttons {

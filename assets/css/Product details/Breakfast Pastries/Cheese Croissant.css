@@ -59,18 +59,16 @@ header {
 
 .side{
     width: 40%;
-    margin-top: 14%;
+    margin-top: 13%;
 }
 
-.side_para h1 {
-     
+.side_para h1 {     
     color: black;
     font-size: 40px;
     margin-top: 10px;
 }
 
-.side_para .para {
-     
+.side_para .para {     
     line-height: 25px;
     width: 450px;
     font-size: 20px;
@@ -105,8 +103,7 @@ header {
 
 .price2 {
     margin-top: 10px;
-    color:black;
-     
+    color:black;     
 }
 
 .buttons {
@@ -205,8 +202,7 @@ header {
     margin-bottom: 5%;
 }
 
-.like {
-     
+.like {     
     margin-left: 5%;
 }
 
@@ -236,8 +232,7 @@ header {
 
 
 .product p {
-    margin-top: 10px;
-     
+    margin-top: 10px;     
     font-size: 20px;
 }
 
