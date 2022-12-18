@@ -80,6 +80,7 @@ td input {
     width: 30px;
     height: 30px;
     padding: 5px;
+    margin-left: 20%;
     background:transparent;
     border-radius: 10px;
     border:black solid 2px;
@@ -91,8 +92,7 @@ td a {
     font-size: 12px;     
 }
 
-td img {
-    margin-right: 10px;
+td .cart-info img {
     border-radius: 10px ;
 }
 
