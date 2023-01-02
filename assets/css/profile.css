@@ -20,7 +20,7 @@ th {
 }
 
 body {
-    background-color: aliceblue;
+    background-color: #B3C0AE;
 }
 
 header {
@@ -70,6 +70,7 @@ td {
     padding: 15px 30px;
     margin: 5px;     
     transition: 0.2s;
+    border: solid 1px black;
 }
 
 .buttons a:nth-of-type(1) button {
@@ -94,4 +95,27 @@ td {
     border-radius: 30px;
     background-color:white;
     color: black;
+}
+
+/* responsive */
+
+@media only screen and (max-width:700px) {
+
+    .table-container{
+        padding-top: 30%;
+        height: 60vh;
+    }
+
+    caption {
+        font-size: 16px;
+    }
+
+    td {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .buttons {
+        margin-left: 28%;
+    }
 }

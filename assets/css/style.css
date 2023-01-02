@@ -21,7 +21,7 @@ a {
 }
 
 body {
-    background-color: aliceblue;
+    background-color: white;
 }
 
 header{
@@ -63,6 +63,7 @@ header{
     border: none;
     border-radius: 10px;
     padding: 0 20px 20px 20px;
+    background-color: rgba(0, 0, 0, 0.148);
 }
 
 .content button{
@@ -83,7 +84,6 @@ header{
 
 .content button a {
     text-decoration: none;
-    
     font-style: bold;
     font-weight: 600;
 }
@@ -113,26 +113,31 @@ header{
 /* products */
 
 .products {
-    display:flex;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    gap: 3rem;
+    width: 80%;
+    place-items: center;
+    margin: auto;
 }
 
 .products a {
     text-decoration: none;
-    color: black;
 }
 
 .product {
     margin-top: 50px;
-    background-color: rgb(238, 218, 182);
+    background-color: white;
     border-radius: 10px;
     padding: 30px 20px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     transition: 0.2s;
+    color:black;
 }
 
 .product:hover {
-    background-color:rgb(229, 196, 134) ;
+    border: 1.5px solid #c29b66;
+    color:black; 
 }
 
 .product p {
@@ -153,22 +158,27 @@ header{
 }
 
 .product .buttons button:nth-child(1) {
-    border: none;
+    border: 1px black solid;
     transition: 0.1s;
     background-color: white;
+    color:black;
 }
 
 .product .buttons button:nth-child(1):hover {
-    border: 2px solid black;
+    background-color:black;
+    color: white;
 }
 
 .product .buttons button:nth-child(2) {
-    background: none;
+    border: 1px black solid;
     transition: 0.1s;
+    background-color: white;
+    color:black;
 }
 
 .product .buttons button:nth-child(2):hover {
-    background: white;
+    background-color:black;
+    color: white;
 }
 
 /* about */
@@ -197,7 +207,6 @@ header{
 
 .about-para p {
     margin-top: 40px;
-    
     width: 90%;
     font-size: 22px;
     line-height: 40px;
@@ -286,9 +295,9 @@ header{
 .meet {
     display: flex;
     margin-top: 7%;
+    padding-top: 7%;
     margin-bottom: 7%;
-    border-top: 2px black solid;
-    border-bottom: 2px black solid;
+    border-top: 1px black solid;
 }
 
 .meet-para {
@@ -298,19 +307,156 @@ header{
 }
 
 .meet-para h1 {
-    
     font-size: 60px;
 }
 
 .meet-para p {
     margin-top: 40px;
-    
     width: 90%;
     font-size: 22px;
     line-height: 40px;
     font-style:italic;
     text-align: justify;
     text-justify:inter-word;
+}
+
+/* responsive */
+
+
+@media only screen and (max-width:700px) {
+
+    body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        width: 100%;
+    }
+
+    .content {
+        margin-top: 40%; 
+    }
+
+    .bg-img {
+        max-height: 70vh;
+        background-image: url(../Images/bhuwan-bansal-NBTqo3Ig73w-unsplash-overlay\ \(2\).jpg);
+        filter: grayscale(15%);
+        background-size:cover;
+        background-position: center;
+    }
+
+    .content button{
+        margin-left: 20%;
+        padding: 15px 60px;
+        align-items: center;
+        border-radius: 30px;
+        border:0px;
+        margin-top: 4%;
+        font-size: 20px;
+    }
+
+    .heading {
+        font-size: 45px;
+    }
+
+    .para {
+        font-size: 16px; 
+    }
+
+    .heading-2 h1 {
+        font-size: 20px;
+    }
+
+    .heading-2 p {
+        font-size: 16px;
+    }
+
+    .products {
+        flex-wrap: wrap;
+    }
+
+    .product {
+        width: 50%;
+        height: 70%;
+        margin: 10% auto;
+
+    }
+
+    .product img {
+        width: 50%;
+        height: 50%;
+        margin-left: 23%;
+    }
+
+    .product p {
+        font-size: 16px;
+    }
+
+    .products h2 {
+        font-size: 20px;
+        line-height: 20px;
+    }
+
+    .product .buttons button {
+        padding: 10px 15px;
+        border-radius: 30px;
+        font-size: 12px;
+        font-weight: 700;
+    }
+
+    .categories {
+        flex-wrap: wrap;
+    }
+
+    /* about */
+
+    .about{
+        margin-top: 70%;
+        height: 50vh;
+    }
+
+    .about-para{
+        width: 80%;
+        margin-left: 14%;
+        top: 5%;
+    }
+
+    .about-para h1 {
+        font-size: 20px;
+    }
+
+    .about-para p {
+        font-size: 16px;
+        line-height: normal;
+        width: none;
+        text-justify: auto;
+    }
+
+    /* meet */
+
+    .meet {
+        height: 50vh;
+    }
+
+    .meet-para{
+        max-height: 50vh;
+    }
+
+    .meet-para h1 {
+        font-size: 20px;
+    }
+
+    .meet-para p {
+        font-size: 12px;
+        line-height: normal;
+        margin-top: 20px;   
+    }
+
+    .categories {
+        position: static;
+    }
 }
 
 

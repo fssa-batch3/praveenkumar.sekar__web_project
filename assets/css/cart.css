@@ -20,7 +20,7 @@ small {
 }
 
 body {
-    background-color: aliceblue;
+    background-color: #B3C0AE;
 }
 
 header {
@@ -145,6 +145,55 @@ th:last-child {
 .checkout button:hover {
     background-color: black;
     color: white;
+}
+
+@media only screen and (max-width:700px) {
+    th {
+        text-align: left;
+        padding: 5px;
+        padding-top: 50PX;
+        color: "#ffffff";     
+        font-size: 16px;
+        font-family: 'Catamaran', sans-serif;
+    }
+
+    td .cart-info img {
+        border-radius: 10px ;
+        width: 100%;
+        height: 100%;
+    }
+
+    .details {
+        margin: 0;
+    }
+
+    .details p{
+        font-size: 16px;
+        margin-top: 0;
+    }
+
+    .price p {
+        font-size: 16px;
+    }
+
+    .checkout button {
+        position: relative;
+        left: 32%;
+        padding: 10px 50px;
+        margin-bottom: 30px;
+        margin-top: 30px;    
+        border-style: solid;
+        border-color: black;
+        color: black;
+        border-radius: 20px;
+        background-color: white;
+        transition: 0.2s;
+    }
+
+    .total-price {
+        width: 40%;
+        margin-left: 50%;
+    }
 }
 
 

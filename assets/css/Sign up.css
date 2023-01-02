@@ -24,7 +24,7 @@ button {
 }
 
 body {
-    background-color: aliceblue;
+    background-color: #B3C0AE;
 }
 
 header {
@@ -106,4 +106,42 @@ form a {
     padding-top: 10px;
     text-decoration: none;
     color: black;
+}
+
+/* responsive */
+
+@media only screen and (max-width:700px) {
+    .form-container {
+        width: 100%;
+        padding-top: 40%;
+        padding-bottom: 20%;
+    }
+
+    .form-container form {
+        width: 70%;
+    }
+
+    .form-container form img {
+        width: 50px;
+    }
+
+    .form-container form h1 {
+        font-size: 20px;
+    }
+
+    form label { 
+        font-size: 16px;
+        font-weight: 700;
+        margin-left: 37px;
+    }
+    
+    form input {
+        appearance: none;
+        background: none;
+        margin: 10px 0 0 37px;
+        border:none;
+        border-bottom: 2px solid black;
+        width: 70%;
+        padding: 5px;
+    }
 }

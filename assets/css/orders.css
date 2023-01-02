@@ -12,7 +12,7 @@ small {
 }
 
 body {
-    background-color: aliceblue;
+    background-color: #B3C0AE;
 }
 
 header {
@@ -48,11 +48,14 @@ table {
     flex-wrap: wrap;   
 }
 
+table tr {
+    border-bottom: 0.5px solid black;
+}
+
 th {
     text-align: center;
     padding: 5px;
-    color: "#ffffff";
-    border-bottom: 2px solid black;     
+    color: "#ffffff";     
     font-size: 20px;
     font-family: 'Catamran', sans-serif;
 }
@@ -61,12 +64,38 @@ td {
     font-size: 22px;
     text-align: center;
     padding: 30px;
-    border-bottom: 2px solid black;
     font-family: 'Telex', sans-serif;    
 }
 
 th:nth-of-type(4){
     padding: 100px;
+}
+
+@media only screen and (max-width:700px) {
+
+    .order {
+        margin-top: 40%;
+        margin-bottom: 20%;
+    }
+
+    th {
+        font-size: 10px;
+        padding: 10px;
+    }
+    
+    th:nth-of-type(4){
+        padding: 0px;
+    }
+
+    td {
+        font-size: 10px;
+        padding: 0;
+    }
+
+    td img {
+        width: 100%;
+        height: 100%;
+    }
 }
 
 
