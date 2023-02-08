@@ -106,7 +106,7 @@ header {
 .category-section {
     padding-top: 2%;
     padding-bottom: 7%;
-    background-color: #B3C0AE;
+    background-color: white;
 }
 
 #breakfast-pastries{
@@ -119,16 +119,14 @@ header {
     margin-top: 5%;
 }
 
-.products {
+.products1, .products2, .products3 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
     gap: 10rem;
+    row-gap: 2rem;
     width: 80%;
     place-items: center;
     margin: auto;
-}
-
-.products a {
     text-decoration: none;
 }
 
@@ -140,6 +138,11 @@ header {
     padding: 30px 20px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     transition: 0.2s;
+}
+
+.product a {
+    color: #8e464e;
+    text-decoration: none;
 }
 
 .product:hover {

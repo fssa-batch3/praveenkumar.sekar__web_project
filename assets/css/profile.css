@@ -20,7 +20,7 @@ th {
 }
 
 body {
-    background-color: #B3C0AE;
+    background-color: white;
 }
 
 header {
@@ -43,10 +43,12 @@ caption{
 .sub-container {
     margin: auto;
     margin-top: 10%;
-    background-color: #FFFEFA;
+    background-color: white;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     border-radius: 10px;
     padding-top: 30px;
+    display: flex;
+    flex-direction: column;
 }
 
 tr td:nth-of-type(2) {
@@ -61,15 +63,14 @@ td {
 }
 
 .buttons {
-    margin-top: 5%;
-    margin-left: 19%;
-    margin-bottom: 5%;
+    margin: auto;
 }
 
 .buttons button {
-    padding: 15px 30px;
-    margin: 5px;     
+    padding: 15px 30px;    
     transition: 0.2s;
+    margin-top: 5%;
+    margin-bottom: 5%;
     border: solid 1px black;
 }
 

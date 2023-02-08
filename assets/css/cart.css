@@ -20,7 +20,7 @@ small {
 }
 
 body {
-    background-color: #B3C0AE;
+    background-color: white;
 }
 
 header {
@@ -72,8 +72,8 @@ th {
 .cart table td {
     font-size: 22px;
     padding: 30px 5px;
-    border-top: black 2px solid;
-    border-bottom: black 2px solid;
+    border-top: black 1px solid;
+    border-bottom: black 1px solid;
 }
 
 td input {
@@ -83,7 +83,7 @@ td input {
     margin-left: 20%;
     background:transparent;
     border-radius: 10px;
-    border:black solid 2px;
+    border:black solid 1px;
     color:black;
 }
 
@@ -102,10 +102,6 @@ td .cart-info img {
 
 .details p {     
     font-size: 30px;
-}
-
-.cart div:nth-of-type(1) td {
-    border-top: none;
 }
 
 .total-price {
@@ -134,8 +130,7 @@ th:last-child {
     padding: 10px 50px;
     margin-bottom: 30px;
     margin-top: 30px;    
-    border-style: solid;
-    border-color: black;
+    border: 1px black solid;
     color: black;
     border-radius: 20px;
     background-color: white;

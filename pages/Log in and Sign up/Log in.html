@@ -24,26 +24,28 @@
                     </nav>
         </header>
         <div class="form-container">
-        <form>
+        <form role="form" onsubmit="signIn(event);">
             <img src="../../assets/Images/v1033-a-15-a-removebg-preview - Copy.svg" width="100px" alt="logo">
         <h1>Sign in</h1>
         <div class="email">
             <label>Email:</label>
             <br>
-            <input type="email">
+            <input type="email" id="email">
             <br><br>
         </div>
         <div class="password">
             <label>Password:</label>
             <br>
-            <input type="password">
+            <input type="password" id="password">
             <br><br>
         </div>
-        <div><a href="../../index.html"><button>Log In</button></a></div>    
+        <div>
+            <button type="submit" >Log In</button>
+        </div>      
             <a href="#"><p>Forgot password?</p></a>
             <br>
             <a href="./Sign up.html"><p>Don't have an account? Register</p></a>
-        </form>
+        </form> 
         </div>
         <footer>
             <div class="foot">
@@ -72,5 +74,69 @@
             </div>
 
         </footer>
+
+    <script>
+        
+        // function signup(){
+
+        const signUp = e => {
+            let
+                name = document.getElementById("name").value,
+                phone = document.getElementById("phone").value,
+                email = document.getElementById("email").value,
+                address = document.getElementById("address").value,
+                password = document.getElementById("password").value;
+
+            let user_cred = JSON.parse(localStorage,getItem('user_cred')) || [];
+
+            let exist = user_cred.length &&
+                JSON.parse(localStorage.getItem('user_detail')).some(data =>
+                    data.email.toLowerCase() == email.toLowerCase() ||
+                    data.password.toLowerCase() == password.toLowerCase()
+                );
+
+            if(!exist){
+                user_cred.push({name,phone,email,address,passwrod});
+
+                localStorage.setItem('user_cred',JSON.stringify(user_cred));
+                console.log(localStorage.getItem('user_cred'));
+                document.querySelector('form').reset();
+                document.getElementById('email').focus();
+                document.getElementById('password').focus();
+                alert('Account created successfully');
+                location.href = "../../index.html";
+            }
+
+            else {
+                alert('Sorry the User already exists! \n Try with a new Email or Phone Number.');
+                document.querySelector('form').reset();
+            }
+            e.preventDefault();   
+        } 
+
+        // function sign in()
+        const signIn = e =>{
+            let email = document.getElementById('email').value,
+                password = document.getElementById('password').value;
+            
+            let user_cred = JSON.parse(localStorage.getItem('user_cred')) || [];
+
+            let exist = user_cred.length &&
+            JSON.parse(localStorage.getItem('user_cred')).some(data => data.email.toLowerCase() == email
+            && data.password.toLowerCase() == password);
+
+            if(!exist){
+                alert("Incorrect Login Credentials");
+            }
+
+            else{
+                alert("Your Login is Successful");
+                location.href = "../../index.html";
+            }
+            e.preventDefault();
+        }
+
+        </script>
+
     </body>
 </html>

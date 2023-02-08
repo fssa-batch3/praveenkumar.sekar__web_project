@@ -19,41 +19,41 @@
                     <ul>
                         <li><a href="../../index.html">Home</a></li>
                         <li><a href="../products/product_list.html">Products</a></li>
-                        <li><a href="../../assets/css/Sign up.css">Log In</a></li>
+                        <li><a href="../../assets/css/Sign up.html">Log In</a></li>
                         <li><a href="../Cart/cart.html"><img src="../../assets/Images/icon-cart.svg" alt="cart"></a></li>
                     </ul>
                     </nav>
         </header>
         <div class="form-container">
-        <form>
+        <form role="form" onsubmit="signUp(event)">
             <img src="../../assets/Images/v1033-a-15-a-removebg-preview - Copy.svg" width="100px" alt="logo">
         <h1>Register</h1>
-        <div class="first-name">
-            <label>First Name:</label><br>
-            <input type="text">
+        <div class="name">
+            <label>Name:</label><br>
+            <input type="text" id="name">
             <br><br>
         </div>
-        <div class="last-name">
-            <label>Last Name:</label><br>
-            <input type="text">
+        <div class="phone">
+            <label>Phone Number:</label><br>
+            <input type="number" id="phone">
             <br><br>
         </div>
         <div class="email">
             <label>Email:</label><br>
-            <input type="email">
+            <input type="email" id="email">
             <br><br>
         </div>
         <div class="address">
             <label>Address:</label><br>
-            <input type="text"/>
+            <input type="text" id="address"/>
             <br><br>
         </div>
-        <div class="password">
+        <div class="password" id="test">
             <label>Password:</label><br>
-            <input type="password">
+            <input type="password" id="password" value="*****">
             <br><br>
         </div>
-        <div><a href="../../index.html"><button>Register</button></a></div><br>   
+        <div><button type="submit">Register</button></div><br>   
             <a href="./Log in.html"><p>Already have an account? Sign in</p></a>
         </form>
         </div>
@@ -84,5 +84,69 @@
             </div>
 
         </footer>
+
+
+        <script>
+        
+        // function signup(){
+
+        const signUp = e => {
+            let name = document.getElementById("name").value,
+                phone = document.getElementById("phone").value,
+                email = document.getElementById("email").value,
+                address = document.getElementById("address").value,
+                password = document.getElementById("password").value;
+
+            let user_cred = JSON.parse(localStorage.getItem('user_cred')) || [];
+
+            let exist = user_cred.length &&
+                JSON.parse(localStorage.getItem('user_cred')).some(data =>
+                    data.email.toLowerCase() == email.toLowerCase() ||
+                    data.phone.toLowerCase() == phone.toLowerCase()
+                );
+
+            if(!exist){
+                user_cred.push({name,phone,email,address,password});
+
+                localStorage.setItem('user_cred',JSON.stringify(user_cred));
+                console.log(localStorage.getItem('user_cred'));
+                document.querySelector('form').reset();
+                document.getElementById('email').focus();
+                document.getElementById('phone').focus();
+                alert('Account created successfully');
+                location.href = "../../index.html";
+            }
+
+            else {
+                alert('Sorry the User already exists! \n Try with a new Email or Phone Number.');
+                document.querySelector('form').reset();
+            }
+            e.preventDefault();   
+        } 
+
+        // function sign in()
+        // const signIn = e =>{
+        //     let email = document.getElementById('email').value,
+        //         password = document.getElementById('password').value;
+            
+        //     let user_cred = JSON.parse(localStorage.getItem('user_cred')) || [];
+
+        //     let exist = user_cred.length &&
+        //     JSON.parse(localStorage.getItem('user_cred')).some(data => data.email.toLowerCase() == email
+        //     && data.password.toLowerCase() ==password);
+
+        //     if(!exist){
+        //         alert("Incorrect Login Credentials");
+        //     }
+
+        //     else{
+        //         alert("Your Login is Successful");
+        //         location.href = "../../index.html";
+        //     }
+        //     e.preventDefault();
+        // }
+
+        </script>
+
     </body>
 </html>

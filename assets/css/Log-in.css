@@ -24,7 +24,7 @@ button {
 }
 
 body {
-    background-color: #B3C0AE;
+    background-color: white;
 }
 
 header {
@@ -35,6 +35,7 @@ header {
 .form-container {
     display: flex;
     margin-bottom: 5%;
+    height: 100vh;
 }
 
 form {
@@ -42,7 +43,7 @@ form {
     flex-direction: column;
     width: 450px;
     border-radius: 10px;
-    margin: 13% auto auto auto;
+    margin: auto;
     background:  white;
     padding: 5px 5px 20px 5px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -54,12 +55,12 @@ form img {
 
 form h1 {
     text-align: center;
-    
+    font-weight: 100;
 }
 
 form label { 
     font-size: 18px;
-    font-weight: 700;
+    font-weight: normal;
     margin-left: 37px;
 }
 
@@ -68,7 +69,7 @@ form input {
     background: none;
     margin: 10px 0 0 37px;
     border:none;
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid black;
     width: 365px;
     padding: 5px;
 }
@@ -83,8 +84,7 @@ form div:nth-of-type(3) {
 
 form button {
     background-color: white;
-    border-style: solid;
-    border-color: black;
+    border: 1px solid black;
     border-radius: 20px;
     margin: auto;
     margin-bottom: 10px;

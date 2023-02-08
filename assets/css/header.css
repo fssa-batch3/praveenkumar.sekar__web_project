@@ -57,7 +57,7 @@ nav ul li a {
     position: relative;
     text-decoration: none;
     color: black;
-    font-weight: 500;
+    font-weight: normal;
 }
 
 nav ul li a:after {

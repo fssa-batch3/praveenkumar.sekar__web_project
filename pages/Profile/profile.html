@@ -31,21 +31,21 @@
                             <tr>
                                 <th></th>
                             </tr>
-                            <tr>
+                            <tr></tr>
                                 <td>Name:</td>
-                                <td>Praveen</td>
+                                <td><p id="name"></p></td>
                             </tr>
                             <tr>
                                 <td>Email:</td>
-                                <td>praveen@hotmail.com</td>
+                                <td><p id="email"></p></td>
                             </tr> 
                             <tr>
                                 <td>Mobile:</td>
-                                <td>6381040919</td>
+                                <td><p id="phone"></p></td>
                             </tr>
                             <tr>
                                 <td>Address:</td>
-                                <td>221B Baker Street</td>
+                                <td><p id="address"></p></td>
                             </tr>      
                         </trbody>
                     </table>
@@ -82,5 +82,26 @@
                 </div>
     
             </footer>
+
+            <script>
+
+                const email = localStorage.getItem("email");
+                const address = localStorage.getItem("address");
+                const phone = localStorage.getItem("phone");
+                const name = localStorage.getItem("name");
+
+                console.log(email);
+                console.log(address);
+                console.log(phone);
+                console.log(name);
+                
+                document.getElementById("email").innerText = email
+                document.getElementById("address").innerText = address  
+                document.getElementById("phone").innerText = phone
+                document.getElementById("name").innerText = name
+
+
+            </script>
+
     </body>
 </html>
