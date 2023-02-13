@@ -79,61 +79,64 @@
         
         // function signup(){
 
-        const signUp = e => {
-            let
-                name = document.getElementById("name").value,
-                phone = document.getElementById("phone").value,
-                email = document.getElementById("email").value,
-                address = document.getElementById("address").value,
-                password = document.getElementById("password").value;
+        // const signUp = e => {
+        //     let first_name = document.getElementById("first_name").value,
+        //         last_name = document.getElementById("last_name").value,
+        //         phone = document.getElementById("phone").value,
+        //         email = document.getElementById("email").value,
+        //         address = document.getElementById("address").value,
+        //         password = document.getElementById("password").value;
 
-            let user_cred = JSON.parse(localStorage,getItem('user_cred')) || [];
+        //     let user_cred = JSON.parse(localStorage,getItem('user_cred')) || [];
 
-            let exist = user_cred.length &&
-                JSON.parse(localStorage.getItem('user_detail')).some(data =>
-                    data.email.toLowerCase() == email.toLowerCase() ||
-                    data.password.toLowerCase() == password.toLowerCase()
-                );
+        //     let exist = user_cred.length &&
+        //         JSON.parse(localStorage.getItem('user_cred')).some(data =>
+        //             data.email.toLowerCase() == email.toLowerCase() ||
+        //             data.password.toLowerCase() == password.toLowerCase()
+        //         );
 
-            if(!exist){
-                user_cred.push({name,phone,email,address,passwrod});
+        //     if(!exist){
+        //         user_cred.push({first_name,last_name,phone,email,address,password});
 
-                localStorage.setItem('user_cred',JSON.stringify(user_cred));
-                console.log(localStorage.getItem('user_cred'));
-                document.querySelector('form').reset();
-                document.getElementById('email').focus();
-                document.getElementById('password').focus();
-                alert('Account created successfully');
-                location.href = "../../index.html";
-            }
+        //         localStorage.setItem('user_cred',JSON.stringify(user_cred));
+        //         console.log(localStorage.getItem('user_cred'));
+        //         document.querySelector('form').reset();
+        //         document.getElementById('email').focus();
+        //         document.getElementById('password').focus();
+        //         alert('Account created successfully');
+        //         location.href = "../../index.html";
+        //     }
 
-            else {
-                alert('Sorry the User already exists! \n Try with a new Email or Phone Number.');
-                document.querySelector('form').reset();
-            }
-            e.preventDefault();   
-        } 
+        //     else {
+        //         alert('Sorry the User already exists! \n Try with a new Email or Phone Number.');
+        //         document.querySelector('form').reset();
+        //     }
+        //     e.preventDefault();   
+        // } 
 
         // function sign in()
-        const signIn = e =>{
+        function signIn (e) {
+            e.preventDefault();
             let email = document.getElementById('email').value,
                 password = document.getElementById('password').value;
             
             let user_cred = JSON.parse(localStorage.getItem('user_cred')) || [];
 
             let exist = user_cred.length &&
-            JSON.parse(localStorage.getItem('user_cred')).some(data => data.email.toLowerCase() == email
-            && data.password.toLowerCase() == password);
+            JSON.parse(localStorage.getItem('user_cred')).some(data => 
+            data.email.toLowerCase() == email
+            && data.password == password);
 
             if(!exist){
-                alert("Incorrect Login Credentials");
+                alert("Incorrect User Credentials");
+                document.querySelector('form').reset();
             }
 
             else{
+                localStorage.setItem('uniqueID',JSON.stringify(email));
                 alert("Your Login is Successful");
                 location.href = "../../index.html";
             }
-            e.preventDefault();
         }
 
         </script>

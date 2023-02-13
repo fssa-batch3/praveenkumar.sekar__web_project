@@ -31,9 +31,13 @@
                             <tr>
                                 <th></th>
                             </tr>
-                            <tr></tr>
-                                <td>Name:</td>
-                                <td><p id="name"></p></td>
+                            <tr>
+                                <td>First Name:</td>
+                                <td><p id="first_name"></p></td>
+                            </tr>
+                            <tr>
+                                <td>Last Name:</td>
+                                <td><p id="last_name"></p></td>
                             </tr>
                             <tr>
                                 <td>Email:</td>
@@ -85,20 +89,18 @@
 
             <script>
 
-                const email = localStorage.getItem("email");
-                const address = localStorage.getItem("address");
-                const phone = localStorage.getItem("phone");
-                const name = localStorage.getItem("name");
-
-                console.log(email);
-                console.log(address);
-                console.log(phone);
-                console.log(name);
-                
-                document.getElementById("email").innerText = email
-                document.getElementById("address").innerText = address  
-                document.getElementById("phone").innerText = phone
-                document.getElementById("name").innerText = name
+        //get value from local storage
+        let uniqueID = JSON.parse(localStorage.getItem("uniqueID"));
+        let user_cred = JSON.parse(localStorage.getItem("user_cred"));
+        function profile_data(e){
+            return e.email == uniqueID;
+        }
+        person_data = user_cred.find(profile_data);
+        document.getElementById("first_name").innerText = person_data["first_name"];
+        document.getElementById("last_name").innerText = person_data["last_name"];
+        document.getElementById("email").innerText = person_data["email"];
+        document.getElementById("phone").innerText = person_data["phone"];
+        document.getElementById("address").innerText = person_data["address"]
 
 
             </script>

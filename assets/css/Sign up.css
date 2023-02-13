@@ -65,6 +65,8 @@ form label {
     margin-left: 37px;
 }
 
+
+
 form input {
     appearance: none;
     background: none;
@@ -79,7 +81,11 @@ form input:focus {
     outline: none;
 }
 
-form div:nth-of-type(6) {
+form input:focus:invalid {
+    border: 2px red solid;
+}
+
+form div:nth-of-type(8) {
     display: flex;
 }
 

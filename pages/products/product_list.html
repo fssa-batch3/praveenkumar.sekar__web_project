@@ -327,7 +327,7 @@
                         "alt": "Chocolate raspberry cake"},
                     "category": "cake"
                 },
-                
+
 
                 {
                     "name": "Cookies And Cream Cake",
@@ -587,10 +587,18 @@
             // img
             prod_img = document.createElement("img");
             prod_img.setAttribute("src", object["image"]["src"]);
-            prod_img.setAttribute("height","300px")
-            prod_img.setAttribute("wdith","350px")
+            prod_img.setAttribute("class","img_size")
             prod_img.setAttribute("alt", object["image"]["alt"]);
             div_prod.append(prod_img);
+
+            prod_a = document.createElement("a");
+            prod_a.setAttribute("href", "./product_detail.html");
+            div_prod.append(prod_a);
+
+            prod_button = document.createElement("button");
+            prod_button.setAttribute("class", "prod_button");
+            prod_button.innerText = "Learn more";
+            prod_a.append(prod_button)
 
             return div_prod;
 

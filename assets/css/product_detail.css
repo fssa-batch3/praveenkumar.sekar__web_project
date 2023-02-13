@@ -30,8 +30,8 @@ header {
 
 .whole{
     width: 1200px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    display: flex;
+    /* grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); */
     gap: 10rem;
     margin:auto;
     margin-top: 10%;
@@ -45,7 +45,7 @@ header {
 }
 
 .main img {
-    border-radius: 20px;
+    border-radius: 5px;
     border: 2px black solid;
     background-color: white;
 }
@@ -60,6 +60,7 @@ header {
 textarea{
     resize: none;
     border-radius: 5px;
+    width: 269px;
 }
 
 /* --------side-------- */
@@ -129,7 +130,7 @@ textarea{
     padding-right: 10px;
     margin-right: 20px;
     border:2px solid black;
-    border-radius: 30px;
+    border-radius: 5px;
     background-color: white;
     
 }
@@ -142,24 +143,20 @@ textarea{
     padding-right: 50px;
     margin-right: 20px;
     border:2px solid black;
-    border-radius: 20px;
+    border-radius: 5px;
     background-color: black;
     color: white;
-    
     transition: 0.2s;   
 }
 
 .add button:hover {
     color :black;
     background-color: white;
-
 }
 
 .spec {
     margin: 20px 0;
 }
-
-
 
 .spec-buttons {
     display: inline-flex;
@@ -183,8 +180,8 @@ textarea{
 }
 
 .spec-buttons button:nth-of-type(1) {
-    border-top-left-radius: 30px ;
-    border-bottom-left-radius: 30px;
+    border-top-left-radius: 5px ;
+    border-bottom-left-radius: 5px;
     border: 2px black solid;
     border-right: 1px white solid;
 }
@@ -196,8 +193,8 @@ textarea{
 }
 
 .spec-buttons button:nth-of-type(3) {
-    border-top-right-radius: 30px ;
-    border-bottom-right-radius: 30px;
+    border-top-right-radius: 5px ;
+    border-bottom-right-radius: 5px;
     border: 2px black solid;
     border-left: none;
 }
@@ -222,28 +219,30 @@ textarea{
     margin-left: 3rem;
 }
 
-.products a {
-    text-decoration: none;
-    color:#8e464e;
-}
-
-.products a:hover {
-    color:#EDD0C0;
-}
-
 .product {
     margin-top: 50px;
-    background-color: #EDD0C0;
-    color: #8e464e;
-    border-radius: 10px;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
     padding: 30px 20px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     transition: 0.2s;
 }
 
+.img_size {
+    height: 250px;
+    width: 300px;
+}
+
+.product a {
+    color: black;
+    text-decoration: none;
+}
+
 .product:hover {
-    background-color:#C8626D;
-    color:#EDD0C0; 
+    background-color: white;
+    color: black; 
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px 5px, rgba(0, 0, 0, 0.3) 0px 8px 16px 8px;
 }
 
 .product p {
@@ -251,38 +250,31 @@ textarea{
     font-size: 20px;
 }
 
-.product .buttons {
+.prod_button {
+    position: relative;
     display: flex;
-    justify-content: space-around;
+    margin:auto;
+    padding: 7px 15px;
+    text-align: center;
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #000000;
+    background: transparent;
+    cursor: pointer;
+    transition: ease-out 0.5s;
+    border: 2px solid #000000;
+    border-radius: 3px;
+    box-shadow: inset 0 0 0 0 #000000;
 }
 
-.product .buttons button {
-    padding: 15px 50px;
-    border-radius: 30px;
-    font-size: 16px;
-    font-weight: 700;
+.prod_button:hover {
+    color: white;
+    box-shadow: inset 0 -100px 0 0 #000000;
 }
 
-.product .buttons button:nth-child(1) {
-    border: none;
-    transition: 0.1s;
-    background-color: white;
-    color:#8e464e;
-}
-
-.product .buttons button:nth-child(1):hover {
-    background-color:#EDD0C0;
-}
-
-.product .buttons button:nth-child(2) {
-    border: none;
-    transition: 0.1s;
-    background-color: white;
-    color:#8e464e;
-}
-
-.product .buttons button:nth-child(2):hover {
-    background-color:#EDD0C0;
+.prod_button:active {
+    transform: scale(0.9);
 }
 
 /* responsive */
@@ -290,8 +282,10 @@ textarea{
 @media only screen and (max-width:700px){
 
     .whole {
+        display: grid;
         width: 100%;
         gap: 3rem;
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     }
 
     .main {
@@ -356,7 +350,7 @@ textarea{
 
     .product .buttons button {
         padding: 10px 15px;
-        border-radius: 30px;
+        border-radius: 3px;
         font-size: 12px;
         font-weight: 700;
     }
