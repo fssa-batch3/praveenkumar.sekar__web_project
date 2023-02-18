@@ -27,6 +27,8 @@
                 <div class="sub-container">
                     <table class="table">
                         <caption><h2>PROFILE</h2></caption>
+                        <button id="del" onclick="del(event)" class="del1">DELETE</button>
+                        <button id="logOut" onclick="logOut(event)" class="del1">LOG OUT</button>
                         <trbody>
                             <tr>
                                 <th></th>
@@ -54,7 +56,7 @@
                         </trbody>
                     </table>
                     <div class="buttons">
-                    <a href=".#"><button>Edit Profile</button></a>
+                    <a href="./profile_edit.html"><button>Edit Profile</button></a>
                     <a href="../orders/user-orders.html"><button>My Orders</button></a>
                     </div>
                 </div>
@@ -92,18 +94,22 @@
         //get value from local storage
         let uniqueID = JSON.parse(localStorage.getItem("uniqueID"));
         let user_cred = JSON.parse(localStorage.getItem("user_cred"));
+
         function profile_data(e){
             return e.email == uniqueID;
         }
+
         person_data = user_cred.find(profile_data);
         document.getElementById("first_name").innerText = person_data["first_name"];
         document.getElementById("last_name").innerText = person_data["last_name"];
         document.getElementById("email").innerText = person_data["email"];
         document.getElementById("phone").innerText = person_data["phone"];
-        document.getElementById("address").innerText = person_data["address"]
+        document.getElementById("address").innerText = person_data["address"];
+        
 
+        </script>
 
-            </script>
+        <script src="../../assets/edit_profile.js"></script>
 
     </body>
 </html>

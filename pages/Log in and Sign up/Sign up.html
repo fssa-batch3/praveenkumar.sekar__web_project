@@ -113,8 +113,9 @@
 
             let exist = user_cred.length &&
                 JSON.parse(localStorage.getItem('user_cred')).some(data =>
+                    // data.email.trim() == email.trim() ||
                     data.email.toLowerCase() == email.toLowerCase() ||
-                    data.phone.toLowerCase() == phone.toLowerCase()
+                    data.phone.toLowerCase() == phone.toLowerCase() 
                 );
 
             if(!exist){

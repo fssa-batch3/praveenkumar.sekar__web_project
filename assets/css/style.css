@@ -358,16 +358,6 @@ header{
         background-position: center;
     }
 
-    .content button{
-        margin-left: 20%;
-        padding: 15px 60px;
-        align-items: center;
-        border-radius: 30px;
-        border:0px;
-        margin-top: 4%;
-        font-size: 20px;
-    }
-
     .heading {
         font-size: 45px;
     }
@@ -408,13 +398,6 @@ header{
     .products h2 {
         font-size: 20px;
         line-height: 20px;
-    }
-
-    .product .buttons button {
-        padding: 10px 15px;
-        border-radius: 30px;
-        font-size: 12px;
-        font-weight: 700;
     }
 
     .categories {
