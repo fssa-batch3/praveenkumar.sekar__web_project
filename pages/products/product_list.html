@@ -289,278 +289,264 @@
             let prod_img;
             let button;
 
-            const prod_details = [
+            // const prod_details = [
 
-            // CAKES
-                {
-                    "name": "Banana Salted Caramel",
-                    "price":{
-                        "currency" : "₹",
-                        "value" : "500"
-                    },
-                    "image":{
-                        "src": "../../assets/Images/Cakes/Banana Salted Caramel.png",
-                        "alt": "Salted Banana Caramel Cake"},
-                    "category": "cake"
-                },
+            // // CAKES
+            //     {
+            //         "name": "Banana Salted Caramel",
+            //         "price":{
+            //             "currency" : "₹",
+            //             "value" : "500"
+            //         },
+            //         "image":{
+            //             "src": "../../assets/Images/Cakes/Banana Salted Caramel.png",
+            //             "alt": "Salted Banana Caramel Cake"},
+            //         "category": "cake"
+            //     },
 
-                {
-                    "name": "Vanilla Sprinkle Cake",
-                    "price":{
-                        "currency" : "₹",
-                        "value" : "450"
-                    },
-                    "image":{
-                        "src": "../../assets/Images/Cakes/Vanilla Sprinkle.png",
-                        "alt": "Vanilla Sprinkle Cake"},
-                    "category": "cake"
-                },
+            //     {
+            //         "name": "Vanilla Sprinkle Cake",
+            //         "price":{
+            //             "currency" : "₹",
+            //             "value" : "450"
+            //         },
+            //         "image":{
+            //             "src": "../../assets/Images/Cakes/Vanilla Sprinkle.png",
+            //             "alt": "Vanilla Sprinkle Cake"},
+            //         "category": "cake"
+            //     },
 
-                {
-                    "name": "Chocolate Raspberry Cake",
-                    "price":{
-                        "currency" : "₹",
-                        "value" : "650"
-                    },
-                    "image":{
-                        "src": "../../assets/Images/Cakes/Chocolate Raspberry.png",
-                        "alt": "Chocolate raspberry cake"},
-                    "category": "cake"
-                },
-
-
-                {
-                    "name": "Cookies And Cream Cake",
-                    "price":{
-                        "currency" : "₹",
-                        "value" : "600"
-                    },
-                    "image":{
-                        "src": "../../assets/Images/Cakes/Cookies and Cream.png",
-                        "alt": "Cookies and cream cake"},
-                    "category": "cake"
-                },
-
-                {
-                    "name": "Red Velvet",
-                    "price":{
-                        "currency" : "₹",
-                        "value" : "650"
-                    },
-                    "image":{
-                        "src": "../../assets/Images/Cakes/Red velvet.png",
-                        "alt": "Red velvet cake"},
-                    "category": "cake"
-                },
-
-                {
-
-                    "name": "Carrot Cake",
-                    "price":{
-                        "currency" : "₹",
-                        "value" : "450"
-                    },
-                    "image":{ 
-                        "src": "../../assets/Images/Cakes/Carrot Cake.png",
-                        "alt": "Carrot Cake"},
-                    "category": "cake"
-                },
-
-                // BREADS
-
-                {
-                    "name": "Country Loaf",
-                    "price":{
-                        "currency" : "₹",
-                        "value" : "40"
-                    },
-                    "image":{
-                        "src": "../../assets/Images/Breads/Country-Loaf-removebg-preview.png",
-                        "alt": "country loaf"},
-                    "category": "bread"
-                },
-
-                {
-                    "name": "Cereal Bread",
-                    "price":{
-                        "currency" : "₹",
-                        "value" : "50"
-                    },
-                    "image":{
-                        "src": "../../assets/Images/Breads/cereal-bread-removebg-preview.png",
-                        "alt": "cereal bread"},
-                    "category": "bread"
-                },
-
-                {
-                    "name": "Gralic Bread",
-                    "price":{
-                        "currency" : "₹",
-                        "value" : "50"
-                    },
-                    "image":{
-                        "src": "../../assets/Images/Breads/garlic-roll-removebg-preview.png",
-                        "alt": "Garlic Bread"},
-                    "category": "bread"
-                },
-
-                {
-                    "name": "Burger Bun",
-                    "price":{
-                        "currency" : "₹",
-                        "value" : "30"
-                    },
-                    "image":{
-                        "src": "../../assets/Images/Breads/burger-bun-removebg-preview.png",
-                        "alt": "burger bun"},
-                    "category": "bread"
-                },
-
-                {
-                    "name": "Sweet Bread",
-                    "price":{
-                        "currency" : "₹",
-                        "value" : "40"
-                    },
-                    "image":{
-                        "src": "../../assets/Images/Breads/sweet-bread-removebg-preview.png",
-                        "alt": "sweet bread"},
-                    "category": "bread"
-                },
-
-                {
-
-                    "name": "Wheat Bread",
-                    "price":{
-                        "currency" : "₹",
-                        "value" : "50"
-                    },
-                    "image":{ 
-                        "src": "../../assets/Images/Breads/Wheat-bread-removebg-preview.png",
-                        "alt": "wheat bread"},
-                    "category": "bread"
-                },
+            //     {
+            //         "name": "Chocolate Raspberry Cake",
+            //         "price":{
+            //             "currency" : "₹",
+            //             "value" : "650"
+            //         },
+            //         "image":{
+            //             "src": "../../assets/Images/Cakes/Chocolate Raspberry.png",
+            //             "alt": "Chocolate raspberry cake"},
+            //         "category": "cake"
+            //     },
 
 
-                // BREAKFAST PASTRIES
-                {
-                    "name": "Chocolate Croissant",
-                    "price":{
-                        "currency" : "₹",
-                        "value" : "40"
-                    },
-                    "image":{
-                        "src": "../../assets/Images/Breakfast Pastries/Chocolate_Croissant-removebg-preview.png",
-                        "alt": "chocolate croissant"},
-                    "category": "breakfast pastry"
-                },
+            //     {
+            //         "name": "Cookies And Cream Cake",
+            //         "price":{
+            //             "currency" : "₹",
+            //             "value" : "600"
+            //         },
+            //         "image":{
+            //             "src": "../../assets/Images/Cakes/Cookies and Cream.png",
+            //             "alt": "Cookies and cream cake"},
+            //         "category": "cake"
+            //     },
 
-                {
-                    "name": "Multigrain Butter Croissant",
-                    "price":{
-                        "currency" : "₹",
-                        "value" : "45"
-                    },
-                    "image":{
-                        "src": "../../assets/Images/Breakfast Pastries/Multigrain_Butter_Croissant-removebg-preview.png",
-                        "alt": "multigrain butter croissant"},
-                    "category": "breakfast pastry"
-                },
+            //     {
+            //         "name": "Red Velvet",
+            //         "price":{
+            //             "currency" : "₹",
+            //             "value" : "650"
+            //         },
+            //         "image":{
+            //             "src": "../../assets/Images/Cakes/Red velvet.png",
+            //             "alt": "Red velvet cake"},
+            //         "category": "cake"
+            //     },
 
-                {
-                    "name": "Traditional Croissant",
-                    "price":{
-                        "currency" : "₹",
-                        "value" : "30"
-                    },
-                    "image":{
-                        "src": "../../assets/Images/Breakfast Pastries/Traditional Croissant.png",
-                        "alt": "traditional croissant"},
-                    "category": "breakfast pastry"
-                },
+            //     {
 
-                {
-                    "name": "Sprinkled Cookies",
-                    "price":{
-                        "currency" : "₹",
-                        "value" : "15"
-                    },
-                    "image":{
-                        "src": "../../assets/Images/Breakfast Pastries/sprinkle_thumbnail.png",
-                        "alt": "sprinkled cookies"},
-                    "category": "breakfast pastry"
-                },
+            //         "name": "Carrot Cake",
+            //         "price":{
+            //             "currency" : "₹",
+            //             "value" : "450"
+            //         },
+            //         "image":{ 
+            //             "src": "../../assets/Images/Cakes/Carrot Cake.png",
+            //             "alt": "Carrot Cake"},
+            //         "category": "cake"
+            //     },
 
-                {
-                    "name": "Dark Chocolate Cookies",
-                    "price":{
-                        "currency" : "₹",
-                        "value" : "25"
-                    },
-                    "image":{
-                        "src": "../../assets/Images/Breakfast Pastries/dark_and_white_chocolate_florentine_thumbnail.png",
-                        "alt": "dark chocolate cookies"},
-                    "category": "breakfast pastry"
-                },
+            //     // BREADS
 
-                {
+            //     {
+            //         "name": "Country Loaf",
+            //         "price":{
+            //             "currency" : "₹",
+            //             "value" : "40"
+            //         },
+            //         "image":{
+            //             "src": "../../assets/Images/Breads/Country-Loaf-removebg-preview.png",
+            //             "alt": "country loaf"},
+            //         "category": "bread"
+            //     },
 
-                    "name": "Cheese Croissant",
-                    "price":{
-                        "currency" : "₹",
-                        "value" : "40"
-                    },
-                    "image":{ 
-                        "src": "../../assets/Images/Breakfast Pastries/Cheese croissant.png",
-                        "alt": "cheese croissant"},
-                    "category": "breakfast pastry"
-                }
+            //     {
+            //         "name": "Cereal Bread",
+            //         "price":{
+            //             "currency" : "₹",
+            //             "value" : "50"
+            //         },
+            //         "image":{
+            //             "src": "../../assets/Images/Breads/cereal-bread-removebg-preview.png",
+            //             "alt": "cereal bread"},
+            //         "category": "bread"
+            //     },
+
+            //     {
+            //         "name": "Gralic Bread",
+            //         "price":{
+            //             "currency" : "₹",
+            //             "value" : "50"
+            //         },
+            //         "image":{
+            //             "src": "../../assets/Images/Breads/garlic-roll-removebg-preview.png",
+            //             "alt": "Garlic Bread"},
+            //         "category": "bread"
+            //     },
+
+            //     {
+            //         "name": "Burger Bun",
+            //         "price":{
+            //             "currency" : "₹",
+            //             "value" : "30"
+            //         },
+            //         "image":{
+            //             "src": "../../assets/Images/Breads/burger-bun-removebg-preview.png",
+            //             "alt": "burger bun"},
+            //         "category": "bread"
+            //     },
+
+            //     {
+            //         "name": "Sweet Bread",
+            //         "price":{
+            //             "currency" : "₹",
+            //             "value" : "40"
+            //         },
+            //         "image":{
+            //             "src": "../../assets/Images/Breads/sweet-bread-removebg-preview.png",
+            //             "alt": "sweet bread"},
+            //         "category": "bread"
+            //     },
+
+            //     {
+
+            //         "name": "Wheat Bread",
+            //         "price":{
+            //             "currency" : "₹",
+            //             "value" : "50"
+            //         },
+            //         "image":{ 
+            //             "src": "../../assets/Images/Breads/Wheat-bread-removebg-preview.png",
+            //             "alt": "wheat bread"},
+            //         "category": "bread"
+            //     },
+
+
+            //     // BREAKFAST PASTRIES
+            //     {
+            //         "name": "Chocolate Croissant",
+            //         "price":"40",
+            //         "image":{
+            //             "src": "../../assets/Images/Breakfast Pastries/Chocolate_Croissant-removebg-preview.png",
+            //             "alt": "chocolate croissant"},
+            //         "category": "breakfast pastry"
+            //     },
+
+            //     {
+            //         "name": "Multigrain Butter Croissant",
+            //         "price":"45",
+            //         "image":{
+            //             "src": "../../assets/Images/Breakfast Pastries/Multigrain_Butter_Croissant-removebg-preview.png",
+            //             "alt": "multigrain butter croissant"},
+            //         "category": "breakfast pastry"
+            //     },
+
+            //     {
+            //         "name": "Traditional Croissant",
+            //         "price": "30",
+            //         "image":{
+            //             "src": "../../assets/Images/Breakfast Pastries/Traditional Croissant.png",
+            //             "alt": "traditional croissant"},
+            //         "category": "breakfast pastry"
+            //     },
+
+            //     {
+            //         "name": "Sprinkled Cookies",
+            //         "price":"15",
+            //         "image":{
+            //             "src": "../../assets/Images/Breakfast Pastries/sprinkle_thumbnail.png",
+            //             "alt": "sprinkled cookies"},
+            //         "category": "breakfast pastry"
+            //     },
+
+            //     {
+            //         "name": "Dark Chocolate Cookies",
+            //         "price": "25",
+            //         "image":{
+            //             "src": "../../assets/Images/Breakfast Pastries/dark_and_white_chocolate_florentine_thumbnail.png",
+            //             "alt": "dark chocolate cookies"},
+            //         "category": "breakfast pastry"
+            //     },
+
+            //     {
+
+            //         "name": "Cheese Croissant",
+            //         "price":"40",
+            //         "image":{ 
+            //             "src": "../../assets/Images/Breakfast Pastries/Cheese croissant.png",
+            //             "alt": "cheese croissant"},
+            //         "category": "breakfast pastry"
+            //     }
                 
-            ]
+            // ]
 
+            let prod_detail = JSON.parse(localStorage.getItem('prod_detail'));
 
             // array.filter()
 
-            const cakes = prod_details.filter(function category(type){
-                return type.category === "cake"
+            const cakes = prod_detail.filter(function category(type){
+                return type.category === "Cakes"
             }
             )
             console.log(cakes);
-
-            const breads = prod_details.filter(function category(type){
-                return type.category === "bread"
+            const breads = prod_detail.filter(function category(type){
+                return type.category === "Breads"
             }
             )
+
             console.log(breads);
 
-            const breakfast_pastries = prod_details.filter(function category(type){
-                return type.category === "breakfast pastry"
+            const breakfast_pastries = prod_detail.filter(function category(type){
+                return type.category === "Breakfast Pastry"
             }
             )
-            console.log(breakfast_pastries);
 
+            console.log(breakfast_pastries);
             // for loops
 
-            for(i = 0; i < 6; i++) {
+            for(i = 0; i < cakes.length; i++) {
 
                 const div_prod = render(cakes[i]);
                 document.querySelector("div.products1").append(div_prod);
 
             }
 
-            for(i = 0; i < 6; i++) {
+            for(i = 0; i < breads.length; i++) {
 
                 const div_prod = render(breads[i]);
                 document.querySelector("div.products2").append(div_prod);
 
             }
 
-            for(i = 0; i < 6; i++) {
+            for(i = 0; i < breakfast_pastries.length; i++) {
 
                 const div_prod = render(breakfast_pastries[i]);
                 document.querySelector("div.products3").append(div_prod);
 
 }
+
+
+
 
 
         function render(object) { 
@@ -580,15 +566,15 @@
 
             // p
             price = document.createElement("p");
-            price.innerText = object["price"]["currency"]+object["price"]["value"];
+            price.innerText = "₹"+object["price"];
             div_prod.append(price);
 
 
             // img
             prod_img = document.createElement("img");
-            prod_img.setAttribute("src", object["image"]["src"]);
+            prod_img.setAttribute("src", object["image"]);
             prod_img.setAttribute("class","img_size")
-            prod_img.setAttribute("alt", object["image"]["alt"]);
+            prod_img.setAttribute("alt", object["name"]);
             div_prod.append(prod_img);
 
             prod_a = document.createElement("a");

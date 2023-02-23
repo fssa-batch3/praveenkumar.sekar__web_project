@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="../../assets/css/Sign up.css">
         <link rel="stylesheet" href="../../assets/css/normalize.css">
         <link rel="stylesheet" href="../../assets/css/footer.css">
+        <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
         <title>Sign Up</title>
     </head>
 
@@ -95,11 +96,9 @@
 
         </footer>
 
-
         <script>
         
         // function signup(){
-
         function signUp(e) {
             let first_name = document.getElementById("first_name").value,
                 last_name = document.getElementById("last_name").value,
@@ -114,14 +113,15 @@
             let exist = user_cred.length &&
                 JSON.parse(localStorage.getItem('user_cred')).some(data =>
                     // data.email.trim() == email.trim() ||
-                    data.email.toLowerCase() == email.toLowerCase() ||
-                    data.phone.toLowerCase() == phone.toLowerCase() 
+                    data.email.toLowerCase() == email.toLowerCase()
                 );
 
             if(!exist){
 
                 if(password === confirm_pw){
-                user_cred.push({first_name,last_name,phone,email,address,password});
+                    let uuid = uuidv4();
+                    console.log(uuid)
+                user_cred.push({"first-name":first_name,"last-name":last_name,"Phone":phone,"email":email,"address":address,"password":password ,"uuid":uuid});
 
                 localStorage.setItem('user_cred',JSON.stringify(user_cred));
 
