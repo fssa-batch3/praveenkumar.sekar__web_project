@@ -121,7 +121,7 @@
                 if(password === confirm_pw){
                     let uuid = uuidv4();
                     console.log(uuid)
-                user_cred.push({"first-name":first_name,"last-name":last_name,"Phone":phone,"email":email,"address":address,"password":password ,"uuid":uuid});
+                user_cred.push({"first_name":first_name,"last_name":last_name,"Phone":phone,"email":email,"address":address,"password":password ,"uuid":uuid});
 
                 localStorage.setItem('user_cred',JSON.stringify(user_cred));
 
