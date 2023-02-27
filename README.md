@@ -1,45 +1,19 @@
-# Folder_structure
+# 100-day-project
+This is a project for a online bakery.
+ProblemStatement: https://docs.google.com/document/d/1VrJPSHv5xkXPM490szPQvGa0h5zu1iI2hcwt5sW0Diw/edit?usp=share_link
+UserFlow: https://drive.google.com/file/d/1dgp4sUQ8RGB2PTrMfsbszhEo8LQEjPTL/view?usp=share_link
+Wireframe: https://drive.google.com/drive/u/0/folders/1NynibtMORgpWvEXLRIP8Hc0KlxgN14J6
 
-    .
-    ├── assets                  # Compiled files 
-    ├── pages                   # Compiled files
-    ├── index.html
-    └── README.md
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=fssa-batch3_praveenkumar.sekar__web_project&metric=bugs)](https://sonarcloud.io/summary/new_code?id=fssa-batch3_praveenkumar.sekar__web_project)
 
-## assets
+## USER CRUD 
+    - Register
+    - Log In
+    - Update user details
+    - Delete user
 
-    .
-    ├── assets                  # Compiled files 
-        ├── images              # Compiled files 
-        ├── css                 # Compiled files 
-        └── js                  # Compiled files 
-
-### assets/images
-
-    .
-    ├── images                  # Compiled files 
-        ├── logo.svg            # Compiled files 
-        └── banner.png          # Compiled files 
-
-### assets/css
-
-    .
-    ├── css                     # Compiled files 
-        ├── normalize.css       # Compiled files 
-        ├── style.css           # Compiled files 
-        ├── header.css          # Compiled files 
-        └── footer.css          # Compiled files 
-
-## pages
-
-    .
-    └── pages                         
-        └── Products                  
-            ├── product_list.html               # Compiled files
-            ├── new_product.html                # Compiled files
-            └── edit_product.html               # Compiled files
-        └── Orders                              
-            ├── order_list.html                 # Compiled files
-            ├── new_order.html                  # Compiled files
-            ├── edit_order.html                 # Compiled files
-            └── order_details.html              # Compiled files
+## PRODUCT CRUD 
+    - Create product
+    - Read product
+    - Update product
+    - Delete product
