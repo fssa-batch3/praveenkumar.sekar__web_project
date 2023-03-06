@@ -54,6 +54,33 @@ caption{
     width: 1200px;
 }
 
+.add {
+    display: flex;
+    justify-content:flex-end;
+    margin-right: 1%;
+    margin-bottom: 1%;
+}
+
+.add a {
+    text-decoration:none;
+}
+
+.sub-container button{
+    border: 1px black solid;
+    padding: 5px 10px;
+    background-color: white;
+    border-radius: 3px;
+}
+
+.sub-container button:hover{
+    border: 1px black solid;
+    padding: 5px 10px;
+    background-color: black;
+    color: white;
+    border-radius: 3px;
+    transition: 0.5s;
+}
+
 /* td {
     text-align: center;
     padding: 50px;     
@@ -66,37 +93,6 @@ caption{
     margin: auto;
 }
 
-.buttons button {
-    padding: 15px 30px;    
-    transition: 0.2s;
-    margin-top: 5%;
-    margin-bottom: 5%;
-    border: solid 1px black;
-}
-
-.buttons a:nth-of-type(1) button {
-    border-radius: 30px;
-    background-color: white;
-    color: black;
-}
-
-.buttons a:nth-of-type(1) button:hover {
-    border-radius: 30px;
-    background-color:black;
-    color: white;
-}
-
-.buttons a:nth-of-type(2) button {
-    border-radius: 30px;
-    background-color:black;
-    color: white;
-}
-
-.buttons a:nth-of-type(2) button:hover {
-    border-radius: 30px;
-    background-color:white;
-    color: black;
-}
 
 .del {
     /* background: none;

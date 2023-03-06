@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Create</title>
-    <link rel="stylesheet" href="../../assets/css/product_create.css">
+    <title>Update Create</title>
+    <link rel="stylesheet" href="../../assets/css/product_update.css">
     <link rel="stylesheet" href="../../assets/css/header.css">
     <link rel="stylesheet" href="../../assets/css/footer.css">
     <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
@@ -25,9 +25,9 @@
     </header>
 
     <div class="form-container">
-        <form role="form" id="form" onsubmit="createProduct(event)">
+        <form role="form" id="form">
             <img src="../../assets/Images/v1033-a-15-a-removebg-preview - Copy.svg" width="100px" alt="logo">
-        <h1>Create Product</h1>
+        <h1>Update Product</h1>
         <div class="product_name">
             <label>Product Name:</label><br>
             <input type="text" id="product_name" required>
@@ -56,35 +56,13 @@
             <input type="url" id="add_image" required>
             <br><br>
         </div>
-        <div class="submit"><button type="submit">Create</button></div>
+        <div class="submit"><button class="update" type="submit">Update</button></div>
         </form>
         </div>
 
     <script>
-                function createProduct(e) {
-            let product_name = document.getElementById("product_name").value;
-            let description = document.getElementById("description").value;
-            let price = document.getElementById("price").value;
-            let category = document.getElementById("category").value;
-            let add_image = document.getElementById("add_image").value;
-                let product_uuid = uuidv4();
-            let prod_detail = JSON.parse(localStorage.getItem('prod_detail')) || [];
-
-                prod_detail.push({ "name":product_name,
-                                    "description":description,
-                                    "price":price,
-                                    "category":category,
-                                    "image":add_image,
-                                    "product_id":product_uuid});
-
-                localStorage.setItem('prod_detail',JSON.stringify(prod_detail));
-                alert('Product added');
-                window.location.href = "../admin/admin_product_list.html";
-
-                e.preventDefault();
-                }
+                
     </script>
-
     <footer>
         <div class="foot">
             <h1>HOME BAKERY</h1>
@@ -112,5 +90,55 @@
         </div>
 
     </footer>
+
+    <script>
+
+            let uuid = JSON.parse(localStorage.getItem("product_id"));
+            let product = JSON.parse(localStorage.getItem("prod_detail"));
+
+            function find_data(e) {
+                return e.product_id == uuid;
+            }
+
+            product_data = product.find(find_data);
+            document.getElementById("product_name").value = product_data["name"];
+            document.getElementById("description").value = product_data["description"];
+            document.getElementById("price").value = product_data["price"];
+            document.getElementById("category").value = product_data["category"];
+            document.getElementById("add_image").value = product_data["image"];
+
+
+            // Funtion update
+
+            let update = document.querySelector("button.update");
+
+            update.addEventListener("click", update_detail);
+
+            function update_detail() {
+                const uuid = JSON.parse(localStorage.getItem("product_id"));
+                const product = JSON.parse(localStorage.getItem("prod_detail"));
+
+                function find_data(e) {
+                    return e.product_id == uuid;
+            }
+
+            product_data = product.find(find_data);
+
+            product_data["name"] = document.getElementById("product_name").value;
+            product_data["description"] = document.getElementById("description").value;
+            product_data["price"] = document.getElementById("price").value;
+            product_data["category"] = document.getElementById("category").value;
+            product_data["image"] = document.getElementById("add_image").value;
+
+            localStorage.setItem('prod_detail', JSON.stringify(product));
+
+            alert('Product updated successfully');
+
+            window.location.href = "./admin_product_list.html";
+
+            }
+
+
+    </script>
 </body>
 </html>

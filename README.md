@@ -17,3 +17,9 @@ Wireframe: https://drive.google.com/drive/u/0/folders/1NynibtMORgpWvEXLRIP8Hc0Kl
     - Read product
     - Update product
     - Delete product
+
+## CART 
+    - Add and remove products to cart
+    - Changing the quantity of products
+    - Displaying price of products respect to quantity
+    - Summarize price of products

@@ -1,111 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale1.0">
-        <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600;700;800;900&family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&family=Telex&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="../../assets/css/admin_product_list.css">
-        <link rel="stylesheet" href="../../assets/css/header.css">
-        <link rel="stylesheet" href="../../assets/css/normalize.css">
-        <link rel="stylesheet" href="../../assets/css/footer.css">
-        <link rel="stylesheet" href="../../assets/css/bootstrap.css">
-        <title>Bakery</title>
-    </head>
-    <body>
-        <header>
-            <div class="container">
-                    <img src="../../assets/Images/v1033-a-15-a-removebg-preview - Copy.svg" width="100px" alt="logo">
-                    <nav>
-                    <ul>
-                        <li><a href="../../index.html">Home</a></li>
-                        <li><a href="../products/product_list.html">Products</a></li>
-                        <li><a href="../Log in and Sign up/Log in.html">Log In</a></li>
-                        <li><a href="../Cart/cart.html"><img src="../../assets/Images/icon-cart.svg" alt="cart"></a></li>
-                        <li><a href="../Profile/profile.html"><img src="../../assets/Images/profile.svg" width="26px" alt="profile"></a></li>
-                    </ul>
-                    </nav>
-        </header>
-                <div class="table-container">
-                <div class="sub-container">
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">First</th>
-                                <th scope="col">Last</th>
-                                <th scope="col">Handle</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td colspan="2">Larry the Bird</td>
-                                <td>@twitter</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                </div>
-            </div>
-            <footer>
-                <div class="foot">
-                    <h1>HOME BAKERY</h1>
-                    <div class="list">
-                    <ul>
-                        <li><h2>ABOUT</h2></li>
-                        <li><a href="../../index.html">Homepage</a></li>
-                        <li><a href="../../../../index.html#about">About Us</a></li>
-                        <li><a href="../../../../index.html#history">Our History</a></li>
-                        <li><a href="../products/product_list.html">Products</a></li>
-                    </ul>
-                    <ul>
-                        <li><h2>PRODUCTS</h2></li>
-                        <li><a href="../products/product_list.html">Breads</a></li>
-                        <li><a href="../products/product_list.html">Cakes</a></li>
-                        <li><a href="../products/product_list.html">Breakfast Pastries</a></li>
-                    </ul>
-                    <ul>
-                        <li><h2>FOLLOW US</h2></li>
-                        <a href="https://www.instagram.com/"><li><img src="../../assets/Images/instagram.svg" width="40px" alt="instagram">Instagram</li></a>
-                        <a href="https://twitter.com/"><li><img src="../../assets/Images/twitter.svg" width="40px" alt="twitter">Twitter</li></a>
-                        <a href="https://github.com/"><li><img src="../../assets/Images/github.svg" width="40px" alt="GitHub">GitHub</li></a>
-                    </ul>
-                    </div>
-                </div>
-    
-            </footer>
 
-            <script>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600;700;800;900&family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&family=Telex&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/admin_product_list.css">
+    <link rel="stylesheet" href="../../assets/css/header.css">
+    <link rel="stylesheet" href="../../assets/css/normalize.css">
+    <link rel="stylesheet" href="../../assets/css/footer.css">
+    <link rel="stylesheet" href="../../assets/css/bootstrap.css">
+    <title>Bakery</title>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <img src="../../assets/Images/v1033-a-15-a-removebg-preview - Copy.svg" width="100px" alt="logo">
+            <nav>
+                <ul>
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="../products/product_list.html">Products</a></li>
+                    <li><a href="../Log in and Sign up/Log in.html">Log In</a></li>
+                    <li><a href="../Cart/cart.html"><img src="../../assets/Images/icon-cart.svg" alt="cart"></a></li>
+                    <li><a href="../Profile/profile.html"><img src="../../assets/Images/profile.svg" width="26px"
+                                alt="profile"></a></li>
+                </ul>
+            </nav>
+    </header>
+    <div class="table-container">
+        <div class="sub-container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Product Name</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Update</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+                <tbody class="table_body">
+                </tbody>
+            </table>
+            <div class="add">
+                <a href="./product_create.html"><button>Add Item</button></a>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="foot">
+            <h1>HOME BAKERY</h1>
+            <div class="list">
+                <ul>
+                    <li>
+                        <h2>ABOUT</h2>
+                    </li>
+                    <li><a href="../../index.html">Homepage</a></li>
+                    <li><a href="../../../../index.html#about">About Us</a></li>
+                    <li><a href="../../../../index.html#history">Our History</a></li>
+                    <li><a href="../products/product_list.html">Products</a></li>
+                </ul>
+                <ul>
+                    <li>
+                        <h2>PRODUCTS</h2>
+                    </li>
+                    <li><a href="../products/product_list.html">Breads</a></li>
+                    <li><a href="../products/product_list.html">Cakes</a></li>
+                    <li><a href="../products/product_list.html">Breakfast Pastries</a></li>
+                </ul>
+                <ul>
+                    <li>
+                        <h2>FOLLOW US</h2>
+                    </li>
+                    <a href="https://www.instagram.com/">
+                        <li><img src="../../assets/Images/instagram.svg" width="40px" alt="instagram">Instagram</li>
+                    </a>
+                    <a href="https://twitter.com/">
+                        <li><img src="../../assets/Images/twitter.svg" width="40px" alt="twitter">Twitter</li>
+                    </a>
+                    <a href="https://github.com/">
+                        <li><img src="../../assets/Images/github.svg" width="40px" alt="GitHub">GitHub</li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+
+    </footer>
+
+    <script>
 
         //get value from local storage
-        let uniqueID = JSON.parse(localStorage.getItem("uniqueID"));
-        let user_cred = JSON.parse(localStorage.getItem("user_cred"));
+        let prod_detail = JSON.parse(localStorage.getItem("prod_detail"));
 
-        function profile_data(e){
-            return e.email == uniqueID;
+        for(i = 0; i < prod_detail.length; i++){
+            const table_data = create(prod_detail[i]);
+            document.querySelector("tbody.table_body").append(tr);
         }
 
-        person_data = user_cred.find(profile_data);
-        document.getElementById("first_name").innerText = person_data["first_name"];
-        document.getElementById("last_name").innerText = person_data["last_name"];
-        document.getElementById("email").innerText = person_data["email"];
-        document.getElementById("phone").innerText = person_data["phone"];
-        document.getElementById("address").innerText = person_data["address"];
-        
+    function create(prod){
 
-        </script>
+        // tr 
 
-        <script src="../../assets/edit_profile.js"></script>
+        tr = document.createElement("tr");
+        console.log(tr);
 
-    </body>
+        // td 1
+
+        td1 = document.createElement("td");
+        td1.innerText = [i+1];
+        tr.append(td1);
+
+        // td 2
+
+        td2 = document.createElement("td");
+        td2.innerText = prod["name"];
+        tr.append(td2);
+
+        // td 3
+
+        td3 = document.createElement("td");
+        td3.innerText = prod["description"];
+        tr.append(td3);
+
+        // td 4
+
+        td4 = document.createElement("td");
+        td4.innerText = prod["price"];
+        tr.append(td4);
+
+        // td 5
+
+        td5 = document.createElement("td");
+        td5.innerText = prod["category"];
+        tr.append(td5);
+
+        // a update
+
+        td6 = document.createElement("td");
+        tr.append(td6);
+
+        // a update
+
+        butup = document.createElement("button");
+        butup.setAttribute("data-id", prod["product_id"]);
+        butup.setAttribute("class", "update");
+        butup.innerText = "Edit";
+        td6.append(butup);
+
+        // a delete
+
+        td7 = document.createElement("td");
+        tr.append(td7);
+
+        // a delete
+
+        butdel = document.createElement("button");
+        butdel.setAttribute("class", "delete");
+        butdel.innerText = "Delete";
+        td7.append(butdel);
+
+    }
+
+
+    // edit for product
+
+    const edit = document.querySelectorAll("button.update");
+
+    edit.forEach(function (getID){
+        getID.addEventListener('click', function(){
+            const id = this.dataset.id; 
+            
+            localStorage.setItem("product_id" , JSON.stringify(id));
+
+            window.location.href = "../admin/admin_product_update.html";
+        })
+    });
+
+    let del_prod = document.querySelectorAll("button.delete");
+
+    del_prod.forEach(function (getID){
+        getID.addEventListener("click", function(){
+        if (confirm("Are you sure?")) {
+            let uuid = JSON.parse(localStorage.getItem("product_id"));
+            let product = JSON.parse(localStorage.getItem("prod_detail"));
+
+            function find_data(e) {
+                return e.product_id == uuid;
+            }
+
+            product_data = product.find(find_data);
+
+            const indexOfUser = product.indexOf(product_data);
+
+            product.splice(indexOfUser, 1);
+
+            localStorage.setItem('prod_detail', JSON.stringify(product));
+
+            window.location.reload();
+                }
+            }
+        )}
+    );
+
+    </script>
+
+    <script src="../../assets/edit_profile.js"></script>
+</body>
+
 </html>
