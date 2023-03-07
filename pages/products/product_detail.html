@@ -365,25 +365,6 @@
                     console.log(prod_data);
 
 
-                // let params = new URLSearchParams(window.location.search)
-                // params.get('product_id');
-
-                // console.log(window.location.search)
-
-                // console.log(params);
-                // const prod_details = JSON.parse(localStorage.getItem("prod_detail"));
-
-                // console.log(prod_details)
-                // function findProduct(e){
-                // return  e.product_id === prod_details;
-                // }
-                // let productData = prod_details.find(findProduct);
-                // console.log(productData);
-
-                // let params = window.location.search;
-                // console.log(params);
-
-
                         // creating elements
 
                 whole = document.createElement("div");
@@ -476,18 +457,15 @@
                 btns_add.setAttribute("class", "add");
                 btns.append(btns_add);
 
-                btn_a = document.createElement("a");
-                btn_a.setAttribute("href", "../../../Cart/cart.html");
-                btns_add.append(btn_a);
-
                 add_btn = document.createElement("button");
-                add_btn.innerText = ("&#x1F6D2; Add to cart")
-                btn_a.append(add_btn);
+                add_btn.setAttribute("id", "add");
+                add_btn.innerText = ("&#x1F6D2;Add to cart")
+                btns_add.append(add_btn);
 
                 document.querySelector("div.whole").append(main);
                 document.querySelector("div.whole").append(side);
 
-
+                
             </script>
     </body>
 </html>
