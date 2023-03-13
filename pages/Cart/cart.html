@@ -26,14 +26,14 @@
         </header>
             <div class="cart">
                 <img src="../../assets/Images/v1033-a-15-a-removebg-preview - Copy.svg" width="100px" alt="logo">
-                <table>
+                <table class="table">
                     <caption><h1>YOUR CART(3)</h1></caption>
                     <tr>
                         <th>Products</th>
                         <th>Quantity</th>
                         <th>Subtotal</th>
                     </tr>
-                    <tr>
+                    <!-- <tr>
                         <td>
                             <div class="cart-info">
                                 <img src="../../assets/Images/Breads/burger-bun-removebg-preview.png" width="200px" height="200px" alt="burger bun">
@@ -50,8 +50,8 @@
                         <td class="price">
                             <p>₹30.00</p>
                         </td>
-                    </tr>
-                    <tr>
+                    </tr> -->
+                    <!-- <tr>
                         <td>
                             <div class="cart-info">
                                 <img src="../../assets/Images/breads/sweet-bread-removebg-preview.png" width="200px" height="200px" alt="sweet bread">
@@ -68,8 +68,8 @@
                         <td class="price">
                             <p>₹40.00</p>
                         </td>
-                    </tr>
-                    <tr>
+                    </tr> -->
+                    <!-- <tr>
                         <td>
                             <div class="cart-info">
                                 <img src="../../assets/Images/breads/cereal-bread-removebg-preview.png" width="200px" height="200px" alt="cereal bread">
@@ -86,7 +86,7 @@
                         <td class="price">
                             <p>₹50.00</p>
                         </td>
-                    </tr>
+                    </tr> -->
                 </table>
                 
 
@@ -141,5 +141,60 @@
                 </div>
     
             </footer>
+
+            <script>
+                
+                    table_r = document.createElement("tr");
+                    console.log(table_r)
+
+                    td1 = document.createElement("td");
+                    table_r.append(td1);
+
+                    cart_info = document.createElement("div")
+                    cart_info.setAttribute("class", "cart-info");
+                    td1.append(cart_info);
+
+                    cart_img = document.createElement("img");
+                    cart_img.setAttribute("class", "cart-img");
+                    cart_img.setAttribute("src","../../assets/Images/Breads/burger-bun-removebg-preview.png")
+                    cart_img.setAttribute("width", "200px");
+                    cart_img.setAttribute("height", "200px");
+                    cart_info.append(cart_img);
+
+                    detail = document.createElement("div");
+                    detail.setAttribute("class", "details");
+                    cart_info.append(detail);
+                    
+                    prod_name = document.createElement("p")
+                    prod_name.innerText = "Burger Bun";
+                    detail.append(prod_name);
+
+                    price = document.createElement("small");
+                    price.innerText = "Price:₹30.00";
+                    detail.append(price);
+
+                    remove = document.createElement("a")
+                    remove.setAttribute("href","#");
+                    remove.innerText = ("Remove");
+                    detail.append(remove);
+
+                    td2 = document.createElement("td");
+                    table_r.append(td2);
+
+                    inp = document.createElement("input");
+                    inp.setAttribute("type", "number");
+                    inp.setAttribute("value", "1");
+                    td2.append(inp);
+
+                    td3 = document.createElement("td");
+                    td3.setAttribute("class", "price");
+                    table_r.append(td3);
+
+                    price2 = document.createElement("p");
+                    price2.innerText = "Price: ₹30.00";
+                    td3.append(price2);
+
+                    document.querySelector("table.table").append(table_r);
+            </script> 
         </body>
 </html>

@@ -459,11 +459,27 @@
 
                 add_btn = document.createElement("button");
                 add_btn.setAttribute("id", "add");
+                add_btn.setAttribute("onclick", "add_to_cart()");
                 add_btn.innerText = ("&#x1F6D2;Add to cart")
                 btns_add.append(add_btn);
 
                 document.querySelector("div.whole").append(main);
                 document.querySelector("div.whole").append(side);
+
+                function add_to_cart() {
+                    let params = window.location.search;
+                    console.log(params);
+                    let urlParams = new URLSearchParams(params);
+
+                    let product = urlParams.get('product_id');
+                    console.log(product);
+
+                    let cart_id = JSON.parse(localStorage.getItem('cart_id')) || [];
+
+                    cart_id.push(product);
+
+                    localStorage.setItem('cart_id',JSON.stringify(cart_id));
+                    }
 
                 
             </script>
