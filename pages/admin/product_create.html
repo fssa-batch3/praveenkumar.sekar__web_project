@@ -72,7 +72,11 @@
 
                 prod_detail.push({ "name":product_name,
                                     "description":description,
-                                    "price":price,
+                                    prices : {
+                                        "price1" : price1,
+                                        "price2" : price2,
+                                        "price3" : price3
+                                    },
                                     "category":category,
                                     "image":add_image,
                                     "product_id":product_uuid});

@@ -406,7 +406,10 @@
                 price_p = document.createElement("p");
                 price_p.innerText = ("₹" + prod_data["price"]);
                 price1.append(price_p);
+            
+            // start 
 
+            if (prod_data["category"] == "Cakes"){
                 spec = document.createElement("div");
                 spec.setAttribute("class", "spec");
                 side.append(spec);
@@ -440,6 +443,9 @@
                 tarea.setAttribute("rows", "4");
                 tarea.setAttribute("cols", "30");
                 tarea_div.append(tarea);
+            }
+
+                // end 
 
                 btns = document.createElement("div");
                 btns.setAttribute("class", "buttons");
@@ -474,11 +480,24 @@
                     let product = urlParams.get('product_id');
                     console.log(product);
 
-                    let cart_id = JSON.parse(localStorage.getItem('cart_id')) || [];
+                    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                    let prod_details = JSON.parse(localStorage.getItem("prod_detail")) || [];
 
-                    cart_id.push(product);
+                    let exist = cart.length &&
+                JSON.parse(localStorage.getItem('cart')).some(data =>
+                    data.product_id === product)
 
-                    localStorage.setItem('cart_id',JSON.stringify(cart_id));
+                    if(!exist){
+                    cart.push({
+                        "product_id": product,
+                            
+                    });
+                    localStorage.setItem('cart',JSON.stringify(cart));
+                    }
+
+                    else {
+                        alert("Item already added to cart");
+                    }
                     }
 
                 

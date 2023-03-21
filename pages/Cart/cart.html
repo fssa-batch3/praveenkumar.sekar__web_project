@@ -143,7 +143,18 @@
             </footer>
 
             <script>
-                
+
+                    let prod_details = JSON.parse(localStorage.getItem("prod_detail"));
+
+                    let cart_id = JSON.parse(localStorage.getItem("cart"));
+
+                    let cart_detail = prod_details.filter(product =>
+                        cart_id.some(kart_id => kart_id.product_id === product.product_id))
+
+                    console.log(cart_detail);
+
+                    for(i = 0; i < cart_detail.length; i++){
+
                     table_r = document.createElement("tr");
                     console.log(table_r)
 
@@ -156,7 +167,7 @@
 
                     cart_img = document.createElement("img");
                     cart_img.setAttribute("class", "cart-img");
-                    cart_img.setAttribute("src","../../assets/Images/Breads/burger-bun-removebg-preview.png")
+                    cart_img.setAttribute("src",cart_detail[i]["image"])
                     cart_img.setAttribute("width", "200px");
                     cart_img.setAttribute("height", "200px");
                     cart_info.append(cart_img);
@@ -166,16 +177,16 @@
                     cart_info.append(detail);
                     
                     prod_name = document.createElement("p")
-                    prod_name.innerText = "Burger Bun";
+                    prod_name.innerText = cart_detail[i]["name"];
                     detail.append(prod_name);
 
                     price = document.createElement("small");
-                    price.innerText = "Price:₹30.00";
+                    price.innerText = "Price: "+ cart_detail[i]["price"];
                     detail.append(price);
 
-                    remove = document.createElement("a")
-                    remove.setAttribute("href","#");
-                    remove.innerText = ("Remove");
+                    remove = document.createElement("button")
+                    remove.setAttribute("class", "remove");
+                    remove.innerText = (" "+"Remove");
                     detail.append(remove);
 
                     td2 = document.createElement("td");
@@ -191,10 +202,36 @@
                     table_r.append(td3);
 
                     price2 = document.createElement("p");
-                    price2.innerText = "Price: ₹30.00";
+                    price2.innerText = "Price: "+ cart_detail[i]["price"];
                     td3.append(price2);
 
                     document.querySelector("table.table").append(table_r);
+                    }
+
+                    let remove_item = document.querySelectorAll("button.remove");
+
+    remove_item.forEach(function (getID){
+        getID.addEventListener("click", function(){
+        if (confirm("Are you sure?")) {
+            let cart = JSON.parse(localStorage.getItem("cart"));
+
+            function find_data(e) {
+                return e.cart == cart;
+            }
+
+            product_data = cart.find(find_data);
+
+            const indexOfUser = cart.indexOf(product_data);
+
+            cart.splice(indexOfUser, 1);
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            window.location.reload();
+                }
+            }
+        )}
+    );
             </script> 
         </body>
 </html>
