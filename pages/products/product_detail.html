@@ -11,7 +11,7 @@
         <title>Bakery</title>
     </head>
     <body class="body">
-        <header>
+        <!-- <header id ="header">
             <div class="container">
                     <img src="../../assets/Images/v1033-a-15-a-removebg-preview - Copy.svg" width="100px" alt="logo">
                     <nav>
@@ -23,7 +23,7 @@
                         <li><a href="../../../Profile/profile.html"><img src="../../assets/Images/profile.svg" width="26px" alt="Profile"></a></li>
                     </ul>
                     </nav>
-        </header>
+        </header> -->
 
         <div class="whole">
             <!-- <section class="main">
@@ -115,6 +115,8 @@
                 </div>
     
             </footer>
+
+<script src="../../assets/header.js"></script>
 
             <script>
 //                             const prod_details = [
@@ -451,13 +453,13 @@
                 btns.setAttribute("class", "buttons");
                 side.append(btns);
 
-                btns_amount = document.createElement("div");
-                btns_amount.setAttribute("class", "amount");
-                btns.append(btns_amount);
+                // btns_amount = document.createElement("div");
+                // btns_amount.setAttribute("class", "amount");
+                // btns.append(btns_amount);
 
-                amount_btn = document.createElement("button");
-                amount_btn.innerText = ("-0+")
-                btns_amount.append(amount_btn);
+                // amount_btn = document.createElement("button");
+                // amount_btn.innerText = ("-0+")
+                // btns_amount.append(amount_btn);
 
                 btns_add = document.createElement("div");
                 btns_add.setAttribute("class", "add");
@@ -466,7 +468,7 @@
                 add_btn = document.createElement("button");
                 add_btn.setAttribute("id", "add");
                 add_btn.setAttribute("onclick", "add_to_cart()");
-                add_btn.innerText = ("&#x1F6D2;Add to cart")
+                add_btn.innerText = ("Add to cart")
                 btns_add.append(add_btn);
 
                 document.querySelector("div.whole").append(main);
@@ -490,7 +492,8 @@
                     if(!exist){
                     cart.push({
                         "product_id": product,
-                            
+                        "price": prod_data["price"],
+                        "quantity": 1
                     });
                     localStorage.setItem('cart',JSON.stringify(cart));
                     }

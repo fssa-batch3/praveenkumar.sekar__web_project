@@ -11,7 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
 </head>
 <body>
-    <header>
+    <!-- <header id ="header">
         <div class="container">
             <img src="../../assets/Images/v1033-a-15-a-removebg-preview - Copy.svg" width="100px" alt="logo" >
                 <nav>
@@ -22,7 +22,7 @@
                     <li><a href="../Cart/cart.html"><img src="../../assets/Images/icon-cart.svg" alt="cart"></a></li>
                 </ul>
                 </nav>
-    </header>
+    </header> -->
 
     <div class="form-container">
         <form role="form" id="form" onsubmit="createProduct(event)">
@@ -38,18 +38,19 @@
             <textarea placeholder="Enter product description" id="description" rows="4" cols="49 "></textarea>
             <br><br>
         </div>
+        <div class="category">
+            <label>Category:</label>
+            <select id="category">
+                <option>Breads</option>
+                <option>Cakes</option>
+                <option>Breakfast Pastry</option>
+            </select>
+            
+            </div>
         <div class="price">
             <label>Price:</label><br>
             <input type="text" id="price" required>
             <br><br>
-        </div>
-        <div class="category">
-        <label>Category:</label>
-        <select id="category">
-            <option>Breads</option>
-            <option>Cakes</option>
-            <option>Breakfast Pastry</option>
-        </select>
         </div>
         <div class="add_image">
             <label>Image:</label><br>
@@ -61,6 +62,33 @@
         </div>
 
     <script>
+            let cate = document.querySelector("#category");
+            cate.addEventListener("change", prices)
+
+            function prices (){
+                let inputcate = cate.value;
+
+                if (inputcate == "Cakes"){
+                    let label1 = document.createElement ("label");
+                    label1.innerText = "1Kg";
+                    document.querySelector(".price").append(label1);
+
+                    let br = document.createElement ("br");
+                    document.querySelector(".price").append(br);
+
+                }
+
+                else if (inputcate == "Breads"){
+                    let label1 = document.createElement ("label");
+                    label1.innerText = "2Kg";
+                    document.querySelector(".price").append(label1);
+
+                    let br = document.createElement ("br");
+                    document.querySelector(".price").append(br);
+
+                }
+            }
+
                 function createProduct(e) {
             let product_name = document.getElementById("product_name").value;
             let description = document.getElementById("description").value;
@@ -72,11 +100,7 @@
 
                 prod_detail.push({ "name":product_name,
                                     "description":description,
-                                    prices : {
-                                        "price1" : price1,
-                                        "price2" : price2,
-                                        "price3" : price3
-                                    },
+                                    "prices": price,
                                     "category":category,
                                     "image":add_image,
                                     "product_id":product_uuid});
@@ -116,5 +140,7 @@
         </div>
 
     </footer>
+
+<script src="../../assets/header.js"></script>
 </body>
 </html>

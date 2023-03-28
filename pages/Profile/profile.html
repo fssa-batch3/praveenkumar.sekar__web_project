@@ -10,7 +10,7 @@
         <title>Bakery</title>
     </head>
     <body>
-        <header>
+        <!-- <header id ="header">
             <div class="container">
                     <img src="../../assets/Images/v1033-a-15-a-removebg-preview - Copy.svg" width="100px" alt="logo">
                     <nav>
@@ -22,13 +22,12 @@
                         <li><a href="../Profile/profile.html"><img src="../../assets/Images/profile.svg" width="26px" alt="profile"></a></li>
                     </ul>
                     </nav>
-        </header>
+        </header> -->
                 <div class="table-container">
                 <div class="sub-container">
                     <table class="table">
                         <caption><h2>PROFILE</h2></caption>
-                        <button id="del" onclick="del(event)" class="del1">DELETE</button>
-                        <button id="logOut" onclick="logOut(event)" class="del1">LOG OUT</button>
+                        <a href="./profile_edit.html"><button class="edit">EDIT</button></a>
                         <trbody>
                             <tr>
                                 <th></th>
@@ -56,8 +55,11 @@
                         </trbody>
                     </table>
                     <div class="buttons">
-                    <a href="./profile_edit.html"><button>Edit Profile</button></a>
+                        <a href="../../index.html"><button id="logOut" class="del1">LOG OUT</button></a>
                     <a href="../orders/user-orders.html"><button>My Orders</button></a>
+                    </div>
+                    <div class="del">
+                        <button id="del" onclick="del(event)" class="del1">DELETE</button>
                     </div>
                 </div>
             </div>
@@ -88,6 +90,8 @@
                 </div>
     
             </footer>
+
+            <script src ="../../assets/header.js"></script>
 
             <script>
 
