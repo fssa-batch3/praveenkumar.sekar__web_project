@@ -6,30 +6,30 @@ Wireframe: https://drive.google.com/drive/u/0/folders/1NynibtMORgpWvEXLRIP8Hc0Kl
 
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=fssa-batch3_praveenkumar.sekar__web_project&metric=bugs)](https://sonarcloud.io/summary/new_code?id=fssa-batch3_praveenkumar.sekar__web_project)
 
-<!-- ## USER CRUD 
+## USER CRUD (completed :white_check_mark:)
     - Register
     - Log In
     - Update user details
     - Delete user
 
-## PRODUCT CRUD 
+## PRODUCT CRUD (completed :white_check_mark:)
     - Create product
     - Read product
     - Update product
     - Delete product
 
-## CART 
+## CART (completed :white_check_mark:)
     - Add and remove products to cart
     - Changing the quantity of products
     - Displaying price of products respect to quantity
-    - Summarize price of products -->
+    - Summarize price of products
 
 # Home_Bakery
 
-## User
+## Buyer
 
 ### Create an account
-- Scenario 1: Successfully create an account
+- Scenario 1: Successfully create an account.
     - Steps:
         1. Navigate to the registration page.
         2. Enter the required information such as name, email, and password.
@@ -38,18 +38,47 @@ Wireframe: https://drive.google.com/drive/u/0/folders/1NynibtMORgpWvEXLRIP8Hc0Kl
         - The user is redirected to the login page.
 
 ### Log into an account
-- Scenario 1: Successfully login in to account
+- Scenario 1: Successfully login in to account.
     - Steps:
         1. Navigate to the login page.
         2. Enter the required information such as email, and password.
         3. Click the "login" button.
     - Expected Result:
-        - The user is redirected to the home page.
+        - The user is redirected to the home page. 
 
-<!-- ### View products/items
+### View profile
+- Scenario 1: Successfully view profile.
+    - Steps :
+        1. Log in as a buyer.
+        2. Navigate to the profile page.
+        3. View the profile details such as name, email and address.
+    - Expected Result:
+        - The user can view the profile details.
+
+### Edit profile 
+- Scenario 1: Successfully edit profile.
+    - Steps :
+        1. Log in as a buyer.
+        2. Navigate to the profile page.
+        3. Click the "edit" button.
+        4. Update account details.
+        5. Click the "confirm edit" button.
+    - Expected Result:
+        - The user can edit the profile details.
+
+### Delete profile 
+- Scenario 1: Successfully delete profile.
+    - Steps :
+        1. Log in as a buyer.
+        2. Navigate to the profile page.
+        3. Click the "delete" button.
+    - Expected Result:
+        - The user can delete the profile.
+
+### View products/items
 - Scenario 1: Successfully view products/items
     - Steps:
-        1. Log in as a user.
+        1. Log in as a buyer.
         2. Navigate to the product listing page.
         3. View the list of available products/items.
     - Expected Result:
@@ -58,8 +87,36 @@ Wireframe: https://drive.google.com/drive/u/0/folders/1NynibtMORgpWvEXLRIP8Hc0Kl
 ### View product/item details
 - Scenario 1: Successfully view product/item details
     - Steps:
-        1. Log in as a user.
+        1. Log in as a buyer.
         2. Navigate to the product listing page.
         3. Select a product/item to view its details.
     - Expected Result:
-        - The user can view the details of the selected product/item. -->
+        - The user can view the details of the selected product/item.
+
+### Add product/item to cart
+- Scenario 1: Successfully add products to cart
+    - Steps:
+        1. Log in as a buyer
+        2. Navigate to the product listing page.
+        3. Select a product/item to view its details.
+        4. Click the "Add to cart" button.
+    - Expected Result:
+        - The product/item is successfully added to the cart.
+
+### View product/item in cart
+- Scenario 1: Successfully view the product/item in the cart.
+    - Steps:
+        1. Log in as a buyer
+        2. Navigate to the cart page.
+        3. view the list of products/items in the cart.
+    - Expected Result:
+        - The product/item can be viewed by the user in the cart page.
+
+### Remove product/item from cart
+- Scenario 1: Successfully remove products/items from the cart.
+    - Steps:
+        1. Log in as a buyer
+        2. Navigate to the cart page.
+        3. remove the selected product/item from the cart.
+    - Expected Result:
+        - The product/item is removed from the cart
