@@ -132,9 +132,25 @@
 
         // td 4
 
+        let category = prod["category"];
+        let find_default_price = prod["price_details"].find(e => e.size == "1/2 Kg")
+        let find_second_price = prod["price_details"].find(e => e.size == "1 Kg")
+        let find_third_price = prod["price_details"].find(e => e.size == "2 Kg")
+        console.log(find_default_price)
+
+        if (category == "Cakes"){
         td4 = document.createElement("td");
-        td4.innerText = prod["price"];
+        td4.innerText = "1/2kg = ₹" + find_default_price["price"]+"\n" 
+                        + " " + "1kg = ₹" + find_second_price["price"]+"\n" 
+                        + " " + "2kg = ₹" +find_third_price["price"];
         tr.append(td4);
+    }
+
+    else {
+        td4 = document.createElement("td");
+        td4.innerText = "₹"+find_default_price["price"];
+        tr.append(td4);
+    }
 
         // td 5
 

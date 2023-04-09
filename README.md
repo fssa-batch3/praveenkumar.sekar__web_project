@@ -119,4 +119,4 @@ Wireframe: https://drive.google.com/drive/u/0/folders/1NynibtMORgpWvEXLRIP8Hc0Kl
         2. Navigate to the cart page.
         3. remove the selected product/item from the cart.
     - Expected Result:
-        - The product/item is removed from the cart
+        - The product/item is removed from the cart.

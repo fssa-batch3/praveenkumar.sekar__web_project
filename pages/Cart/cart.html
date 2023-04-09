@@ -179,19 +179,23 @@
 
     <script>
 
-        let prod_details = JSON.parse(localStorage.getItem("prod_detail"));
+        // let prod_details = JSON.parse(localStorage.getItem("prod_detail"));
 
-        let cart_id = JSON.parse(localStorage.getItem("cart"));
+        let cart_id = JSON.parse(localStorage.getItem("cart_id"));
 
-        let cart_detail = prod_details.filter(product =>
-            cart_id.some(kart_id => kart_id.product_id === product.product_id))
+        // let cart_detail = prod_details.filter(product =>
+        //     cart_id.some(kart_id => kart_id.product_id === product.product_id))
 
-        console.log(cart_detail);
+        // console.log(cart_detail);
+
+        let cart = JSON.parse(localStorage.getItem("add_to_cart"));
+        console.log(cart);
+
 
         let subtotal = 0;
         let tax = 0;
 
-        for (i = 0; i < cart_detail.length; i++) {
+        for (i = 0; i < cart.length; i++) {
 
             table_r = document.createElement("tr");
             console.log(table_r)
@@ -205,7 +209,7 @@
 
             cart_img = document.createElement("img");
             cart_img.setAttribute("class", "cart-img");
-            cart_img.setAttribute("src", cart_detail[i]["image"])
+            cart_img.setAttribute("src", cart[i]["image"])
             cart_img.setAttribute("width", "200px");
             cart_img.setAttribute("height", "200px");
             cart_info.append(cart_img);
@@ -215,11 +219,11 @@
             cart_info.append(detail);
 
             prod_name = document.createElement("p")
-            prod_name.innerText = cart_detail[i]["name"];
+            prod_name.innerText = cart[i]["product_name"];
             detail.append(prod_name);
 
             price = document.createElement("small");
-            price.innerText = "Price: " + cart_detail[i]["price"];
+            price.innerText = "Price: " + cart[i]["test_price"];
             detail.append(price);
 
             remove = document.createElement("button")
@@ -229,15 +233,15 @@
 
             td2 = document.createElement("td");
             td2.setAttribute("class", "quantity");
-            td2.setAttribute("data-id", cart_detail[i]["product_id"]);
+            td2.setAttribute("data-id", cart[i]["product_id"]); 
             table_r.append(td2);
 
-            let find = cart_id.find(e => e.product_id ==  cart_detail[i]["product_id"]);
+            let find = cart.find(e => e.product_id ==  cart[i]["product_id"]);
 
             inp = document.createElement("input");
             inp.setAttribute("class", "inp");
             inp.setAttribute("type", "number");
-            inp.setAttribute("value", find["quantity"]);
+            inp.setAttribute("value", cart[i]["quantity"]);
             td2.append(inp);
 
             td3 = document.createElement("td");
@@ -245,12 +249,12 @@
             table_r.append(td3);
 
             price2 = document.createElement("p");
-            price2.innerText = "Price: " + cart_detail[i]["price"]*find["quantity"];
+            price2.innerText = "Price: " + cart[i]["test_price"]*cart[i]["quantity"];
             td3.append(price2);
 
             document.querySelector("table.table").append(table_r);
 
-            subtotal+= cart_detail[i]["price"]*find["quantity"];
+            subtotal+= cart[i]["test_price"]*cart[i]["quantity"];
         }
 
         document.querySelector("#sub").innerText = "₹ " + subtotal;
@@ -293,13 +297,13 @@
                 let quan = parent.querySelector(".inp").value
                 let uuid = parent.getAttribute("data-id");
 
-                let cart = JSON.parse(localStorage.getItem("cart"));
+                let cart = JSON.parse(localStorage.getItem("add_to_cart"));
 
                 let update_cart = cart.filter(e => e.product_id == uuid)
 
                 if(update_cart){
                     update_cart[0].quantity = parseInt(quan)
-                    localStorage.setItem("cart", JSON.stringify(cart));
+                    localStorage.setItem("add_to_cart", JSON.stringify(cart));
                 }
                 location.reload();
             }

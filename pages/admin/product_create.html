@@ -48,9 +48,11 @@
             
             </div>
         <div class="price">
-            <label>Price:</label><br>
-            <input type="text" id="price" required>
-            <br><br>
+            <label>Price:</label>
+            <br>
+            <input id = "price1">
+            <br>
+            <br>
         </div>
         <div class="add_image">
             <label>Image:</label><br>
@@ -67,23 +69,83 @@
 
             function prices (){
                 let inputcate = cate.value;
+                
+                document.querySelector(".price").innerHTML = "";
 
                 if (inputcate == "Cakes"){
                     let label1 = document.createElement ("label");
-                    label1.innerText = "1Kg";
+                    label1.setAttribute("id", "1/2kg");
+                    label1.innerText = "1/2Kg:";
                     document.querySelector(".price").append(label1);
+
+                    let br1 = document.createElement ("br");
+                    document.querySelector(".price").append(br1);
+
+                    let input1 = document.createElement ("input");
+                    input1.setAttribute("id", "price1");
+                    document.querySelector(".price").append(input1);
+
+                    br1 = document.createElement ("br");
+                    document.querySelector(".price").append(br1);
+
+                    br1 = document.createElement ("br");
+                    document.querySelector(".price").append(br1);
+
+                    let label2 = document.createElement ("label");
+                    label2.setAttribute("id", "1kg");
+                    label2.innerText = "1Kg:";
+                    document.querySelector(".price").append(label2);
+
+                    let br2 = document.createElement ("br");
+                    document.querySelector(".price").append(br2);
+
+                    let input2 = document.createElement ("input");
+                    input2.setAttribute("id", "price2");
+                    document.querySelector(".price").append(input2);
+
+                    br1 = document.createElement ("br");
+                    document.querySelector(".price").append(br1);
+
+                    br1 = document.createElement ("br");
+                    document.querySelector(".price").append(br1);
+
+                    let label3 = document.createElement ("label");
+                    label3.setAttribute("id", "2kg");
+                    label3.innerText = "2Kg:";
+                    document.querySelector(".price").append(label3);
+
+                    let br3 = document.createElement ("br");
+                    document.querySelector(".price").append(br3);
+
+                    let input3 = document.createElement ("input");
+                    input3.setAttribute("id", "price3");
+                    document.querySelector(".price").append(input3);
+
+                    br1 = document.createElement ("br");
+                    document.querySelector(".price").append(br1);
+
+                    br1 = document.createElement ("br");
+                    document.querySelector(".price").append(br1);
+
+                }
+
+                else{
+
+                    let label = document.createElement("label");
+                    label.innerText = "Price:";
+                    document.querySelector(".price").append(label)
 
                     let br = document.createElement ("br");
                     document.querySelector(".price").append(br);
 
-                }
+                    let input = document.createElement ("input");
+                    input.setAttribute("id", "price1");
+                    document.querySelector(".price").append(input);
 
-                else if (inputcate == "Breads"){
-                    let label1 = document.createElement ("label");
-                    label1.innerText = "2Kg";
-                    document.querySelector(".price").append(label1);
+                    br = document.createElement ("br");
+                    document.querySelector(".price").append(br);
 
-                    let br = document.createElement ("br");
+                    br = document.createElement ("br");
                     document.querySelector(".price").append(br);
 
                 }
@@ -92,25 +154,49 @@
                 function createProduct(e) {
             let product_name = document.getElementById("product_name").value;
             let description = document.getElementById("description").value;
-            let price = document.getElementById("price").value;
             let category = document.getElementById("category").value;
             let add_image = document.getElementById("add_image").value;
                 let product_uuid = uuidv4();
+
+
+let array = []
+
+        if (category == "Cakes") {
+            let price1 = document.getElementById("price1").value;
+            let price2 = document.getElementById("price2").value;
+            let price3 = document.getElementById("price3").value;
+
+            array.push({ "size": "1/2 Kg",
+                         "price": price1},
+                         { "size": "1 Kg",
+                         "price": price2},
+                         {"size": "2 Kg",
+                         "price": price3})
+        }
+
+        else {
+            let price1 = document.getElementById("price1").value;
+
+            array.push({ "size": "1/2 Kg",
+                         "price": price1})
+        }
             let prod_detail = JSON.parse(localStorage.getItem('prod_detail')) || [];
 
-                prod_detail.push({ "name":product_name,
+                prod_detail.push({ "name":product_name, 
                                     "description":description,
-                                    "prices": price,
+                                    "price_details" : array,
                                     "category":category,
                                     "image":add_image,
-                                    "product_id":product_uuid});
+                                    "product_id":product_uuid});     
 
                 localStorage.setItem('prod_detail',JSON.stringify(prod_detail));
                 alert('Product added');
                 window.location.href = "../admin/admin_product_list.html";
 
                 e.preventDefault();
+
                 }
+
     </script>
 
     <footer>
