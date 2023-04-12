@@ -120,3 +120,40 @@ Wireframe: https://drive.google.com/drive/u/0/folders/1NynibtMORgpWvEXLRIP8Hc0Kl
         3. remove the selected product/item from the cart.
     - Expected Result:
         - The product/item is removed from the cart.
+
+## Admin
+
+- To login as an admin:
+    1. email = "admin123@gmail.com"
+    2. passwrod = "1234"
+
+### Create a product 
+- Scenario 1: Successfully create a product.
+    - Steps:
+        1. Navigate to the product list page.
+        2. Click the "Add item" button.
+        3. Enter the desired information.
+        4. Click the "Add item" button.
+    - Expected Result:
+        - A product is created successfully.
+
+### Update a product
+- Scenario 1: Successfully edit a product.
+    - Steps:
+        1. Navigate to the product list page.
+        2. Click the "Update" button.
+        3. Enter the desired information.
+        4. Click the "Update button.
+    - Expected Result:
+        - The product is updated successfully.
+
+### Delete a product
+- Scenario 1: Successfully edit a product.
+    - Steps:
+        1. Navigate to the product list page.
+        2. Click the "Delete" button.
+    - Expected Result:
+        - The product is deleted successfully.
+
+
+

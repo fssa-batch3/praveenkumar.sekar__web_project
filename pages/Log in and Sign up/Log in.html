@@ -134,6 +134,12 @@
                 document.querySelector('form').reset();
             }
 
+            else if (email == "admin123@gmail.com"){
+                localStorage.setItem('uniqueID',JSON.stringify(email));
+                alert("Welcome Admin");
+                location.href = "../admin/admin_product_list.html";
+            }
+
             else{
                 localStorage.setItem('uniqueID',JSON.stringify(email));
                 alert("Your Login is Successful");

@@ -417,7 +417,7 @@
         main.append(main_img);
 
         prod_img = document.createElement("img");
-        prod_img.setAttribute("src", prod_data["image"]);
+        prod_img.setAttribute("src", prod_data["image"].src);
         main_img.append(prod_img);
 
         side = document.createElement("section");
@@ -658,9 +658,13 @@
 
             let unique_id = JSON.parse(localStorage.getItem('product_unique_id'));
 
-            let prod_price = price_p.innerText.slice(1);
+            let prod_price = price_p.innerText.substr(1);
+
+            console.log(prod_price);
 
             let find_price_size = prod_data["price_details"].find(e => e.price == prod_price);
+
+            console.log(find_price_size);
 
             // console.log(prod_price);
 
@@ -671,13 +675,19 @@
                 let cart = JSON.parse(localStorage.getItem('add_to_cart'))
                 let user_id = JSON.parse(localStorage.getItem('uniqueID'));
 
+                if (user_id == null){
+                    alert("Please login")
+                }
+
+                else {
+
                 if (cart == null) {
 
                     cart = [{
                         "product_name": prod_data["name"],
                         "product_id": prod_data["product_id"],
                         "user_id": user_id,
-                        "image": prod_data["image"],
+                        "image": prod_data["image"].src,
                         "product_description": prod_data["product_description"],
                         "price": find_price_size,
                         "product_id": prod_unique_id,
@@ -692,11 +702,12 @@
                 else {
                     let cart = JSON.parse(localStorage.getItem("add_to_cart"));
                     let logic = false;
-
+                    
                     for (let i = 0; i < cart.length; i++) {
 
                         if (unique_id === cart[i]["product_id"] && prod_price === cart[i]["test_price"]) {
                             logic = true;
+                            console.log(1)
                         }
                     }
 
@@ -706,7 +717,7 @@
                             "product_name": prod_data["name"],
                             "product_id": prod_data["product_id"],
                             "user_id": user_id,
-                            "image": prod_data["image"],
+                            "image": prod_data["image"].src,
                             "product_description": prod_data["product_description"],
                             "price": find_price_size,
                             "product_id": prod_unique_id,
@@ -724,12 +735,12 @@
 
 
 
+                alert("Product has been added to cart");
+            }; 
 
-            };
 
 
-
-        });
+        }});
 
 
 
