@@ -34,9 +34,9 @@
     <div class="cart">
         <img src="../../assets/Images/v1033-a-15-a-removebg-preview - Copy.svg" width="100px" alt="logo">
         <table class="table">
-            <caption>
+            <!-- <caption>
                 <h1>YOUR CART(3)</h1>
-            </caption>
+            </caption> -->
             <tr>
                 <th>Products</th>
                 <th>Quantity</th>
@@ -191,6 +191,15 @@
         let cart = JSON.parse(localStorage.getItem("add_to_cart"));
         console.log(cart);
 
+        let table = document.querySelector(".table");
+
+        table_caption = document.createElement("caption");
+        table.append(table_caption);
+
+        table_h1 = document.createElement("h1");
+        table_h1.innerText = "Your Cart(" + cart.length + ")";
+        table_caption.append(table_h1);
+
 
         let subtotal = 0;
         let tax = 0;
@@ -222,8 +231,28 @@
             prod_name.innerText = cart[i]["product_name"];
             detail.append(prod_name);
 
+            if (cart[i]["category"] == "Cakes"){
+                if (cart[i]["size"] == 0){
+                    cake_size1 = document.createElement("small");
+                    cake_size1.innerText = "1/2Kg ";
+                    detail.append(cake_size1);
+                }
+
+                else if (cart[i]["size"] == 1){
+                    cake_size2 = document.createElement("small");
+                    cake_size2.innerText = "1Kg ";
+                    detail.append(cake_size2);
+                }
+
+                else if (cart[i]["size"] == 2){
+                    cake_size3 = document.createElement("small");
+                    cake_size3.innerText = "2Kg ";
+                    detail.append(cake_size3);
+                }
+            }
+
             price = document.createElement("small");
-            price.innerText = "Price: " + cart[i]["test_price"];
+            price.innerText = "Price: " + cart[i]["price"];
             detail.append(price);
 
             remove = document.createElement("button")
@@ -233,14 +262,16 @@
 
             td2 = document.createElement("td");
             td2.setAttribute("class", "quantity");
-            td2.setAttribute("data-id", cart[i]["product_id"]); 
+            td2.setAttribute("data-id", cart[i]["product_cart_id"]); 
             table_r.append(td2);
 
-            let find = cart.find(e => e.product_id ==  cart[i]["product_id"]);
+            let find = cart.find(e => e.product_cart_id ==  cart[i]["product_cart_id"]);
+
 
             inp = document.createElement("input");
             inp.setAttribute("class", "inp");
             inp.setAttribute("type", "number");
+            inp.setAttribute("min", 1);
             inp.setAttribute("value", cart[i]["quantity"]);
             td2.append(inp);
 
@@ -249,12 +280,12 @@
             table_r.append(td3);
 
             price2 = document.createElement("p");
-            price2.innerText = "Price: " + cart[i]["test_price"]*cart[i]["quantity"];
+            price2.innerText = "Price: " + cart[i]["price"]*cart[i]["quantity"];
             td3.append(price2);
 
             document.querySelector("table.table").append(table_r);
 
-            subtotal+= cart[i]["test_price"]*cart[i]["quantity"];
+            subtotal+= cart[i]["price"]*cart[i]["quantity"];
         }
 
         document.querySelector("#sub").innerText = "₹ " + subtotal;
@@ -268,21 +299,28 @@
         remove_item.forEach(function (getID) {
             getID.addEventListener("click", function () {
                 if (confirm("Are you sure?")) {
-                    let cart = JSON.parse(localStorage.getItem("cart"));
+
+                    const parent = this.parentNode.parentNode.parentNode.parentNode;
+                    
+                    const get_id = parent.querySelector(".quantity").getAttribute("data-id");
+
+                    let cart = JSON.parse(localStorage.getItem("add_to_cart"));
 
                     function find_data(e) {
-                        return e.cart == cart;
+                        return e.get_id == cart["product_cart_id"];
                     }
 
-                    product_data = cart.find(find_data);
+                    let product_data = cart.find(find_data);
 
                     const indexOfUser = cart.indexOf(product_data);
 
+                    console.log(indexOfUser);
+
                     cart.splice(indexOfUser, 1);
 
-                    localStorage.setItem('cart', JSON.stringify(cart));
+                    localStorage.setItem("add_to_cart", JSON.stringify(cart));
 
-                    window.location.reload();
+                    location.reload();
                 }
             }
             )
@@ -299,7 +337,7 @@
 
                 let cart = JSON.parse(localStorage.getItem("add_to_cart"));
 
-                let update_cart = cart.filter(e => e.product_id == uuid)
+                let update_cart = cart.filter(e => e.product_cart_id == uuid)
 
                 if(update_cart){
                     update_cart[0].quantity = parseInt(quan)

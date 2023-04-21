@@ -13,9 +13,9 @@ if (!prod) {
                 "product_id": "d7795e2d-df36-4d9a-addd-1e614ac9eb7a",
                 "description": "It is very delecious",
                 "price_details":[
-                                {"size": "1/2 Kg", "price": "500"},
-                                {"size": "1 Kg", "price": "750"},
-                                {"size": "2 Kg", "price": "1500"}
+                                {"size": 0, "price": "500"},
+                                {"size": 1, "price": "750"},
+                                {"size": 2, "price": "1500"}
                             ],
                 "image": {
                     "src": "https://iili.io/HvHP9Sf.png",
@@ -29,9 +29,9 @@ if (!prod) {
                 "product_id": "d7795e2d-df36-4d9a-adfg-1e614ac9eb7a",
                 "description": "It is very delecious",
                 "price_details":[
-                    {"size": "1/2 Kg", "price": "600"},
-                    {"size": "1 Kg", "price": "800"},
-                    {"size": "2 Kg", "price": "1500"}
+                    {"size": 0, "price": "600"},
+                    {"size": 1, "price": "800"},
+                    {"size": 2, "price": "1500"}
                 ],
                 "image": {
                     "src": "https://iili.io/HvH6ycG.png",
@@ -45,9 +45,9 @@ if (!prod) {
                 "product_id": "d7795e2d-df36-4d9a-poeh-1e614ac9eb7a",
                 "description": "It is very delecious",
                 "price_details":[
-                    {"size": "1/2 Kg", "price": "400"},
-                    {"size": "1 Kg", "price": "600"},
-                    {"size": "2 Kg", "price": "1100"}
+                    {"size": 0, "price": "400"},
+                    {"size": 1, "price": "600"},
+                    {"size": 2, "price": "1100"}
                 ],
                 "image": {
                     "src": "https://iili.io/HvHPJ94.png",
@@ -64,7 +64,7 @@ if (!prod) {
                 "product_id": "d7795e2d-df36-4d9a-apdo-1e614ac9eb7a",
                 "description": "It is very delecious",
                 "price_details":[
-                                {"size": "1/2 Kg", "price": "45"}
+                                {"size": 0, "price": "45"}
                             ],
                 "image": {
                     "src": "https://iili.io/HvH6X3b.md.png",
@@ -78,7 +78,7 @@ if (!prod) {
                 "product_id": "d7795e2d-df36-4d9a-adha-1e614ac9eb7a",
                 "description": "It is very delecious",
                 "price_details":[
-                                {"size": "1/2 Kg", "price": "55"}
+                                {"size": 0, "price": "55"}
                             ],
                 "image": {
                     "src": "https://iili.io/HvH6haj.md.png",
@@ -92,7 +92,7 @@ if (!prod) {
                 "product_id": "d7795e2d-df36-4d9a-adbh-1e614ac9eb7a",
                 "description": "It is very delecious",
                 "price_details":[
-                    {"size": "1/2 Kg", "price": "60"}
+                    {"size": 0, "price": "60"}
                 ],
                 "image": {
                     "src": "https://iili.io/HvH6V6u.md.png",
@@ -108,7 +108,7 @@ if (!prod) {
                 "product_id": "d7795e2d-df36-4d9a-bhdy-1e614ac9eb7a",
                 "description": "It is very delecious",
                 "price_details":[
-                    {"size": "1/2 Kg", "price": "45"}
+                    {"size": 0, "price": "45"}
                 ],
                 "image": {
                     "src": "https://iili.io/HvHiYI2.png",
@@ -122,7 +122,7 @@ if (!prod) {
                 "product_id": "d7795e2d-df36-4d9a-agdb-1e614ac9eb7a",
                 "description": "It is very delecious",
                 "price_details":[
-                    {"size": "1/2 Kg", "price": "40"}
+                    {"size": 0, "price": "40"}
                 ],
                 "image": {
                     "src": "https://iili.io/HvHiaXS.png",
@@ -136,7 +136,7 @@ if (!prod) {
                 "product_id": "d7795e2d-df36-4d9a-andk-1e614ac9eb7a",
                 "description": "It is very delecious",
                 "price_details":[
-                    {"size": "1/2 Kg", "price": "50"}
+                    {"size": 0, "price": "50"}
                 ],
                 "image": {
                     "src": "https://iili.io/HvHicL7.md.png",

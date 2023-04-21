@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../../assets/css/header.css">
     <link rel="stylesheet" href="../../assets/css/normalize.css">
     <link rel="stylesheet" href="../../assets/css/footer.css">
+    <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
     <title>Bakery</title>
 </head>
 
@@ -397,12 +398,14 @@
 
         let price_list = [];
 
+        let size = 0;
+
 
         // creating elements
 
-        let find_default_price = prod_data["price_details"].find(e => e.size == "1/2 Kg")
-        let find_second_price = prod_data["price_details"].find(e => e.size == "1 Kg")
-        let find_third_price = prod_data["price_details"].find(e => e.size == "2 Kg")
+        let find_default_price = prod_data["price_details"].find(e => e.size == 0)
+        let find_second_price = prod_data["price_details"].find(e => e.size == 1)
+        let find_third_price = prod_data["price_details"].find(e => e.size == 2)
 
         whole = document.createElement("div");
         whole.setAttribute("class", "whole");
@@ -418,6 +421,7 @@
 
         prod_img = document.createElement("img");
         prod_img.setAttribute("src", prod_data["image"].src);
+        prod_img.setAttribute("alt", prod_data["image"].alt);
         main_img.append(prod_img);
 
         side = document.createElement("section");
@@ -462,7 +466,6 @@
             w_btn1 = document.createElement("button");
             w_btn1.setAttribute("class", "weights");
             w_btn1.setAttribute("onclick", "half_kg()");
-            w_btn1.setAttribute("data-size", "0");
             w_btn1.setAttribute("id", "0");
             w_btn1.innerText = ("1/2Kg")
             spec_button.append(w_btn1);
@@ -470,7 +473,6 @@
             w_btn2 = document.createElement("button");
             w_btn2.setAttribute("class", "weights");
             w_btn2.setAttribute("onclick", "one_kg()");
-            w_btn2.setAttribute("data-size", "1");
             w_btn2.setAttribute("id", "1");
             w_btn2.innerText = ("1Kg")
             spec_button.append(w_btn2);
@@ -478,7 +480,6 @@
             w_btn3 = document.createElement("button");
             w_btn3.setAttribute("class", "weights");
             w_btn3.setAttribute("onclick", "two_kg()");
-            w_btn3.setAttribute("data-size", "2");
             w_btn3.setAttribute("id", "2");
             w_btn3.innerText = ("2Kg")
             spec_button.append(w_btn3);
@@ -494,6 +495,9 @@
             tarea_div.append(tarea);
 
 
+
+
+
             function half_kg() {
                 document.querySelector(".price1").innerHTML = "";
 
@@ -505,7 +509,7 @@
 
                 let test = container.dataset.size;
 
-                let get_price = prod_data["price_details"].find(e => e.size == "1/2 Kg");
+                let get_price = prod_data["price_details"].find(e => e.size == 0);
 
                 if (price_list.length > 0) {
 
@@ -518,6 +522,10 @@
                 else {
                     price_list.push(get_price);
                 }
+
+                size = 0;
+
+                console.log(size);
 
                 // console.log(price_list);
 
@@ -534,7 +542,7 @@
 
                 let test = container.dataset.size;
 
-                let get_price = prod_data["price_details"].find(e => e.size == "1 Kg");
+                let get_price = prod_data["price_details"].find(e => e.size == 1);
 
                 if (price_list.length > 0) {
 
@@ -548,7 +556,9 @@
                     price_list.push(get_price);
                 }
 
-                console.log(price_list);
+                size = 1;
+
+                console.log(size);
             }
 
             function two_kg() {
@@ -562,7 +572,7 @@
 
                 let test = container.dataset.size;
 
-                let get_price = prod_data["price_details"].find(e => e.size == "2 Kg");
+                let get_price = prod_data["price_details"].find(e => e.size == 2);
 
                 if (price_list.length > 0) {
 
@@ -577,12 +587,11 @@
                 }
 
 
-                console.log(price_list);
+                size = 2;
+
+                console.log(size);
 
             }
-
-
-
 
 
             // let weight = document.querySelectorAll(".weights");
@@ -635,16 +644,18 @@
 
             let product = urlParams.get('product_id');
 
-            let cart_id = JSON.parse(localStorage.getItem('cart_id')) || [];
+            // let cart_id = JSON.parse(localStorage.getItem('cart_id')) || [];
 
-            cart_id.push(product);
+            // cart_id.push(product, size);
 
-            localStorage.setItem('cart_id', JSON.stringify(cart_id));
+            // localStorage.setItem('cart_id', JSON.stringify(cart_id));
 
 
             let prod_unique_id = this.dataset.id;
 
             localStorage.setItem('prod_unique_id', JSON.stringify(prod_unique_id));
+
+            let unique_id = JSON.parse(localStorage.getItem('prod_unique_id'));
 
             let prod_list = JSON.parse(localStorage.getItem("prod_detail"));
 
@@ -656,91 +667,143 @@
 
             //  console.log(prod_data);
 
-            let unique_id = JSON.parse(localStorage.getItem('product_unique_id'));
+            let prod_size = size;
+
+            let product_size = JSON.parse(localStorage.getItem('prod_size'));
+
+            if (prod_data["category"] == "Cakes"){
+
+            localStorage.setItem('prod_size', JSON.stringify(prod_size));
+
+            }
 
             let prod_price = price_p.innerText.substr(1);
 
             console.log(prod_price);
 
-            let find_price_size = prod_data["price_details"].find(e => e.price == prod_price);
-
-            console.log(find_price_size);
-
             // console.log(prod_price);
 
-            let id = '';
+            let cart = JSON.parse(localStorage.getItem('add_to_cart'))
+            let user_id = JSON.parse(localStorage.getItem('uniqueID'));
 
-            if (id == '') {
+            if (user_id == null) {
+                alert("Please login")
+            }
 
-                let cart = JSON.parse(localStorage.getItem('add_to_cart'))
-                let user_id = JSON.parse(localStorage.getItem('uniqueID'));
-
-                if (user_id == null){
-                    alert("Please login")
-                }
-
-                else {
+            else {
 
                 if (cart == null) {
 
+                    if (prod_data["category"] == "Cakes"){
+
                     cart = [{
+                        "product_cart_id": uuidv4(),
                         "product_name": prod_data["name"],
                         "product_id": prod_data["product_id"],
                         "user_id": user_id,
                         "image": prod_data["image"].src,
                         "product_description": prod_data["product_description"],
-                        "price": find_price_size,
+                        "size": size,
                         "product_id": prod_unique_id,
                         "quantity": 1,
-                        "test_price": prod_price
+                        "price": prod_price,
+                        "category": prod_data["category"]
                     }];
 
                     localStorage.setItem("add_to_cart", JSON.stringify(cart));
+
+                    window.alert("Product has been added to cart");
+
+                }
+
+                else {
+                    cart = [{
+                        "product_cart_id": uuidv4(),
+                        "product_name": prod_data["name"],
+                        "product_id": prod_data["product_id"],
+                        "user_id": user_id,
+                        "image": prod_data["image"].src,
+                        "product_description": prod_data["product_description"],
+                        "size": 0,
+                        "product_id": prod_unique_id,
+                        "quantity": 1,
+                        "price": prod_price,
+                        "category": prod_data["category"]
+                    }];
+
+                    localStorage.setItem("add_to_cart", JSON.stringify(cart));
+
+                    window.alert("Product has been added to cart");
+                }
 
                 }
 
                 else {
                     let cart = JSON.parse(localStorage.getItem("add_to_cart"));
                     let logic = false;
-                    
-                    for (let i = 0; i < cart.length; i++) {
 
-                        if (unique_id === cart[i]["product_id"] && prod_price === cart[i]["test_price"]) {
-                            logic = true;
-                            console.log(1)
+                    if (prod_data["category"] == "Cakes") {
+                        for (let i = 0; i < cart.length; i++) {
+
+                            if (unique_id === cart[i]["product_id"] && product_size == cart[i]["size"]) {
+                                logic = true;
+                            }
                         }
-                    }
-
-
-                    if (!logic) {
+                        if (!logic) {
                         cart.push({
+                            "product_cart_id": uuidv4(),
                             "product_name": prod_data["name"],
                             "product_id": prod_data["product_id"],
                             "user_id": user_id,
                             "image": prod_data["image"].src,
                             "product_description": prod_data["product_description"],
-                            "price": find_price_size,
+                            "size": size,
                             "product_id": prod_unique_id,
                             "quantity": 1,
-                            "test_price": prod_price
+                            "price": prod_price,
+                            "category": prod_data["category"]
                         });
 
                         localStorage.setItem("add_to_cart", JSON.stringify(cart));
+
+                        window.alert("Product has been added to cart");
                     }
 
+                    }
 
+                    else {
+                        for (let i = 0; i < cart.length; i++) {
 
+                            if (unique_id === cart[i]["product_id"]) {
+                                logic = true;
+                            }
+                        }
 
+                        if (!logic) {
+                        cart.push({
+                            "product_cart_id": uuidv4(),
+                            "product_name": prod_data["name"],
+                            "product_id": prod_data["product_id"],
+                            "user_id": user_id,
+                            "image": prod_data["image"].src,
+                            "product_description": prod_data["product_description"],
+                            "size": 0,
+                            "product_id": prod_unique_id,
+                            "quantity": 1,
+                            "price": prod_price,
+                            "category": prod_data["category"]
+                        });
+
+                        localStorage.setItem("add_to_cart", JSON.stringify(cart));
+
+                        window.alert("Product has been added to cart");
+                    }
                 }
+                }
+            };
 
 
-
-                alert("Product has been added to cart");
-            }; 
-
-
-
-        }});
+        });
 
 
 

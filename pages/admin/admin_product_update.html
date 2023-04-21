@@ -32,12 +32,12 @@
             <h1>Update Product</h1>
             <div class="product_name">
                 <label>Product Name:</label><br>
-                <input type="text" id="product_name" required>
+                <input type="text" id="product_name"  pattern="[a-zA-Z ]+" title = "Use uppercase or lowercase only."required>
                 <br><br>
             </div>
             <div class="description">
                 <label>Description:</label><br>
-                <textarea placeholder="Enter product description" id="description" rows="4" cols="49 "></textarea>
+                <textarea placeholder="Enter product description" id="description" rows="4" cols="49" maxlength="100"></textarea>
                 <br><br>
             </div>
             <div class="category">
@@ -48,7 +48,7 @@
                     <option>Breakfast Pastry</option>
                 </select>
             </div>
-            <div class="price">
+            <div class="price" pattern="[0-9]+" title = "Please use numbers only">
             </div>
             <div class="add_image">
                 <label>Image:</label><br>
@@ -117,7 +117,7 @@ let uuid = JSON.parse(localStorage.getItem("product_id"));
         if (category == "Cakes") {
             let label1 = document.createElement("label");
             label1.setAttribute("id", "1/2kg");
-            label1.innerText = "1/2Kg:";
+            label1.innerText = "1/2Kg price:";
             document.querySelector(".price").append(label1);
 
             let br1 = document.createElement("br");
@@ -135,7 +135,7 @@ let uuid = JSON.parse(localStorage.getItem("product_id"));
 
             let label2 = document.createElement("label");
             label2.setAttribute("id", "1kg");
-            label2.innerText = "1Kg:";
+            label2.innerText = "1Kg price:";
             document.querySelector(".price").append(label2);
 
             let br2 = document.createElement("br");
@@ -153,7 +153,7 @@ let uuid = JSON.parse(localStorage.getItem("product_id"));
 
             let label3 = document.createElement("label");
             label3.setAttribute("id", "2kg");
-            label3.innerText = "2Kg:";
+            label3.innerText = "2Kg price:";
             document.querySelector(".price").append(label3);
 
             let br3 = document.createElement("br");
@@ -203,7 +203,7 @@ let uuid = JSON.parse(localStorage.getItem("product_id"));
             if (inputcate == "Cakes") {
                 let label1 = document.createElement("label");
                 label1.setAttribute("id", "1/2kg");
-                label1.innerText = "1/2Kg:";
+                label1.innerText = "1/2Kg price:";
                 document.querySelector(".price").append(label1);
 
                 let br1 = document.createElement("br");
@@ -221,7 +221,7 @@ let uuid = JSON.parse(localStorage.getItem("product_id"));
 
                 let label2 = document.createElement("label");
                 label2.setAttribute("id", "1kg");
-                label2.innerText = "1Kg:";
+                label2.innerText = "1Kg price:";
                 document.querySelector(".price").append(label2);
 
                 let br2 = document.createElement("br");
@@ -239,7 +239,7 @@ let uuid = JSON.parse(localStorage.getItem("product_id"));
 
                 let label3 = document.createElement("label");
                 label3.setAttribute("id", "2kg");
-                label3.innerText = "2Kg:";
+                label3.innerText = "2Kg price:";
                 document.querySelector(".price").append(label3);
 
                 let br3 = document.createElement("br");
@@ -279,9 +279,9 @@ let uuid = JSON.parse(localStorage.getItem("product_id"));
             }
         }
 
-        let find_default_price = product_data["price_details"].find(e => e.size == "0");
-        let find_second_price = product_data["price_details"].find(e => e.size == "1");
-        let find_third_price = product_data["price_details"].find(e => e.size == "2");
+        let find_default_price = product_data["price_details"].find(e => e.size == 0);
+        let find_second_price = product_data["price_details"].find(e => e.size == 1);
+        let find_third_price = product_data["price_details"].find(e => e.size == 2);
 
 
         document.getElementById("product_name").value = product_data["name"];
@@ -297,7 +297,7 @@ let uuid = JSON.parse(localStorage.getItem("product_id"));
             document.getElementById("price1").value = find_default_price["price"];
         }
         document.getElementById("category").value = product_data["category"];
-        document.getElementById("add_image").value = product_data["image"];
+        document.getElementById("add_image").value = product_data["image"].src;
 
 
         // Funtion update
@@ -316,9 +316,9 @@ let uuid = JSON.parse(localStorage.getItem("product_id"));
 
            let product_data = product.find(find_data);
 
-           let find_default_price = product_data["price_details"].find(e => e.size == "0");
-        let find_second_price = product_data["price_details"].find(e => e.size == "1");
-        let find_third_price = product_data["price_details"].find(e => e.size == "2");
+           let find_default_price = product_data["price_details"].find(e => e.size == 0);
+        let find_second_price = product_data["price_details"].find(e => e.size == 1);
+        let find_third_price = product_data["price_details"].find(e => e.size == 2);
 
 if (category == "Cakes") {
             product_data["name"] = document.getElementById("product_name").value;
@@ -327,7 +327,7 @@ if (category == "Cakes") {
             find_second_price["price"] = document.getElementById("price2").value;
             find_third_price["price"] = document.getElementById("price3").value;
             product_data["category"] = document.getElementById("category").value;
-            product_data["image"] = document.getElementById("add_image").value;
+            product_data["image"].src = document.getElementById("add_image").value;
         }
 
         else {
@@ -335,14 +335,11 @@ if (category == "Cakes") {
             product_data["description"] = document.getElementById("description").value; 
             find_default_price["price"] = document.getElementById("price1").value;
             product_data["category"] = document.getElementById("category").value;
-            product_data["image"] = document.getElementById("add_image").value;
+            product_data["image"].src = document.getElementById("add_image").value;
         }
 
             localStorage.setItem('prod_detail', JSON.stringify(product));
 
-            
-
-            console.log("hi")
             location.href = "./admin_product_list.html";
 
             alert('Product updated successfully');

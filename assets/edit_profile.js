@@ -39,6 +39,8 @@ if(confirm("Are you sure?")){
 const indexOfUser = user_cred.indexOf(person_data);
 user_cred.splice(indexOfUser,1);
 
+localStorage.removeItem('uniqueID');
+
 localStorage.setItem('user_cred',JSON.stringify(user_cred));
 window.location.href = "../../index.html";
 
@@ -48,7 +50,7 @@ window.location.href = "../../index.html";
 
 function logOut (e) {
 
-    localStorage.setItem('uniqueID', "");
+    localStorage.removeItem('uniqueID');
     window.location.href = "../Log in and Sign up/Log in.html";
 
 }

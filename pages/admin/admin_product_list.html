@@ -133,9 +133,9 @@
         // td 4
 
         let category = prod["category"];
-        let find_default_price = prod["price_details"].find(e => e.size == "1/2 Kg")
-        let find_second_price = prod["price_details"].find(e => e.size == "1 Kg")
-        let find_third_price = prod["price_details"].find(e => e.size == "2 Kg")
+        let find_default_price = prod["price_details"].find(e => e.size == 0)
+        let find_second_price = prod["price_details"].find(e => e.size == 1)
+        let find_third_price = prod["price_details"].find(e => e.size == 2)
         console.log(find_default_price)
 
         if (category == "Cakes"){

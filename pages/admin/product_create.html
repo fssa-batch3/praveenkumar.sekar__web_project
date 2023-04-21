@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,6 +11,7 @@
     <link rel="stylesheet" href="../../assets/css/footer.css">
     <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
 </head>
+
 <body>
     <!-- <header id ="header">
         <div class="container">
@@ -27,175 +29,202 @@
     <div class="form-container">
         <form role="form" id="form" onsubmit="createProduct(event)">
             <img src="../../assets/Images/v1033-a-15-a-removebg-preview - Copy.svg" width="100px" alt="logo">
-        <h1>Create Product</h1>
-        <div class="product_name">
-            <label>Product Name:</label><br>
-            <input type="text" id="product_name" required>
-            <br><br>
-        </div>
-        <div class="description">
-            <label>Description:</label><br>
-            <textarea placeholder="Enter product description" id="description" rows="4" cols="49 "></textarea>
-            <br><br>
-        </div>
-        <div class="category">
-            <label>Category:</label>
-            <select id="category">
-                <option>Breads</option>
-                <option>Cakes</option>
-                <option>Breakfast Pastry</option>
-            </select>
-            
+            <h1>Create Product</h1>
+            <div class="product_name">
+                <label>Product Name:</label><br>
+                <input type="text" id="product_name" pattern="[a-zA-Z ]+" title="Use uppercase or lowercase only."
+                    required>
+                <br><br>
             </div>
-        <div class="price">
-            <label>Price:</label>
-            <br>
-            <input id = "price1">
-            <br>
-            <br>
-        </div>
-        <div class="add_image">
-            <label>Image:</label><br>
-            <input type="url" id="add_image" required>
-            <br><br>
-        </div>
-        <div class="submit"><button type="submit">Create</button></div>
+            <div class="description">
+                <label>Description:</label><br>
+                <textarea placeholder="Enter product description" id="description" rows="4" cols="49"
+                    maxlength="100"></textarea>
+                <br><br>
+            </div>
+            <div class="category">
+                <label>Category:</label>
+                <select id="category">
+                    <option>Breads</option>
+                    <option>Cakes</option>
+                    <option>Breakfast Pastry</option>
+                </select>
+
+            </div>
+            <div class="price">
+                <label>Price:</label>
+                <br>
+                <input id="price1" pattern="[0-9]+" title="Please use numbers only" required>
+                <br>
+                <br>
+            </div>
+            <div class="add_image">
+                <label>Image:</label><br>
+                <input type="url" id="add_image" required>
+                <br><br>
+            </div>
+            <div class="submit"><button type="submit">Create</button></div>
         </form>
-        </div>
+    </div>
 
     <script>
-            let cate = document.querySelector("#category");
-            cate.addEventListener("change", prices)
+        let cate = document.querySelector("#category");
+        cate.addEventListener("change", prices)
 
-            function prices (){
-                let inputcate = cate.value;
-                
-                document.querySelector(".price").innerHTML = "";
+        function prices() {
+            let inputcate = cate.value;
 
-                if (inputcate == "Cakes"){
-                    let label1 = document.createElement ("label");
-                    label1.setAttribute("id", "1/2kg");
-                    label1.innerText = "1/2Kg:";
-                    document.querySelector(".price").append(label1);
+            document.querySelector(".price").innerHTML = "";
 
-                    let br1 = document.createElement ("br");
-                    document.querySelector(".price").append(br1);
+            if (inputcate == "Cakes") {
+                let label1 = document.createElement("label");
+                label1.setAttribute("id", "1/2kg");
+                label1.innerText = "1/2Kg price:";
+                document.querySelector(".price").append(label1);
 
-                    let input1 = document.createElement ("input");
-                    input1.setAttribute("id", "price1");
-                    document.querySelector(".price").append(input1);
+                let br1 = document.createElement("br");
+                document.querySelector(".price").append(br1);
 
-                    br1 = document.createElement ("br");
-                    document.querySelector(".price").append(br1);
+                let input1 = document.createElement("input");
+                input1.setAttribute("id", "price1");
+                input1.setAttribute("pattern", "[0-9]+");
+                input1.setAttribute("title", "Please use numbers only.");
+                input1.setAttribute["required"] = true;
+                document.querySelector(".price").append(input1);
 
-                    br1 = document.createElement ("br");
-                    document.querySelector(".price").append(br1);
+                br1 = document.createElement("br");
+                document.querySelector(".price").append(br1);
 
-                    let label2 = document.createElement ("label");
-                    label2.setAttribute("id", "1kg");
-                    label2.innerText = "1Kg:";
-                    document.querySelector(".price").append(label2);
+                br1 = document.createElement("br");
+                document.querySelector(".price").append(br1);
 
-                    let br2 = document.createElement ("br");
-                    document.querySelector(".price").append(br2);
+                let label2 = document.createElement("label");
+                label2.setAttribute("id", "1kg");
+                label2.innerText = "1Kg price :";
+                document.querySelector(".price").append(label2);
 
-                    let input2 = document.createElement ("input");
-                    input2.setAttribute("id", "price2");
-                    document.querySelector(".price").append(input2);
+                let br2 = document.createElement("br");
+                document.querySelector(".price").append(br2);
 
-                    br1 = document.createElement ("br");
-                    document.querySelector(".price").append(br1);
+                let input2 = document.createElement("input");
+                input2.setAttribute("id", "price2");
+                input2.setAttribute("pattern", "[0-9]+");
+                input2.setAttribute("title", "Please use numbers only.");
+                input2.setAttribute["required"] = true;
+                document.querySelector(".price").append(input2);
 
-                    br1 = document.createElement ("br");
-                    document.querySelector(".price").append(br1);
+                br1 = document.createElement("br");
+                document.querySelector(".price").append(br1);
 
-                    let label3 = document.createElement ("label");
-                    label3.setAttribute("id", "2kg");
-                    label3.innerText = "2Kg:";
-                    document.querySelector(".price").append(label3);
+                br1 = document.createElement("br");
+                document.querySelector(".price").append(br1);
 
-                    let br3 = document.createElement ("br");
-                    document.querySelector(".price").append(br3);
+                let label3 = document.createElement("label");
+                label3.setAttribute("id", "2kg");
+                label3.innerText = "2Kg price :";
+                document.querySelector(".price").append(label3);
 
-                    let input3 = document.createElement ("input");
-                    input3.setAttribute("id", "price3");
-                    document.querySelector(".price").append(input3);
+                let br3 = document.createElement("br");
+                document.querySelector(".price").append(br3);
 
-                    br1 = document.createElement ("br");
-                    document.querySelector(".price").append(br1);
+                let input3 = document.createElement("input");
+                input3.setAttribute("id", "price3");
+                input3.setAttribute("pattern", "[0-9]+");
+                input3.setAttribute("title", "Please use numbers only.");
+                input3.setAttribute["required"] = true;
+                document.querySelector(".price").append(input3);
 
-                    br1 = document.createElement ("br");
-                    document.querySelector(".price").append(br1);
+                br1 = document.createElement("br");
+                document.querySelector(".price").append(br1);
 
-                }
+                br1 = document.createElement("br");
+                document.querySelector(".price").append(br1);
 
-                else{
-
-                    let label = document.createElement("label");
-                    label.innerText = "Price:";
-                    document.querySelector(".price").append(label)
-
-                    let br = document.createElement ("br");
-                    document.querySelector(".price").append(br);
-
-                    let input = document.createElement ("input");
-                    input.setAttribute("id", "price1");
-                    document.querySelector(".price").append(input);
-
-                    br = document.createElement ("br");
-                    document.querySelector(".price").append(br);
-
-                    br = document.createElement ("br");
-                    document.querySelector(".price").append(br);
-
-                }
             }
 
-                function createProduct(e) {
-            let product_name = document.getElementById("product_name").value;
+            else {
+
+                let label = document.createElement("label");
+                label.innerText = "Price:";
+                document.querySelector(".price").append(label)
+
+                let br = document.createElement("br");
+                document.querySelector(".price").append(br);
+
+                let input = document.createElement("input");
+                input.setAttribute("id", "price1");
+                input.setAttribute("pattern", "[0-9]+");
+                input.setAttribute("title", "Please use numbers only.");
+                input.setAttribute["required"] = true;
+                document.querySelector(".price").append(input);
+
+                br = document.createElement("br");
+                document.querySelector(".price").append(br);
+
+                br = document.createElement("br");
+                document.querySelector(".price").append(br);
+
+            }
+        }
+
+        function createProduct(e) {
+            let product_name = document.getElementById("product_name").value.trim();
             let description = document.getElementById("description").value;
             let category = document.getElementById("category").value;
             let add_image = document.getElementById("add_image").value;
-                let product_uuid = uuidv4();
+            let product_uuid = uuidv4();
 
 
-let array = []
+            let array = []
 
-        if (category == "Cakes") {
-            let price1 = document.getElementById("price1").value;
-            let price2 = document.getElementById("price2").value;
-            let price3 = document.getElementById("price3").value;
+            if (category == "Cakes") {
+                let price1 = document.getElementById("price1").value;
+                let price2 = document.getElementById("price2").value;
+                let price3 = document.getElementById("price3").value;
 
-            array.push({ "size": "1/2 Kg",
-                         "price": price1},
-                         { "size": "1 Kg",
-                         "price": price2},
-                         {"size": "2 Kg",
-                         "price": price3})
-        }
+                array.push({
+                    "size": 0,
+                    "price": price1
+                },
+                    {
+                        "size": 1,
+                        "price": price2
+                    },
+                    {
+                        "size": 2,
+                        "price": price3
+                    })
+            }
 
-        else {
-            let price1 = document.getElementById("price1").value;
+            else {
+                let price1 = document.getElementById("price1").value;
 
-            array.push({ "size": "1/2 Kg",
-                         "price": price1})
-        }
+                array.push({
+                    "size": 0,
+                    "price": price1
+                })
+            }
             let prod_detail = JSON.parse(localStorage.getItem('prod_detail')) || [];
 
-                prod_detail.push({ "name":product_name, 
-                                    "description":description,
-                                    "price_details" : array,
-                                    "category":category,
-                                    "image":add_image,
-                                    "product_id":product_uuid});     
+            prod_detail.push({
+                "name": product_name,
+                "description": description,
+                "price_details": array,
+                "category": category,
+                "image": {
+                    "src": add_image,
+                    "alt": product_name
+                },
+                "product_id": product_uuid
+            });
 
-                localStorage.setItem('prod_detail',JSON.stringify(prod_detail));
-                alert('Product added');
-                window.location.href = "../admin/admin_product_list.html";
+            localStorage.setItem('prod_detail', JSON.stringify(prod_detail));
+            alert('Product added');
+            window.location.href = "../admin/admin_product_list.html";
 
-                e.preventDefault();
+            e.preventDefault();
 
-                }
+        }
 
     </script>
 
@@ -203,30 +232,43 @@ let array = []
         <div class="foot">
             <h1>HOME BAKERY</h1>
             <div class="list">
-            <ul>
-                <li><h2>ABOUT</h2></li>
-                <li><a href="../../index.html">Homepage</a></li>
-                <li><a href="../../../../index.html#about">About Us</a></li>
-                <li><a href="../../../../index.html#history">Our History</a></li>
-                <li><a href="../products/product_list.html">Products</a></li>
-            </ul>
-            <ul>
-                <li><h2>PRODUCTS</h2></li>
-                <li><a href="../products/product_list.html">Breads</a></li>
-                <li><a href="../products/product_list.html">Cakes</a></li>
-                <li><a href="../products/product_list.html">Breakfast Pastries</a></li>
-            </ul>
-            <ul>
-                <li><h2>FOLLOW US</h2></li>
-                <a href="https://www.instagram.com/"><li><img src="../../assets/Images/instagram.svg" width="40px" alt="Instagram">Instagram</li></a>
-                <a href="https://twitter.com/"><li><img src="../../assets/Images/twitter.svg" width="40px" alt="Twitter">Twitter</li></a>
-                <a href="https://github.com/"><li><img src="../../assets/Images/github.svg" width="40px" alt="GitHub">GitHub</li></a>
-            </ul>
+                <ul>
+                    <li>
+                        <h2>ABOUT</h2>
+                    </li>
+                    <li><a href="../../index.html">Homepage</a></li>
+                    <li><a href="../../../../index.html#about">About Us</a></li>
+                    <li><a href="../../../../index.html#history">Our History</a></li>
+                    <li><a href="../products/product_list.html">Products</a></li>
+                </ul>
+                <ul>
+                    <li>
+                        <h2>PRODUCTS</h2>
+                    </li>
+                    <li><a href="../products/product_list.html">Breads</a></li>
+                    <li><a href="../products/product_list.html">Cakes</a></li>
+                    <li><a href="../products/product_list.html">Breakfast Pastries</a></li>
+                </ul>
+                <ul>
+                    <li>
+                        <h2>FOLLOW US</h2>
+                    </li>
+                    <a href="https://www.instagram.com/">
+                        <li><img src="../../assets/Images/instagram.svg" width="40px" alt="Instagram">Instagram</li>
+                    </a>
+                    <a href="https://twitter.com/">
+                        <li><img src="../../assets/Images/twitter.svg" width="40px" alt="Twitter">Twitter</li>
+                    </a>
+                    <a href="https://github.com/">
+                        <li><img src="../../assets/Images/github.svg" width="40px" alt="GitHub">GitHub</li>
+                    </a>
+                </ul>
             </div>
         </div>
 
     </footer>
 
-<script src="../../assets/header.js"></script>
+    <script src="../../assets/header.js"></script>
 </body>
+
 </html>

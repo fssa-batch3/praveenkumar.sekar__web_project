@@ -546,9 +546,9 @@
 
         function render(object) { 
 
-            let find_default_price = object["price_details"].find(e => e.size == "1/2 Kg")
-        let find_second_price = object["price_details"].find(e => e.size == "1")
-        let find_third_price = object["price_details"].find(e => e.size == "2")
+            let find_default_price = object["price_details"].find(e => e.size == 0)
+        let find_second_price = object["price_details"].find(e => e.size == 1)
+        let find_third_price = object["price_details"].find(e => e.size == 2)
 
                 
             // div_product
