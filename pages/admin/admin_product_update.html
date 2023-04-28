@@ -1,354 +1,364 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update Create</title>
-    <link rel="stylesheet" href="../../assets/css/product_update.css">
-    <link rel="stylesheet" href="../../assets/css/header.css">
-    <link rel="stylesheet" href="../../assets/css/footer.css">
-    <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Update Create</title>
+        <link rel="stylesheet" href="../../assets/css/product_update.css">
+        <link rel="stylesheet" href="../../assets/css/header.css">
+        <link rel="stylesheet" href="../../assets/css/footer.css">
+        <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
+    </head>
 
-<body>
-    <!-- <header id ="header">
-        <div class="container">
+    <body>
+        <!-- <header id ="header">
+            <div class="container">
             <img src="../../assets/Images/v1033-a-15-a-removebg-preview - Copy.svg" width="100px" alt="logo" >
-                <nav>
-                <ul>
-                    <li><a href="../../index.html">Home</a></li>
-                    <li><a href="../products/product_list.html">Products</a></li>
-                    <li><a href="../../assets/css/Sign up.html">Log In</a></li>
-                    <li><a href="../Cart/cart.html"><img src="../../assets/Images/icon-cart.svg" alt="cart"></a></li>
-                </ul>
-                </nav>
-    </header> -->
+            <nav>
+            <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../products/product_list.html">Products</a></li>
+            <li><a href="../../assets/css/Sign up.html">Log In</a></li>
+            <li><a href="../Cart/cart.html"><img src="../../assets/Images/icon-cart.svg" alt="cart"></a></li>
+            </ul>
+            </nav>
+            </header> -->
 
-    <div class="form-container">
-        <form role="form" id="form">
-            <img src="../../assets/Images/v1033-a-15-a-removebg-preview - Copy.svg" width="100px" alt="logo">
-            <h1>Update Product</h1>
-            <div class="product_name">
-                <label>Product Name:</label><br>
-                <input type="text" id="product_name"  pattern="[a-zA-Z ]+" title = "Use uppercase or lowercase only."required>
-                <br><br>
-            </div>
-            <div class="description">
-                <label>Description:</label><br>
-                <textarea placeholder="Enter product description" id="description" rows="4" cols="49" maxlength="100"></textarea>
-                <br><br>
-            </div>
-            <div class="category">
-                <label>Category:</label>
-                <select id="category" disabled>
-                    <option>Breads</option>
-                    <option>Cakes</option>
-                    <option>Breakfast Pastry</option>
-                </select>
-            </div>
-            <div class="price" pattern="[0-9]+" title = "Please use numbers only">
-            </div>
-            <div class="add_image">
-                <label>Image:</label><br>
-                <input type="url" id="add_image" required>
-                <br><br>
-            </div>
-            <div class="submit"><button class="update" type="submit">Update</button></div>
-        </form>
-    </div>
-
-    <footer>
-        <div class="foot">
-            <h1>HOME BAKERY</h1>
-            <div class="list">
-                <ul>
-                    <li>
-                        <h2>ABOUT</h2>
-                    </li>
-                    <li><a href="../../index.html">Homepage</a></li>
-                    <li><a href="../../../../index.html#about">About Us</a></li>
-                    <li><a href="../../../../index.html#history">Our History</a></li>
-                    <li><a href="../products/product_list.html">Products</a></li>
-                </ul>
-                <ul>
-                    <li>
-                        <h2>PRODUCTS</h2>
-                    </li>
-                    <li><a href="../products/product_list.html">Breads</a></li>
-                    <li><a href="../products/product_list.html">Cakes</a></li>
-                    <li><a href="../products/product_list.html">Breakfast Pastries</a></li>
-                </ul>
-                <ul>
-                    <li>
-                        <h2>FOLLOW US</h2>
-                    </li>
-                    <a href="https://www.instagram.com/">
-                        <li><img src="../../assets/Images/instagram.svg" width="40px" alt="Instagram">Instagram</li>
-                    </a>
-                    <a href="https://twitter.com/">
-                        <li><img src="../../assets/Images/twitter.svg" width="40px" alt="Twitter">Twitter</li>
-                    </a>
-                    <a href="https://github.com/">
-                        <li><img src="../../assets/Images/github.svg" width="40px" alt="GitHub">GitHub</li>
-                    </a>
-                </ul>
-            </div>
+        <div class="form-container">
+            <form role="form" id="form">
+                <img src="../../assets/Images/v1033-a-15-a-removebg-preview - Copy.svg" width="100px" alt="logo">
+                <h1>Update Product</h1>
+                <div class="product_name">
+                    <label>Product Name:</label>
+                    <br>
+                    <input type="text" id="product_name" pattern="[a-zA-Z ]+" title = "Use uppercase or lowercase only."required>
+                    <br>
+                    <br>
+                </div>
+                <div class="description">
+                    <label>Description:</label>
+                    <br>
+                    <textarea placeholder="Enter product description" id="description" rows="4" cols="49" maxlength="100"></textarea>
+                    <br>
+                    <br>
+                </div>
+                <div class="category">
+                    <label>Category:</label>
+                    <select id="category" disabled>
+                        <option>Breads</option>
+                        <option>Cakes</option>
+                        <option>Breakfast Pastry</option>
+                    </select>
+                </div>
+                <div class="price" pattern="[0-9]+" title = "Please use numbers only">
+                </div>
+                <div class="add_image">
+                    <label>Image:</label>
+                    <br>
+                    <input type="url" id="add_image" required>
+                    <br>
+                    <br>
+                </div>
+                <div class="submit">
+                    <button class="update" type="submit">Update</button>
+                </div>
+            </form>
         </div>
 
-    </footer>
+        <footer>
+            <div class="foot">
+                <h2>HOME BAKERY</h2>
+                <div class="list">
+                    <ul>
+                        <li>
+                            <h2>ABOUT</h2>
+                        </li>
+                        <li>
+                            <a href="../../index.html">Homepage</a>
+                        </li>
+                        <li>
+                            <a href="../../../../index.html#about">About Us</a>
+                        </li>
+                        <li>
+                            <a href="../../../../index.html#history">Our History</a>
+                        </li>
+                        <li>
+                            <a href="../products/product_list.html">Products</a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <h2>PRODUCTS</h2>
+                        </li>
+                        <li>
+                            <a href="../products/product_list.html">Breads</a>
+                        </li>
+                        <li>
+                            <a href="../products/product_list.html">Cakes</a>
+                        </li>
+                        <li>
+                            <a href="../products/product_list.html">Breakfast Pastries</a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <h2>FOLLOW US</h2>
+                        </li>
+                        <a href="https://www.instagram.com/">
+                            <li>
+                                <img src="../../assets/Images/instagram.svg" width="40px" alt="Instagram">Instagram
+                            </li>
+                        </a>
+                        <a href="https://twitter.com/">
+                            <li>
+                                <img src="../../assets/Images/twitter.svg" width="40px" alt="Twitter">Twitter
+                            </li>
+                        </a>
+                        <a href="https://github.com/">
+                            <li>
+                                <img src="../../assets/Images/github.svg" width="40px" alt="GitHub">GitHub
+                            </li>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+
+        </footer>
+
+        <script src="../../assets/header.js"></script>
+
+        <script>
+const uuid = JSON.parse(localStorage.getItem("product_id"));
+const product = JSON.parse(localStorage.getItem("prod_detail"));
+
+function find_data(e) {
+  return e.product_id === uuid;
+}
+
+const product_data = product.find(find_data);
+
+const { category } = product_data;
+
+if (category === "Cakes") {
+  const label1 = document.createElement("label");
+  label1.setAttribute("id", "1/2kg");
+  label1.innerText = "1/2Kg price:";
+  document.querySelector(".price").append(label1);
+
+  let br1 = document.createElement("br");
+  document.querySelector(".price").append(br1);
+
+  const input1 = document.createElement("input");
+  input1.setAttribute("id", "price1");
+  document.querySelector(".price").append(input1);
+
+  br1 = document.createElement("br");
+  document.querySelector(".price").append(br1);
+
+  br1 = document.createElement("br");
+  document.querySelector(".price").append(br1);
+
+  const label2 = document.createElement("label");
+  label2.setAttribute("id", "1kg");
+  label2.innerText = "1Kg price:";
+  document.querySelector(".price").append(label2);
+
+  const br2 = document.createElement("br");
+  document.querySelector(".price").append(br2);
+
+  const input2 = document.createElement("input");
+  input2.setAttribute("id", "price2");
+  document.querySelector(".price").append(input2);
 
-    <script src="../../assets/header.js"></script>
+  br1 = document.createElement("br");
+  document.querySelector(".price").append(br1);
 
-    <script>
+  br1 = document.createElement("br");
+  document.querySelector(".price").append(br1);
 
-let uuid = JSON.parse(localStorage.getItem("product_id"));
-        let product = JSON.parse(localStorage.getItem("prod_detail"));
+  const label3 = document.createElement("label");
+  label3.setAttribute("id", "2kg");
+  label3.innerText = "2Kg price:";
+  document.querySelector(".price").append(label3);
 
-        function find_data(e) {
-            return e.product_id == uuid;
-        }
+  const br3 = document.createElement("br");
+  document.querySelector(".price").append(br3);
 
-        let product_data = product.find(find_data);
+  const input3 = document.createElement("input");
+  input3.setAttribute("id", "price3");
+  document.querySelector(".price").append(input3);
 
-        let category = product_data["category"];
+  br1 = document.createElement("br");
+  document.querySelector(".price").append(br1);
 
-        if (category == "Cakes") {
-            let label1 = document.createElement("label");
-            label1.setAttribute("id", "1/2kg");
-            label1.innerText = "1/2Kg price:";
-            document.querySelector(".price").append(label1);
+  br1 = document.createElement("br");
+  document.querySelector(".price").append(br1);
+} else {
+  const label = document.createElement("label");
+  label.innerText = "Price:";
+  document.querySelector(".price").append(label);
 
-            let br1 = document.createElement("br");
-            document.querySelector(".price").append(br1);
+  let br = document.createElement("br");
+  document.querySelector(".price").append(br);
 
-            let input1 = document.createElement("input");
-            input1.setAttribute("id", "price1");
-            document.querySelector(".price").append(input1);
+  const input = document.createElement("input");
+  input.setAttribute("id", "price1");
+  document.querySelector(".price").append(input);
 
-            br1 = document.createElement("br");
-            document.querySelector(".price").append(br1);
+  br = document.createElement("br");
+  document.querySelector(".price").append(br);
 
-            br1 = document.createElement("br");
-            document.querySelector(".price").append(br1);
+  br = document.createElement("br");
+  document.querySelector(".price").append(br);
+}
 
-            let label2 = document.createElement("label");
-            label2.setAttribute("id", "1kg");
-            label2.innerText = "1Kg price:";
-            document.querySelector(".price").append(label2);
+const cate = document.querySelector("#category");
+cate.addEventListener("change", prices);
 
-            let br2 = document.createElement("br");
-            document.querySelector(".price").append(br2);
+function prices() {
+  const inputcate = cate.value;
 
-            let input2 = document.createElement("input");
-            input2.setAttribute("id", "price2");
-            document.querySelector(".price").append(input2);
+  document.querySelector(".price").innerHTML = "";
 
-            br1 = document.createElement("br");
-            document.querySelector(".price").append(br1);
+  if (inputcate === "Cakes") {
+    const label1 = document.createElement("label");
+    label1.setAttribute("id", "1/2kg");
+    label1.innerText = "1/2Kg price:";
+    document.querySelector(".price").append(label1);
 
-            br1 = document.createElement("br");
-            document.querySelector(".price").append(br1);
+    let br1 = document.createElement("br");
+    document.querySelector(".price").append(br1);
 
-            let label3 = document.createElement("label");
-            label3.setAttribute("id", "2kg");
-            label3.innerText = "2Kg price:";
-            document.querySelector(".price").append(label3);
+    const input1 = document.createElement("input");
+    input1.setAttribute("id", "price1");
+    document.querySelector(".price").append(input1);
 
-            let br3 = document.createElement("br");
-            document.querySelector(".price").append(br3);
+    br1 = document.createElement("br");
+    document.querySelector(".price").append(br1);
 
-            let input3 = document.createElement("input");
-            input3.setAttribute("id", "price3");
-            document.querySelector(".price").append(input3);
+    br1 = document.createElement("br");
+    document.querySelector(".price").append(br1);
 
-            br1 = document.createElement("br");
-            document.querySelector(".price").append(br1);
+    const label2 = document.createElement("label");
+    label2.setAttribute("id", "1kg");
+    label2.innerText = "1Kg price:";
+    document.querySelector(".price").append(label2);
+
+    const br2 = document.createElement("br");
+    document.querySelector(".price").append(br2);
+
+    const input2 = document.createElement("input");
+    input2.setAttribute("id", "price2");
+    document.querySelector(".price").append(input2);
+
+    br1 = document.createElement("br");
+    document.querySelector(".price").append(br1);
 
-            br1 = document.createElement("br");
-            document.querySelector(".price").append(br1);
-        }
-
-        else {
-
-            let label = document.createElement("label");
-            label.innerText = "Price:";
-            document.querySelector(".price").append(label)
-
-            let br = document.createElement("br");
-            document.querySelector(".price").append(br);
-
-            let input = document.createElement("input");
-            input.setAttribute("id", "price1");
-            document.querySelector(".price").append(input);
-
-            br = document.createElement("br");
-            document.querySelector(".price").append(br);
-
-            br = document.createElement("br");
-            document.querySelector(".price").append(br);
-
-        }
-
-
-        let cate = document.querySelector("#category");
-        cate.addEventListener("change", prices)
-
-        function prices() {
-            let inputcate = cate.value;
-
-            document.querySelector(".price").innerHTML = "";
-
-            if (inputcate == "Cakes") {
-                let label1 = document.createElement("label");
-                label1.setAttribute("id", "1/2kg");
-                label1.innerText = "1/2Kg price:";
-                document.querySelector(".price").append(label1);
-
-                let br1 = document.createElement("br");
-                document.querySelector(".price").append(br1);
-
-                let input1 = document.createElement("input");
-                input1.setAttribute("id", "price1");
-                document.querySelector(".price").append(input1);
-
-                br1 = document.createElement("br");
-                document.querySelector(".price").append(br1);
-
-                br1 = document.createElement("br");
-                document.querySelector(".price").append(br1);
-
-                let label2 = document.createElement("label");
-                label2.setAttribute("id", "1kg");
-                label2.innerText = "1Kg price:";
-                document.querySelector(".price").append(label2);
-
-                let br2 = document.createElement("br");
-                document.querySelector(".price").append(br2);
-
-                let input2 = document.createElement("input");
-                input2.setAttribute("id", "price2");
-                document.querySelector(".price").append(input2);
-
-                br1 = document.createElement("br");
-                document.querySelector(".price").append(br1);
-
-                br1 = document.createElement("br");
-                document.querySelector(".price").append(br1);
-
-                let label3 = document.createElement("label");
-                label3.setAttribute("id", "2kg");
-                label3.innerText = "2Kg price:";
-                document.querySelector(".price").append(label3);
-
-                let br3 = document.createElement("br");
-                document.querySelector(".price").append(br3);
-
-                let input3 = document.createElement("input");
-                input3.setAttribute("id", "price3");
-                document.querySelector(".price").append(input3);
-
-                br1 = document.createElement("br");
-                document.querySelector(".price").append(br1);
-
-                br1 = document.createElement("br");
-                document.querySelector(".price").append(br1);
-
-            }
-
-            else {
-
-                let label = document.createElement("label");
-                label.innerText = "Price:";
-                document.querySelector(".price").append(label)
-
-                let br = document.createElement("br");
-                document.querySelector(".price").append(br);
-
-                let input = document.createElement("input");
-                input.setAttribute("id", "price1");
-                document.querySelector(".price").append(input);
-
-                br = document.createElement("br");
-                document.querySelector(".price").append(br);
-
-                br = document.createElement("br");
-                document.querySelector(".price").append(br);
-
-            }
-        }
-
-        let find_default_price = product_data["price_details"].find(e => e.size == 0);
-        let find_second_price = product_data["price_details"].find(e => e.size == 1);
-        let find_third_price = product_data["price_details"].find(e => e.size == 2);
-
-
-        document.getElementById("product_name").value = product_data["name"];
-        document.getElementById("description").value = product_data["description"];
-        document.getElementById("category").value = product_data["category"];
-        if (category == "Cakes") {
-            document.getElementById("price1").value = find_default_price["price"];
-            document.getElementById("price2").value = find_second_price["price"];
-            document.getElementById("price3").value = find_third_price["price"];
-        }
-
-        else {
-            document.getElementById("price1").value = find_default_price["price"];
-        }
-        document.getElementById("category").value = product_data["category"];
-        document.getElementById("add_image").value = product_data["image"].src;
-
-
-        // Funtion update
-
-        let update = document.querySelector("button.update");
-
-        update.addEventListener("click", update_detail);
-
-        function update_detail() {
-            const uuid = JSON.parse(localStorage.getItem("product_id"));
-            const product = JSON.parse(localStorage.getItem("prod_detail"));
-
-            function find_data(e) {
-                return e.product_id == uuid;
-            }
-
-           let product_data = product.find(find_data);
-
-           let find_default_price = product_data["price_details"].find(e => e.size == 0);
-        let find_second_price = product_data["price_details"].find(e => e.size == 1);
-        let find_third_price = product_data["price_details"].find(e => e.size == 2);
-
-if (category == "Cakes") {
-            product_data["name"] = document.getElementById("product_name").value;
-            product_data["description"] = document.getElementById("description").value; 
-            find_default_price["price"] = document.getElementById("price1").value;
-            find_second_price["price"] = document.getElementById("price2").value;
-            find_third_price["price"] = document.getElementById("price3").value;
-            product_data["category"] = document.getElementById("category").value;
-            product_data["image"].src = document.getElementById("add_image").value;
-        }
-
-        else {
-            product_data["name"] = document.getElementById("product_name").value;
-            product_data["description"] = document.getElementById("description").value; 
-            find_default_price["price"] = document.getElementById("price1").value;
-            product_data["category"] = document.getElementById("category").value;
-            product_data["image"].src = document.getElementById("add_image").value;
-        }
-
-            localStorage.setItem('prod_detail', JSON.stringify(product));
-
-            location.href = "./admin_product_list.html";
-
-            alert('Product updated successfully');
-
-        }
-
-
+    br1 = document.createElement("br");
+    document.querySelector(".price").append(br1);
+
+    const label3 = document.createElement("label");
+    label3.setAttribute("id", "2kg");
+    label3.innerText = "2Kg price:";
+    document.querySelector(".price").append(label3);
+
+    const br3 = document.createElement("br");
+    document.querySelector(".price").append(br3);
+
+    const input3 = document.createElement("input");
+    input3.setAttribute("id", "price3");
+    document.querySelector(".price").append(input3);
+
+    br1 = document.createElement("br");
+    document.querySelector(".price").append(br1);
+
+    br1 = document.createElement("br");
+    document.querySelector(".price").append(br1);
+  } else {
+    const label = document.createElement("label");
+    label.innerText = "Price:";
+    document.querySelector(".price").append(label);
+
+    let br = document.createElement("br");
+    document.querySelector(".price").append(br);
+
+    const input = document.createElement("input");
+    input.setAttribute("id", "price1");
+    document.querySelector(".price").append(input);
+
+    br = document.createElement("br");
+    document.querySelector(".price").append(br);
+
+    br = document.createElement("br");
+    document.querySelector(".price").append(br);
+  }
+}
+
+const find_default_price = product_data.price_details.find((e) => e.size === 0);
+const find_second_price = product_data.price_details.find((e) => e.size === 1);
+const find_third_price = product_data.price_details.find((e) => e.size === 2);
+
+document.getElementById("product_name").value = product_data.name;
+document.getElementById("description").value = product_data.description;
+document.getElementById("category").value = product_data.category;
+if (category === "Cakes") {
+  document.getElementById("price1").value = find_default_price.price;
+  document.getElementById("price2").value = find_second_price.price;
+  document.getElementById("price3").value = find_third_price.price;
+} else {
+  document.getElementById("price1").value = find_default_price.price;
+}
+document.getElementById("category").value = product_data.category;
+document.getElementById("add_image").value = product_data.image.src;
+
+// Funtion update
+
+const update = document.querySelector("button.update");
+
+update.addEventListener("click", update_detail);
+
+function update_detail() {
+  const uuid = JSON.parse(localStorage.getItem("product_id"));
+  const product = JSON.parse(localStorage.getItem("prod_detail"));
+
+  function find_data(e) {
+    return e.product_id === uuid;
+  }
+
+  const product_data = product.find(find_data);
+
+  const find_default_price = product_data.price_details.find(
+    (e) => e.size === 0
+  );
+  const find_second_price = product_data.price_details.find((e) => e.size === 1);
+  const find_third_price = product_data.price_details.find((e) => e.size === 2);
+
+  if (category === "Cakes") {
+    product_data.name = document.getElementById("product_name").value;
+    product_data.description = document.getElementById("description").value;
+    find_default_price.price = document.getElementById("price1").value;
+    find_second_price.price = document.getElementById("price2").value;
+    find_third_price.price = document.getElementById("price3").value;
+    product_data.category = document.getElementById("category").value;
+    product_data.image.src = document.getElementById("add_image").value;
+  } else {
+    product_data.name = document.getElementById("product_name").value;
+    product_data.description = document.getElementById("description").value;
+    find_default_price.price = document.getElementById("price1").value;
+    product_data.category = document.getElementById("category").value;
+    product_data.image.src = document.getElementById("add_image").value;
+  }
+
+  localStorage.setItem("prod_detail", JSON.stringify(product));
+
+  location.href = "./admin_product_list.html";
+
+  alert("Product updated successfully");
+}
     </script>
 
-</body>
+    </body>
 
 </html>
