@@ -2,38 +2,27 @@
 <html lang="en">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600;700;800;900&family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&family=Telex&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="../../assets/css/normalize.css">
+    <link rel="stylesheet" href="../../assets/css/create_address.css">
     <link rel="stylesheet" href="../../assets/css/header.css">
-    <link rel="stylesheet" href="../../assets/css/Sign up.css">
     <link rel="stylesheet" href="../../assets/css/normalize.css">
     <link rel="stylesheet" href="../../assets/css/footer.css">
-    <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
-    <title>Sign Up</title>
+    <title>Create Address</title>
 </head>
 
 <body>
-    <!-- <header id ="header">
-            <div class="container">
-            <img src="../../assets/Images/v1033-a-15-a-removebg-preview - Copy.svg" width="100px" alt="logo" >
-            <nav>
-            <ul>
-            <li><a href="../../index.html">Home</a></li>
-            <li><a href="../products/product_list.html">Products</a></li>
-            <li><a href="../../assets/css/Sign up.html">Log In</a></li>
-            <li><a href="../Cart/cart.html"><img src="../../assets/Images/icon-cart.svg" alt="cart"></a></li>
-            </ul>
-            </nav>
-            </header> -->
+
     <div class="form-container">
-        <form role="form" id="form" onsubmit="signUp(event)">
+        <form role="form" id="form" onsubmit="create_address(event)">
             <img src="../../assets/Images/v1033-a-15-a-removebg-preview - Copy.svg" width="100px" alt="logo">
-            <h1>Register</h1>
+            <h1>Address</h1>
             <div class="first_name">
                 <label>First Name:</label>
                 <br>
@@ -50,48 +39,41 @@
                 <br>
                 <br>
             </div>
-            <div class="phone">
-                <label>Phone Number:</label>
+            <div class="house_no">
+                <label>Flat, House no., Building, Company, Apartment:</label>
                 <br>
-                <input type="tel" id="phone" pattern="[0-9].{9}"
-                    title="Use only numbers. Exclude spaces and special characters. You must enter 10 characters"
-                    required>
+                <input type="text" id="house_no" required>
                 <br>
                 <br>
             </div>
-            <div class="email">
-                <label>Email:</label>
+            <div class="area">
+                <label>Area, Street, Sector, Village:</label>
                 <br>
-                <input type="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
-                <br>
-                <br>
-            </div>
-            <div class="password">
-                <label>Password:</label>
-                <br>
-                <input type="password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                    title="Password must contain(Uppercase, Lowercase, Special character, Number) and min 8 characters."
-                    required>
+                <input type="text" id="area" required>
                 <br>
                 <br>
             </div>
-            <div class="confirm_pw">
-                <label>Confirm Password:</label>
+            <div class="city">
+                <label>City:</label>
                 <br>
-                <input type="password" id="confirm_pw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                    title="Please match the password" required>
+                <input type="text" id="city" value="Chennai" disabled>
+                <br>
+                <br>
+            </div>
+            <div class="pincode">
+                <label>Pincode:</label>
+                <br>
+                <input type="number" id="pincode" min="600001" max="643253" pattern="[6]{1}[0-4]{2}[0-9]{4}"
+                    placeholder="600050" required>
                 <br>
                 <br>
             </div>
             <div class="submit">
-                <button type="submit">Register</button>
+                <button type="submit">Create</button>
             </div>
-            <br>
-            <a href="./Log in.html">
-                <p>Already have an account? Sign in</p>
-            </a>
         </form>
     </div>
+
     <footer>
         <div class="foot">
             <h2>HOME BAKERY</h2>
@@ -133,12 +115,12 @@
                     </li>
                     <a href="https://www.instagram.com/">
                         <li>
-                            <img src="../../assets/Images/instagram.svg" width="40px" alt="Instagram">Instagram
+                            <img src="../../assets/Images/instagram.svg" width="40px" alt="instagram">Instagram
                         </li>
                     </a>
                     <a href="https://twitter.com/">
                         <li>
-                            <img src="../../assets/Images/twitter.svg" width="40px" alt="Twitter">Twitter
+                            <img src="../../assets/Images/twitter.svg" width="40px" alt="twitter">Twitter
                         </li>
                     </a>
                     <a href="https://github.com/">
@@ -149,12 +131,40 @@
                 </ul>
             </div>
         </div>
-
     </footer>
 
     <script src="../../assets/js/header.js"></script>
 
-    <script src="../../assets/js/signup.js"></script>
+    <script>
+        // function signup(){
+        function create_address(e) {
+            const first_name = document.getElementById("first_name").value;
+            const last_name = document.getElementById("last_name").value;
+            const house_no = document.getElementById("house_no").value;
+            const area = document.getElementById("area").value;
+            const city = document.getElementById("city").value;
+            const pincode = document.getElementById("pincode").value;
+
+            const user_address = JSON.parse(localStorage.getItem("user_address")) || [];
+
+            const uuid = uuidv4();
+            user_address.push({
+                first_name,
+                last_name,
+                house_no,
+                area,
+                city,
+                pincode,
+                address_uuid: uuid
+            });
+
+            localStorage.setItem("user_address", JSON.stringify(user_address));
+            // document.querySelector("form").reset();
+            // alert("Account created successfully");
+            // window.location.href = "../../index.html";
+            e.preventDefault();
+        }
+    </script>
 
 </body>
 

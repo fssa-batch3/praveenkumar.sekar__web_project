@@ -126,8 +126,8 @@ div.sidebar{
 }
 
 .address_book {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 2fr));
+    /* display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 2fr)); */
     gap: 1rem;
     row-gap: 0.5rem;
 }
@@ -135,7 +135,7 @@ div.sidebar{
 .address {
     border: 1px black solid;
     padding: 0 2% 2% 2%;
-    width: 40%;
+    width: 70%;
     margin: 5% 2% 0 2%;
 }
 

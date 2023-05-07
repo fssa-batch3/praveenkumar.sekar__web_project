@@ -34,24 +34,24 @@ const user_login_id = JSON.parse(localStorage.getItem("uniqueID"));
 console.log(user_login_id);
 
 if (user_login_id) {
-  document.body.insertAdjacentHTML("afterbegin", after_login);
+    document.body.insertAdjacentHTML("afterbegin", after_login);
 
-  const log_out = document.getElementById("logOut");
+    const log_out = document.getElementById("logOut");
 
-  log_out?.addEventListener("click", () => {
-    if (confirm("Are you sure you want to log out")) {
-      localStorage.removeItem("uniqueID");
-      document.body.innerHTML = before_login;
-    }
-  });
+    log_out?.addEventListener("click", () => {
+        if (window.confirm("Are you sure you want to log out")) {
+            localStorage.removeItem("uniqueID");
+            document.body.innerHTML = before_login;
+        }
+    });
 } else {
-  document.body.insertAdjacentHTML("afterbegin", before_login);
+    document.body.insertAdjacentHTML("afterbegin", before_login);
 
-  const log_out = document.getElementById("logOut");
+    const log_out = document.getElementById("logOut");
 
-  log_out?.removeEventListener(
-    "click",
-    () => (document.body.innerHTML = after_login)
-  );
-  localStorage.removeItem("uniqueID");
+    log_out?.removeEventListener(
+        "click",
+        () => (document.body.innerHTML = after_login)
+    );
+    localStorage.removeItem("uniqueID");
 }

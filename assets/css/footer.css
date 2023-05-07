@@ -26,9 +26,10 @@ p {
     flex-direction: column;
 }
 
-.foot h1 {
+.foot h2 {
     margin: auto;
     margin-top: 3%;
+    font-size: 30px;
 }
 
 .list {

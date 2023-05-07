@@ -1,75 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale1.0" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600;700;800;900&family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&family=Telex&display=swap"
-            rel="stylesheet"
-        />
-        <link rel="stylesheet" href="../../assets/css/profile.css" />
-        <link rel="stylesheet" href="../../assets/css/header.css" />
-        <link rel="stylesheet" href="../../assets/css/normalize.css" />
-        <link rel="stylesheet" href="../../assets/css/footer.css" />
-        <title>Bakery</title>
-    </head>
-    <body>
-        <!-- <header id ="header">
-            <div class="container">
-            <img src="../../assets/Images/v1033-a-15-a-removebg-preview - Copy.svg" width="100px" alt="logo">
-            <nav>
-            <ul>
-            <li><a href="../../index.html">Home</a></li>
-            <li><a href="../products/product_list.html">Products</a></li>
-            <li><a href="../Log in and Sign up/Log in.html">Log In</a></li>
-            <li><a href="../Cart/cart.html"><img src="../../assets/Images/icon-cart.svg" alt="cart"></a></li>
-            <li><a href="../Profile/profile.html"><img src="../../assets/Images/profile.svg" width="26px" alt="profile"></a></li>
-            </ul>
-            </nav>
-            </header> -->
-        <!-- sidebar -->
-        <div class="full">
-            <div class="sidebar">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600;700;800;900&family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&family=Telex&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/profile.css">
+    <link rel="stylesheet" href="../../assets/css/header.css">
+    <link rel="stylesheet" href="../../assets/css/normalize.css">
+    <link rel="stylesheet" href="../../assets/css/footer.css">
+    <title>Bakery</title>
+</head>
+
+<body onload="profile(event)">
+    <div class="full">
+        <div class="sidebar">
+            <div onclick="profile(event)">
+                <h4>ACCOUNT DETAILS</h4>
+            </div>
+            <div onclick="address(event)">
+                <h4>ADDRESS BOOK</h4>
+            </div>
+            <div>
+                <h4>MY ORDERS</h4>
+            </div>
+            <div onclick="logOut(event)">
+                <h4>LOG OUT</h4>
+            </div>
+        </div>
+        <section class="main_content" id="main">
+            <!-- <div class="head">
+                <h2>ACCOUNT DETAILS</h2>
+                <a href="./profile_edit.html">
+                    <button>EDIT</button>
+                </a>
+            </div>
+            <div class="profile_details">
                 <div>
-                    <h4>ACCOUNT DETAILS</h4>
+                    <h4>FIRST NAME</h4>
+                    <p id="first_name"></p>
                 </div>
                 <div>
-                    <h4>ADDRESS BOOK</h4>
+                    <h4>LAST NAME</h4>
+                    <p id="last_name"></p>
                 </div>
                 <div>
-                    <h4>MY ORDERS</h4>
+                    <h4>EMAIL</h4>
+                    <p id="email"></p>
                 </div>
-                <div onclick="logOut(event)">
-                    <h4>LOG OUT</h4>
+                <div>
+                    <h4>PHONE</h4>
+                    <p id="phone"></p>
                 </div>
             </div>
-            <section class="main_content">
-                <div class="head">
-                    <h2>ACCOUNT DETAILS</h2>
-                    <a href="./profile_edit.html">
-                        <button>EDIT</button>
-                    </a>
+            <div class="default_address">
+                <div class="address_head">
+                    <h2>ADDRESS</h2>
+                    <button>EDIT</button>
                 </div>
-                <div class="profile_details">
-                    <div>
-                        <h4>FIRST NAME</h4>
-                        <p id="first_name"></p>
-                    </div>
-                    <div>
-                        <h4>LAST NAME</h4>
-                        <p id="last_name"></p>
-                    </div>
-                    <div>
-                        <h4>EMAIL</h4>
-                        <p id="email"></p>
-                    </div>
-                    <div>
-                        <h4>PHONE</h4>
-                        <p id="phone"></p>
-                    </div>
+                <div>
+                    <p>123, kalaivanar nagar, madurai veeran st</p>
+                    <p>Padi</p>
+                    <p>Chennai, Tamil Nadu</p>
+                    <p>600050</p>
                 </div>
-                <div class="default_address">
+            </div> -->
+
+            <!-- <div class="head">
+                <h2>ADDRESS BOOK</h2>
+                <a href="#"><button>ADD+</button></a>
+            </div>
+            <div class="address_book">
+                <div class="address">
                     <div class="address_head">
                         <h2>ADDRESS</h2>
                         <button>EDIT</button>
@@ -81,154 +86,109 @@
                         <p>600050</p>
                     </div>
                 </div>
-
-                <!-- <div class="head">
-                    <h2>ADDRESS BOOK</h2>
-                    <a href="#"><button>ADD+</button></a>
-                    </div>
-                    <div class="address_book">
-                    <div class="address">
+                <div class="address">
                     <div class="address_head">
-                    <h2>ADDRESS</h2>
-                    <button>EDIT</button>
+                        <h2>ADDRESS</h2>
+                        <button>EDIT</button>
                     </div>
                     <div>
-                    <p>123, kalaivanar nagar, madurai veeran st</p>
-                    <p>Padi</p>
-                    <p>Chennai, Tamil Nadu</p>
-                    <p>600050</p>
+                        <p>123, kalaivanar nagar, madurai veeran st</p>
+                        <p>Padi</p>
+                        <p>Chennai, Tamil Nadu</p>
+                        <p>600050</p>
                     </div>
-                    </div>
-                    <div class="address">
-                    <div class="address_head">
-                    <h2>ADDRESS</h2>
-                    <button>EDIT</button>
-                    </div>
-                    <div>
-                    <p>123, kalaivanar nagar, madurai veeran st</p>
-                    <p>Padi</p>
-                    <p>Chennai, Tamil Nadu</p>
-                    <p>600050</p>
-                    </div>
-                    </div>
-                    <div class="address">
-                    <div class="address_head">
-                    <h2>ADDRESS</h2>
-                    <button>EDIT</button>
-                    </div>
-                    <div>
-                    <p>123, kalaivanar nagar, madurai veeran st</p>
-                    <p>Padi</p>
-                    <p>Chennai, Tamil Nadu</p>
-                    <p>600050</p>
-                    </div>
-                    </div>
-                    <div class="address">
-                    <div class="address_head">
-                    <h2>ADDRESS</h2>
-                    <button>EDIT</button>
-                    </div>
-                    <div>
-                    <p>123, kalaivanar nagar, madurai veeran st</p>
-                    <p>Padi</p>
-                    <p>Chennai, Tamil Nadu</p>
-                    <p>600050</p>
-                    </div>
-                    </div>
-                    </div> -->
-            </section>
-        </div>
-        <footer>
-            <div class="foot">
-                <h2>HOME BAKERY</h2>
-                <div class="list">
-                    <ul>
-                        <li>
-                            <h2>ABOUT</h2>
-                        </li>
-                        <li>
-                            <a href="../../index.html">Homepage</a>
-                        </li>
-                        <li>
-                            <a href="../../../../index.html#about">About Us</a>
-                        </li>
-                        <li>
-                            <a href="../../../../index.html#history"
-                                >Our History</a
-                            >
-                        </li>
-                        <li>
-                            <a href="../products/product_list.html">Products</a>
-                        </li>
-                    </ul>
-                    <ul>
-                        <li>
-                            <h2>PRODUCTS</h2>
-                        </li>
-                        <li>
-                            <a href="../products/product_list.html">Breads</a>
-                        </li>
-                        <li>
-                            <a href="../products/product_list.html">Cakes</a>
-                        </li>
-                        <li>
-                            <a href="../products/product_list.html"
-                                >Breakfast Pastries</a
-                            >
-                        </li>
-                    </ul>
-                    <ul>
-                        <li>
-                            <h2>FOLLOW US</h2>
-                        </li>
-                        <a href="https://www.instagram.com/">
-                            <li>
-                                <img
-                                    src="../../assets/Images/instagram.svg"
-                                    width="40px"
-                                    alt="instagram"
-                                />Instagram
-                            </li>
-                        </a>
-                        <a href="https://twitter.com/">
-                            <li>
-                                <img
-                                    src="../../assets/Images/twitter.svg"
-                                    width="40px"
-                                    alt="twitter"
-                                />Twitter
-                            </li>
-                        </a>
-                        <a href="https://github.com/">
-                            <li>
-                                <img
-                                    src="../../assets/Images/github.svg"
-                                    width="40px"
-                                    alt="GitHub"
-                                />GitHub
-                            </li>
-                        </a>
-                    </ul>
                 </div>
+                <div class="address">
+                    <div class="address_head">
+                        <h2>ADDRESS</h2>
+                        <button>EDIT</button>
+                    </div>
+                    <div>
+                        <p>123, kalaivanar nagar, madurai veeran st</p>
+                        <p>Padi</p>
+                        <p>Chennai, Tamil Nadu</p>
+                        <p>600050</p>
+                    </div>
+                </div>
+                <div class="address">
+                    <div class="address_head">
+                        <h2>ADDRESS</h2>
+                        <button>EDIT</button>
+                    </div>
+                    <div>
+                        <p>123, kalaivanar nagar, madurai veeran st</p>
+                        <p>Padi</p>
+                        <p>Chennai, Tamil Nadu</p>
+                        <p>600050</p>
+                    </div>
+                </div>
+            </div> -->
+        </section>
+    </div>
+    <footer>
+        <div class="foot">
+            <h2>HOME BAKERY</h2>
+            <div class="list">
+                <ul>
+                    <li>
+                        <h2>ABOUT</h2>
+                    </li>
+                    <li>
+                        <a href="../../index.html">Homepage</a>
+                    </li>
+                    <li>
+                        <a href="../../../../index.html#about">About Us</a>
+                    </li>
+                    <li>
+                        <a href="../../../../index.html#history">Our History</a>
+                    </li>
+                    <li>
+                        <a href="../products/product_list.html">Products</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <h2>PRODUCTS</h2>
+                    </li>
+                    <li>
+                        <a href="../products/product_list.html">Breads</a>
+                    </li>
+                    <li>
+                        <a href="../products/product_list.html">Cakes</a>
+                    </li>
+                    <li>
+                        <a href="../products/product_list.html">Breakfast Pastries</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <h2>FOLLOW US</h2>
+                    </li>
+                    <a href="https://www.instagram.com/">
+                        <li>
+                            <img src="../../assets/Images/instagram.svg" width="40px" alt="instagram">Instagram
+                        </li>
+                    </a>
+                    <a href="https://twitter.com/">
+                        <li>
+                            <img src="../../assets/Images/twitter.svg" width="40px" alt="twitter">Twitter
+                        </li>
+                    </a>
+                    <a href="https://github.com/">
+                        <li>
+                            <img src="../../assets/Images/github.svg" width="40px" alt="GitHub">GitHub
+                        </li>
+                    </a>
+                </ul>
             </div>
-        </footer>
+        </div>
+    </footer>
 
-        <script src="../../assets/header.js"></script>
+    <script src="https://kit.fontawesome.com/9cc15ef83d.js" crossorigin="anonymous"></script>
 
-        <!-- <script>
-            //get value from local storage
-            const uniqueID = JSON.parse(localStorage.getItem("uniqueID"));
-            const user_cred = JSON.parse(localStorage.getItem("user_cred"));
-            function profile_data(e) {
-              return e.email ==== uniqueID;
-            }
-            const person_data = user_cred.find(profile_data);
-            document.getElementById("first_name").innerText = person_data.first_name;
-            document.getElementById("last_name").innerText = person_data.last_name;
-            document.getElementById("email").innerText = person_data.email;
-            document.getElementById("phone").innerText = person_data.Phone;
-        </script> -->
+    <script src="../../assets/js/header.js"></script>
 
-        <script src="../../assets/edit_profile.js"></script>
-    </body>
+    <script src="../../assets/js/profile.js"></script>
+</body>
+
 </html>
