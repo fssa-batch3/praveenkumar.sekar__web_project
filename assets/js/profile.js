@@ -39,7 +39,7 @@ const user_profile = `<div class="head">
 
 const address_book = `<div class="head">
     <h2>ADDRESS BOOK</h2>
-    <a href="#"><button>ADD+</button></a>
+    <a href="./create_address.html"><button>ADD+</button></a>
     </div>
     <div class="address_book">
     <div class="address">

@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="../../assets/css/header.css">
     <link rel="stylesheet" href="../../assets/css/normalize.css">
     <link rel="stylesheet" href="../../assets/css/footer.css">
+    <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
     <title>Create Address</title>
 </head>
 
@@ -67,6 +68,10 @@
                     placeholder="600050" required>
                 <br>
                 <br>
+            </div>
+            <div class="chkbox">
+                <input type="checkbox" id="chkbox">
+                <label>Default address</label>
             </div>
             <div class="submit">
                 <button type="submit">Create</button>
@@ -138,31 +143,57 @@
     <script>
         // function signup(){
         function create_address(e) {
-            const first_name = document.getElementById("first_name").value;
-            const last_name = document.getElementById("last_name").value;
-            const house_no = document.getElementById("house_no").value;
-            const area = document.getElementById("area").value;
-            const city = document.getElementById("city").value;
-            const pincode = document.getElementById("pincode").value;
+            e.preventDefault();
+            let first_name = document.getElementById("first_name").value;
+            let last_name = document.getElementById("last_name").value;
+            let house_no = document.getElementById("house_no").value;
+            let area = document.getElementById("area").value;
+            let city = document.getElementById("city").value;
+            let pincode = document.getElementById("pincode").value;
+            let checkbox = document.getElementById("chkbox").checked;
 
-            const user_address = JSON.parse(localStorage.getItem("user_address")) || [];
+            console.log(checkbox);
 
-            const uuid = uuidv4();
-            user_address.push({
-                first_name,
-                last_name,
-                house_no,
-                area,
-                city,
-                pincode,
-                address_uuid: uuid
+            let user_address = JSON.parse(localStorage.getItem("user_address")) || [];
+            let user_id = JSON.parse(localStorage.getItem("uniqueID"));
+            let uuid = uuidv4();
+
+            const current_user = user_address.filter(function current_user_addresses(type) {
+                return type.user_id === user_id;
             });
 
+            if (checkbox === true) {
+                user_address.push({
+                    first_name,
+                    last_name,
+                    house_no,
+                    area,
+                    city,
+                    pincode,
+                    address_uuid: uuid,
+                    user_id,
+                    "default": true
+                });
+            }
+
+            else {
+                user_address.push({
+                    first_name,
+                    last_name,
+                    house_no,
+                    area,
+                    city,
+                    pincode,
+                    address_uuid: uuid,
+                    user_id,
+                    "default": false
+                });
+            }
+
             localStorage.setItem("user_address", JSON.stringify(user_address));
-            // document.querySelector("form").reset();
-            // alert("Account created successfully");
+            document.querySelector("form").reset();
+            alert("Address has been added to your profile");
             // window.location.href = "../../index.html";
-            e.preventDefault();
         }
     </script>
 
