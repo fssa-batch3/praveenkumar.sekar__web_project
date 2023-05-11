@@ -149,6 +149,14 @@ div.sidebar{
     justify-content: space-between;
 }
 
+.address_head div {
+    display : flex;
+}
+
+.address_head div h2 {
+    margin-right: 0.5rem;
+}
+
 .address_head button {
     margin-right: 1.5%;
     font-family: 'Catamran', sans-serif;
@@ -156,6 +164,25 @@ div.sidebar{
     border: none;
     cursor: pointer;
 }
+
+.address_body {
+    border-bottom: 1px black solid;
+    padding-bottom: 1rem;
+}
+
+.address_buttons button {
+    margin-right: 1.5rem;
+    font-family: 'Catamran', sans-serif;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.address_buttons button:nth-of-type(1){
+    border-right: 1px solid black;
+    padding-right: 1.25rem;
+}
+
 
 
 

@@ -31,8 +31,6 @@ const after_login = `
 
 const user_login_id = JSON.parse(localStorage.getItem("uniqueID"));
 
-console.log(user_login_id);
-
 if (user_login_id) {
     document.body.insertAdjacentHTML("afterbegin", after_login);
 
