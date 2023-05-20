@@ -15,24 +15,30 @@
     <title>Bakery</title>
 </head>
 
-<body onload="profile(event)">
+<body>
     <div class="full">
         <div class="sidebar">
-            <div onclick="profile(event)">
-                <h4>ACCOUNT DETAILS</h4>
-            </div>
-            <div onclick="address(event)">
-                <h4>ADDRESS BOOK</h4>
-            </div>
-            <div>
-                <h4>MY ORDERS</h4>
-            </div>
+            <a href="../Profile/profile.html">
+                <div id="account_details">
+                    <h4>ACCOUNT DETAILS</h4>
+                </div>
+            </a>
+            <a href="../Profile/address_book.html">
+                <div id="address_book">
+                    <h4>ADDRESS BOOK</h4>
+                </div>
+            </a>
+            <a href="../orders/order_list.html">
+                <div>
+                    <h4>MY ORDERS</h4>
+                </div>
+            </a>
             <div onclick="logOut(event)">
                 <h4>LOG OUT</h4>
             </div>
         </div>
         <section class="main_content" id="main">
-            <!-- <div class="head">
+            <div class="head">
                 <h2>ACCOUNT DETAILS</h2>
                 <a href="./profile_edit.html">
                     <button>EDIT</button>
@@ -56,73 +62,6 @@
                     <p id="phone"></p>
                 </div>
             </div>
-            <div class="default_address">
-                <div class="address_head">
-                    <h2>ADDRESS</h2>
-                    <button>EDIT</button>
-                </div>
-                <div>
-                    <p>123, kalaivanar nagar, madurai veeran st</p>
-                    <p>Padi</p>
-                    <p>Chennai, Tamil Nadu</p>
-                    <p>600050</p>
-                </div>
-            </div> -->
-
-            <!-- <div class="head">
-                <h2>ADDRESS BOOK</h2>
-                <a href="#"><button>ADD+</button></a>
-            </div>
-            <div class="address_book">
-                <div class="address">
-                    <div class="address_head">
-                        <h2>ADDRESS</h2>
-                        <button>EDIT</button>
-                    </div>
-                    <div>
-                        <p>123, kalaivanar nagar, madurai veeran st</p>
-                        <p>Padi</p>
-                        <p>Chennai, Tamil Nadu</p>
-                        <p>600050</p>
-                    </div>
-                </div>
-                <div class="address">
-                    <div class="address_head">
-                        <h2>ADDRESS</h2>
-                        <button>EDIT</button>
-                    </div>
-                    <div>
-                        <p>123, kalaivanar nagar, madurai veeran st</p>
-                        <p>Padi</p>
-                        <p>Chennai, Tamil Nadu</p>
-                        <p>600050</p>
-                    </div>
-                </div>
-                <div class="address">
-                    <div class="address_head">
-                        <h2>ADDRESS</h2>
-                        <button>EDIT</button>
-                    </div>
-                    <div>
-                        <p>123, kalaivanar nagar, madurai veeran st</p>
-                        <p>Padi</p>
-                        <p>Chennai, Tamil Nadu</p>
-                        <p>600050</p>
-                    </div>
-                </div>
-                <div class="address">
-                    <div class="address_head">
-                        <h2>ADDRESS</h2>
-                        <button>EDIT</button>
-                    </div>
-                    <div>
-                        <p>123, kalaivanar nagar, madurai veeran st</p>
-                        <p>Padi</p>
-                        <p>Chennai, Tamil Nadu</p>
-                        <p>600050</p>
-                    </div>
-                </div>
-            </div> -->
         </section>
     </div>
     <footer>
@@ -189,6 +128,25 @@
     <script src="../../assets/js/header.js"></script>
 
     <script src="../../assets/js/profile.js"></script>
+
+    <script>
+
+        let section = document.querySelector(".sidebar");
+
+        if (uniqueID === "admin123@gmail.com") {
+            const link = document.createElement("a");
+            link.setAttribute("href", "../admin/admin_product_list.html");
+            section.prepend(link);
+
+            const admin_div = document.createElement("div");
+            admin_div.setAttribute("id", "admin");
+            link.appendChild(admin_div);
+
+            const title = document.createElement("h4");
+            title.innerText = "ADMIN PRODUCT LIST";
+            admin_div.appendChild(title);
+        }
+    </script>
 </body>
 
 </html>

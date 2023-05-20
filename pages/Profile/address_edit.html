@@ -21,9 +21,9 @@
 <body>
 
     <div class="form-container">
-        <form role="form" id="form" onsubmit="create_address(event)">
+        <form role="form" id="form">
             <img src="../../assets/Images/v1033-a-15-a-removebg-preview - Copy.svg" width="100px" alt="logo">
-            <h1>Address</h1>
+            <h1>Edit Address</h1>
             <div class="first_name">
                 <label>First Name:</label>
                 <br>
@@ -71,19 +71,13 @@
             <div class="pincode">
                 <label>Pincode:</label>
                 <br>
-                <input type="number" id="pincode" min="600001" max="643253" pattern="[6]{1}[0-4]{2}[0-9]{4}" required>
+                <input type="number" id="pincode" min="600001" max="643253" pattern="[6]{1}[0-4]{2}[0-9]{4}"
+                    placeholder="600050" required>
                 <br>
                 <br>
-            </div>
-            <div class="chkbox">
-                <input type="checkbox" id="chkbox">
-                <label>Default address</label>
             </div>
             <div class="submit">
-                <button type="submit">Create</button>
-            </div>
-            <div>
-                <p>note: We only deliver to places in Chennai</p>
+                <button type="submit" onclick="update_address()">Update</button>
             </div>
         </form>
     </div>
@@ -148,108 +142,40 @@
     </footer>
 
     <script src="../../assets/js/header.js"></script>
-
     <script>
-        // function signup(){
-        function create_address(e) {
-            e.preventDefault();
-            let first_name = document.getElementById("first_name").value;
-            let last_name = document.getElementById("last_name").value;
-            let title = document.getElementById("title").value;
-            let house_no = document.getElementById("house_no").value;
-            let area = document.getElementById("area").value;
-            let city = document.getElementById("city").value;
-            let pincode = document.getElementById("pincode").value;
-            let checkbox = document.getElementById("chkbox").checked;
+        let user_address = JSON.parse(localStorage.getItem("user_address"));
+        let user_id = JSON.parse(localStorage.getItem("uniqueID"));
+        const current_user_address = user_address.filter((e) => e.user_id === user_id);
+        const add_uuid = JSON.parse(localStorage.getItem("address_uuid"));
 
-            console.log(checkbox);
+        function find_data(e) {
+            return e.address_uuid === add_uuid;
+        }
 
-            let user_address = JSON.parse(localStorage.getItem("user_address")) || [];
-            let user_id = JSON.parse(localStorage.getItem("uniqueID"));
-            let uuid = uuidv4();
+        const address_edit = current_user_address.find(find_data);
 
-            if (user_address.length === 0) {
-                user_address.push({
-                    first_name,
-                    last_name,
-                    title,
-                    house_no,
-                    area,
-                    city,
-                    pincode,
-                    address_uuid: uuid,
-                    user_id,
-                    "default": true
-                });
-            }
+        document.getElementById("first_name").value = address_edit.first_name;
+        document.getElementById("last_name").value = address_edit.last_name;
+        document.getElementById("title").value = address_edit.title;
+        document.getElementById("house_no").value = address_edit.house_no;
+        document.getElementById("area").value = address_edit.area;
+        document.getElementById("city").value = address_edit.city;
+        document.getElementById("pincode").value = address_edit.pincode;
 
-            else {
-
-                const current_user = user_address.filter((e) => e.user_id === user_id);
-
-                if (current_user.length === 0) {
-                    user_address.push({
-                        first_name,
-                        last_name,
-                        title,
-                        house_no,
-                        area,
-                        city,
-                        pincode,
-                        address_uuid: uuid,
-                        user_id,
-                        default: true
-                    });
-                }
-
-                else {
-
-                    if (checkbox === true) {
-
-                        let default_address = current_user.find((e) => e.default === true);
-                        default_address.default = false;
-                        localStorage.setItem("user_address", JSON.stringify(user_address));
-
-                        user_address.push({
-                            first_name,
-                            last_name,
-                            title,
-                            house_no,
-                            area,
-                            city,
-                            pincode,
-                            address_uuid: uuid,
-                            user_id,
-                            default: true
-                        });
-                    }
-
-                    else {
-                        user_address.push({
-                            first_name,
-                            last_name,
-                            title,
-                            house_no,
-                            area,
-                            city,
-                            pincode,
-                            address_uuid: uuid,
-                            user_id,
-                            "default": false
-                        });
-                    }
-
-                }
-
-            }
+        function update_address() {
+            address_edit.first_name = document.getElementById("first_name").value;
+            address_edit.last_name = document.getElementById("last_name").value;
+            address_edit.title = document.getElementById("title").value;
+            address_edit.house_no = document.getElementById("house_no").value;
+            address_edit.area = document.getElementById("area").value;
+            address_edit.city = document.getElementById("city").value;
+            address_edit.pincode = document.getElementById("pincode").value;
 
             localStorage.setItem("user_address", JSON.stringify(user_address));
-            document.querySelector("form").reset();
-            alert("Address has been added to your profile");
-            window.location.href = "../../index.html";
+
+            window.location.href = "./profile.html";
+
+            alert("Address has been updated");
         }
+
     </script>
-
-</body>
-
-</html>

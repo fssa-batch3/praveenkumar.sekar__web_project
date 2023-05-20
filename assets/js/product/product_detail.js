@@ -49,7 +49,12 @@ side_para.setAttribute("class", "side_para");
 side.append(side_para);
 
 const side_h1 = document.createElement("h1");
-side_h1.innerText = prod_data.name;
+if (prod_data.category === "Cakes") {
+    side_h1.innerText = prod_data.name + "(1/2kg)";
+}
+else {
+    side_h1.innerText = prod_data.name;
+}
 side_para.append(side_h1);
 
 const side_p = document.createElement("p");
@@ -106,6 +111,7 @@ if (prod_data.category === "Cakes") {
 
     const tarea = document.createElement("textarea");
     tarea.setAttribute("placeholder", "Enter special message here");
+    tarea.setAttribute("id", "tarea");
     tarea.setAttribute("rows", "4");
     tarea.setAttribute("cols", "30");
     tarea_div.append(tarea);
@@ -116,6 +122,9 @@ if (prod_data.category === "Cakes") {
         price_p = document.createElement("p");
         price_p.innerText = `₹${find_default_price.price}`;
         price1.append(price_p);
+
+        side_h1.innerHTML = "";
+        side_h1.innerText = prod_data.name + "(1/2kg)"
 
         const container = document.getElementById("0");
 
@@ -141,6 +150,9 @@ if (prod_data.category === "Cakes") {
         price_p.innerText = `₹${find_second_price.price}`;
         price1.append(price_p);
 
+        side_h1.innerHTML = "";
+        side_h1.innerText = prod_data.name + "(1kg)"
+
         const container = document.getElementById("1");
 
         const test = container.dataset.size;
@@ -164,6 +176,9 @@ if (prod_data.category === "Cakes") {
         price_p = document.createElement("p");
         price_p.innerText = `₹${find_third_price.price}`;
         price1.append(price_p);
+
+        side_h1.innerHTML = "";
+        side_h1.innerText = prod_data.name + "(2kg)"
 
         const container = document.getElementById("2");
 
@@ -241,6 +256,7 @@ add_item.addEventListener("click", function (e) {
         alert("Please login");
     } else if (cart === null) {
         if (prod_data.category === "Cakes") {
+            let spl_msg = document.getElementById("tarea").value;
             cart = [
                 {
                     product_cart_id: uuidv4(),
@@ -248,6 +264,7 @@ add_item.addEventListener("click", function (e) {
                     user_id,
                     image: prod_data.image.src,
                     product_description: prod_data.product_description,
+                    special_message: spl_msg,
                     size,
                     product_id: prod_unique_id,
                     quantity: 1,
@@ -259,6 +276,7 @@ add_item.addEventListener("click", function (e) {
             localStorage.setItem("add_to_cart", JSON.stringify(cart));
 
             window.alert("Product has been added to cart");
+
         } else {
             cart = [
                 {
@@ -284,35 +302,28 @@ add_item.addEventListener("click", function (e) {
         let logic = false;
 
         if (prod_data.category === "Cakes") {
-            for (let i = 0; i < cart.length; i++) {
-                if (
-                    unique_id === cart[i].product_id &&
-                    product_size === cart[i].size
-                ) {
-                    if (user_id === cart[i].user_id) {
-                        logic = true;
-                    }
-                }
-            }
-            if (!logic) {
-                cart.push({
-                    product_cart_id: uuidv4(),
-                    product_name: prod_data.name,
-                    user_id,
-                    image: prod_data.image.src,
-                    product_description: prod_data.product_description,
-                    size,
-                    product_id: prod_unique_id,
-                    quantity: 1,
-                    price: prod_price,
-                    category: prod_data.category,
-                });
 
-                localStorage.setItem("add_to_cart", JSON.stringify(cart));
+            let spl_msg = document.getElementById("tarea").value;
+            cart.push({
+                product_cart_id: uuidv4(),
+                product_name: prod_data.name,
+                user_id,
+                image: prod_data.image.src,
+                product_description: prod_data.product_description,
+                special_message: spl_msg,
+                size,
+                product_id: prod_unique_id,
+                quantity: 1,
+                price: prod_price,
+                category: prod_data.category,
+            });
 
-                window.alert("Product has been added to cart");
-            }
-        } else {
+            localStorage.setItem("add_to_cart", JSON.stringify(cart));
+
+            window.alert("Product has been added to cart");
+        }
+
+        else {
             for (let i = 0; i < cart.length; i++) {
                 if (
                     unique_id === cart[i].product_id &&
@@ -342,4 +353,5 @@ add_item.addEventListener("click", function (e) {
             }
         }
     }
+    location.reload();
 })
