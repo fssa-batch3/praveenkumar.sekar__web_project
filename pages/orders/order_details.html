@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/header.css">
+    <link rel="stylesheet" href="../../assets/css/normalize.css">
+    <link rel="stylesheet" href="../../assets/css/footer.css">
+    <link rel="stylesheet" href="../../assets/css/order_detail.css">
+    <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
+    <title>Order Details</title>
+</head>
+
+<body>
+    <div class="full">
+        <div class="sidebar">
+            <a href="../Profile/profile.html">
+                <div id="account_details">
+                    <h4>ACCOUNT DETAILS</h4>
+                </div>
+            </a>
+            <a href="../Profile/address_book.html">
+                <div id="address_book">
+                    <h4>ADDRESS BOOK</h4>
+                </div>
+            </a>
+            <a href="./order_list.html">
+                <div>
+                    <h4>MY ORDERS</h4>
+                </div>
+            </a>
+            <div onclick="logOut(event)">
+                <h4>LOG OUT</h4>
+            </div>
+        </div>
+        <section class="main_content" id="main">
+            <div class="head">
+                <h2>ORDER DETAILS</h2>
+            </div>
+            <div class="order_detail">
+            </div>
+        </section>
+    </div>
+    <footer>
+        <div class="foot">
+            <h2>HOME BAKERY</h2>
+            <div class="list">
+                <ul>
+                    <li>
+                        <h2>ABOUT</h2>
+                    </li>
+                    <li>
+                        <a href="../../index.html">Homepage</a>
+                    </li>
+                    <li>
+                        <a href="../../../../index.html#about">About Us</a>
+                    </li>
+                    <li>
+                        <a href="../../../../index.html#history">Our History</a>
+                    </li>
+                    <li>
+                        <a href="../products/product_list.html">Products</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <h2>PRODUCTS</h2>
+                    </li>
+                    <li>
+                        <a href="../products/product_list.html">Breads</a>
+                    </li>
+                    <li>
+                        <a href="../products/product_list.html">Cakes</a>
+                    </li>
+                    <li>
+                        <a href="../products/product_list.html">Breakfast Pastries</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <h2>FOLLOW US</h2>
+                    </li>
+                    <a href="https://www.instagram.com/">
+                        <li>
+                            <img src="../../assets/Images/instagram.svg" width="40px" alt="instagram">Instagram
+                        </li>
+                    </a>
+                    <a href="https://twitter.com/">
+                        <li>
+                            <img src="../../assets/Images/twitter.svg" width="40px" alt="twitter">Twitter
+                        </li>
+                    </a>
+                    <a href="https://github.com/">
+                        <li>
+                            <img src="../../assets/Images/github.svg" width="40px" alt="GitHub">GitHub
+                        </li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="../../assets/js/header.js"></script>
+
+    <script>
+
+        const orders = JSON.parse(localStorage.getItem('orders')) || [];
+        const ordered_items = JSON.parse(localStorage.getItem('ordered_items')) || [];
+        const uniqueID = JSON.parse(localStorage.getItem("uniqueID"));
+
+        function order_of_user(e) {
+            return e.userId === uniqueID;
+        }
+
+        const user_order = orders.filter(order_of_user);
+
+        const params = window.location.search;
+
+        const urlParams = new URLSearchParams(params);
+
+        const order = urlParams.get("order_id");
+
+        function findOrder(e) {
+            return e.order_id === order;
+        }
+
+        let today = new Date();
+        let dd = String(today.getDate()).padStart(2, '0');
+        let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        let yyyy = today.getFullYear();
+        let hours = today.getHours();
+        let minutes = today.getMinutes();
+        let seconds = today.getSeconds();
+
+        const morning = document.getElementById("morning");
+        const afternoon = document.getElementById("afternoon");
+        const evening = document.getElementById("evening");
+        const night = document.getElementById("night");
+
+        today = yyyy + '-' + mm + '-' + dd;
+
+        let time = hours + ":" + minutes + ":" + seconds;
+
+        let order_detail = user_order.find(findOrder);
+
+        let order_time = order_detail.ordered_time;
+
+        let str = order_time.substring(3, 5);
+
+        let or = parseInt(order_time.substring(3, 5)) + 3;
+
+        let new_time = order_time.replace(str, or.toString());
+
+        const current_item = ordered_items.filter(e => order_detail.order_id === e.order_id);
+
+        let user_address = JSON.parse(localStorage.getItem("user_address"));
+        let user_id = JSON.parse(localStorage.getItem("uniqueID"));
+        const current_user_address = user_address.filter((e) => e.user_id === user_id);
+        const delivery_address = current_user_address.find(e => e.address_uuid === order_detail.order_address);
+
+        // creating elements for the order details
+
+        const main_div = document.querySelector('.order_detail');
+
+        const head_div = document.createElement("div");
+        head_div.setAttribute("class", "detail_head");
+        main_div.appendChild(head_div);
+
+        const order_id_h4 = document.createElement("h4");
+        order_id_h4.innerText = "ORDER ID :" + order_detail.order_id;
+        head_div.appendChild(order_id_h4);
+
+        if (today !== order_detail.delivery_date) {
+            const delivery_stat = document.createElement("P");
+            delivery_stat.innerText = "NOT DELIVERED";
+            head_div.appendChild(delivery_stat);
+        }
+
+        else {
+            if (order_detail.delivery_time === 0) {
+                if (time >= new_time) {
+                    const delivery_stat = document.createElement("P");
+                    delivery_stat.innerText = "DELIVERED";
+                    head_div.appendChild(delivery_stat);
+                }
+            }
+
+            else if (order_detail.delivery_time === 1) {
+                if (time >= new_time) {
+                    const delivery_stat = document.createElement("P");
+                    delivery_stat.innerText = "DELIVERED";
+                    head_div.appendChild(delivery_stat);
+                }
+            }
+
+            else if (order_detail.delivery_time === 2) {
+                if (time >= new_time) {
+                    const delivery_stat = document.createElement("P");
+                    delivery_stat.innerText = "DELIVERED";
+                    head_div.appendChild(delivery_stat);
+                }
+            }
+
+            else if (order_detail.delivery_time === 3) {
+                if (time >= new_time) {
+                    const delivery_stat = document.createElement("P");
+                    delivery_stat.innerText = "DELIVERED";
+                    head_div.appendChild(delivery_stat);
+                }
+            }
+
+            else if (order_detail.delivery_time === 4) {
+                if (time >= new_time) {
+                    const delivery_stat = document.createElement("P");
+                    delivery_stat.innerText = "DELIVERED";
+                    head_div.appendChild(delivery_stat);
+                }
+            }
+
+            else if (order_detail.delivery_time === 5) {
+                if (time >= new_time) {
+                    const delivery_stat = document.createElement("P");
+                    delivery_stat.innerText = "DELIVERED";
+                    head_div.appendChild(delivery_stat);
+                }
+            }
+        }
+
+        const del_div = document.createElement("div");
+        del_div.setAttribute("class", "detail_main");
+        main_div.appendChild(del_div);
+
+        const del_time = document.createElement("div");
+        del_time.setAttribute("class", "delivery_time");
+        del_div.appendChild(del_time);
+
+        const items = document.createElement("h3");
+        items.innerText = "ITEMS";
+        del_time.appendChild(items);
+
+        const delivery_date = document.createElement("h4");
+        delivery_date.innerText = "Delivered on: " + order_detail.delivery_date;
+        del_time.appendChild(delivery_date);
+
+        const details_body = document.createElement("div");
+        details_body.setAttribute("class", "details_body");
+        del_div.appendChild(details_body);
+
+        for (let i = 0; i < current_item.length; i++) {
+
+            const item_div = document.createElement("div");
+
+            const individual_items = document.createElement('p');
+            if (current_item[i].category === "Cakes") {
+                if (current_item[i].size === 0) {
+                    individual_items.innerText = current_item[i].quantity + "x" + " " + current_item[i].product_name + " " + "(1/2 Kg)";
+                } else if (current_item[i].size === 1) {
+                    individual_items.innerText = current_item[i].quantity + "x" + " " + current_item[i].product_name + " " + "(1 Kg)";
+                } else if (current_item[i].size === 2) {
+                    individual_items.innerText = current_item[i].quantity + "x" + " " + current_item[i].product_name + " " + "(2 Kg)";
+                }
+            }
+            else {
+                individual_items.innerText = current_item[i].quantity + "x" + " " + current_item[i].product_name;
+            }
+
+            item_div.appendChild(individual_items);
+
+            const item_price = document.createElement("p");
+            item_price.innerText = "₹ " + current_item[i].price;
+            item_div.appendChild(item_price);
+
+            details_body.appendChild(item_div);
+        }
+
+        const total_div = document.createElement("div");
+        total_div.setAttribute("class", "total");
+        del_div.appendChild(total_div);
+
+        const div1 = document.createElement("div");
+        total_div.appendChild(div1);
+
+        const sub_total = document.createElement("h4");
+        sub_total.innerText = "SUB-TOTAL";
+        div1.append(sub_total);
+
+        const sub_amount = document.createElement("h4");
+        sub_amount.innerText = "₹ " + order_detail.sub_total;
+        div1.appendChild(sub_amount);
+
+        const div2 = document.createElement("div");
+        total_div.appendChild(div2);
+
+        const tax = document.createElement("h4");
+        tax.innerText = "TAX";
+        div2.append(tax);
+
+        const tax_amount = document.createElement("h4");
+        tax_amount.innerText = "₹ " + order_detail.tax_amount;
+        div2.appendChild(tax_amount);
+
+        const div3 = document.createElement("div");
+        total_div.appendChild(div3);
+
+        const total = document.createElement("h4");
+        total.innerText = "TOTAL";
+        div3.append(total);
+
+        const total_amount = document.createElement("h4");
+        total_amount.innerText = "₹ " + order_detail.total_price;
+        div3.appendChild(total_amount);
+
+        const delivered_div = document.createElement("div");
+        delivered_div.setAttribute("class", "delivered_to");
+        del_div.appendChild(delivered_div);
+
+        const delivered_head = document.createElement("div");
+        delivered_head.setAttribute("class", "del_head");
+        delivered_div.appendChild(delivered_head);
+
+        const delivered_h3 = document.createElement("h3");
+        delivered_h3.innerText = "Delivered to"
+        delivered_head.appendChild(delivered_h3);
+
+        const delivered_title = document.createElement("h4");
+        delivered_title.innerText = delivery_address.title.toUpperCase();
+        delivered_head.appendChild(delivered_title);
+
+        const address_content = document.createElement("div");
+        delivered_div.appendChild(address_content);
+
+        const user_name = document.createElement("p");
+        user_name.innerText = delivery_address.first_name + " " + delivery_address.last_name;
+        address_content.appendChild(user_name);
+
+        const house_info = document.createElement("p");
+        house_info.innerText = delivery_address.house_no;
+
+        address_content.appendChild(house_info);
+
+        const area = document.createElement("p");
+        area.innerText = delivery_address.area;
+        address_content.appendChild(area);
+
+        const city = document.createElement("p");
+        city.innerText = delivery_address.city + ", " + "Tamil Nadu" + ", " + delivery_address.pincode;
+        address_content.appendChild(city);
+
+        const detail_btn = document.createElement("div");
+        detail_btn.setAttribute("class", "reorder")
+        del_div.appendChild(detail_btn);
+
+        const reorder_btn = document.createElement("button");
+        reorder_btn.setAttribute("onclick", "reorder()");
+        reorder_btn.innerText = "REORDER";
+        detail_btn.appendChild(reorder_btn);
+
+        let section = document.querySelector(".sidebar");
+
+        if (uniqueID === "admin123@gmail.com") {
+            const link = document.createElement("a");
+            link.setAttribute("href", "../admin/admin_product_list.html");
+            section.prepend(link);
+
+            const admin_div = document.createElement("div");
+            admin_div.setAttribute("id", "admin");
+            link.appendChild(admin_div);
+
+            const title = document.createElement("h4");
+            title.innerText = "ADMIN PRODUCT LIST";
+            admin_div.appendChild(title);
+        }
+
+        function reorder() {
+
+            let cart = JSON.parse(localStorage.getItem("add_to_cart"));
+
+            const uniqueID = JSON.parse(localStorage.getItem("uniqueID"));
+
+            let uuid = uuidv4();
+
+            cart = cart.filter((e) => e.user_id !== uniqueID);
+            localStorage.setItem("add_to_cart", JSON.stringify(cart));
+
+            const prod_detail = JSON.parse(localStorage.getItem("prod_detail"));
+
+            const key1 = "price_details";
+
+
+            for (let i = 0; i < current_item.length; i++) {
+
+                let product = prod_detail.find((e) => e.product_id === current_item[i].product_id);
+                if (product.category === "Cakes") {
+                    cart.push({
+                        product_cart_id: uuidv4(),
+                        product_name: product.name,
+                        user_id,
+                        image: product.image.src,
+                        product_description: product.pdescription,
+                        special_message: "",
+                        size: current_item[i].size,
+                        product_id: product.product_id,
+                        quantity: current_item[i].quantity,
+                        price: current_item[i].price,
+                        category: product.category,
+                    });
+
+                }
+
+                else {
+                    cart.push({
+                        product_cart_id: uuidv4(),
+                        product_name: product.name,
+                        user_id,
+                        image: product.image.src,
+                        product_description: product.description,
+                        size: current_item[i].size,
+                        product_id: product.product_id,
+                        quantity: current_item[i].quantity,
+                        price: current_item[i].price,
+                        category: product.category,
+                    })
+                }
+
+                localStorage.setItem("add_to_cart", JSON.stringify(cart));
+            }
+            window.location.reload();
+        }
+
+    </script>
+</body>
+
+</html>

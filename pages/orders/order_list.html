@@ -1,1 +1,227 @@
 <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600;700;800;900&family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&family=Telex&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/profile.css">
+    <link rel="stylesheet" href="../../assets/css/header.css">
+    <link rel="stylesheet" href="../../assets/css/normalize.css">
+    <link rel="stylesheet" href="../../assets/css/footer.css">
+    <link rel="stylesheet" href="../../assets/css/order_list.css">
+    <title>Bakery</title>
+</head>
+
+<!-- <body onload="profile(event)"> -->
+<div class="full">
+    <div class="sidebar">
+        <a href="../Profile/profile.html">
+            <div id="account_details">
+                <h4>ACCOUNT DETAILS</h4>
+            </div>
+        </a>
+        <a href="../Profile/address_book.html">
+            <div id="address_book">
+                <h4>ADDRESS BOOK</h4>
+            </div>
+        </a>
+        <a href="./order_list.html">
+            <div>
+                <h4>MY ORDERS</h4>
+            </div>
+        </a>
+        <div onclick="logOut(event)">
+            <h4>LOG OUT</h4>
+        </div>
+    </div>
+    <section class="main_content" id="main">
+        <div class="head">
+            <h2>MY ORDERS</h2>
+        </div>
+        <div class="orders">
+        </div>
+    </section>
+</div>
+<footer>
+    <div class="foot">
+        <h2>HOME BAKERY</h2>
+        <div class="list">
+            <ul>
+                <li>
+                    <h2>ABOUT</h2>
+                </li>
+                <li>
+                    <a href="../../index.html">Homepage</a>
+                </li>
+                <li>
+                    <a href="../../../../index.html#about">About Us</a>
+                </li>
+                <li>
+                    <a href="../../../../index.html#history">Our History</a>
+                </li>
+                <li>
+                    <a href="../products/product_list.html">Products</a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <h2>PRODUCTS</h2>
+                </li>
+                <li>
+                    <a href="../products/product_list.html">Breads</a>
+                </li>
+                <li>
+                    <a href="../products/product_list.html">Cakes</a>
+                </li>
+                <li>
+                    <a href="../products/product_list.html">Breakfast Pastries</a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <h2>FOLLOW US</h2>
+                </li>
+                <a href="https://www.instagram.com/">
+                    <li>
+                        <img src="../../assets/Images/instagram.svg" width="40px" alt="instagram">Instagram
+                    </li>
+                </a>
+                <a href="https://twitter.com/">
+                    <li>
+                        <img src="../../assets/Images/twitter.svg" width="40px" alt="twitter">Twitter
+                    </li>
+                </a>
+                <a href="https://github.com/">
+                    <li>
+                        <img src="../../assets/Images/github.svg" width="40px" alt="GitHub">GitHub
+                    </li>
+                </a>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<script src="https://kit.fontawesome.com/9cc15ef83d.js" crossorigin="anonymous"></script>
+
+<script src="../../assets/js/header.js"></script>
+
+<script>
+    const orders = JSON.parse(localStorage.getItem('orders')) || [];
+    const ordered_items = JSON.parse(localStorage.getItem('ordered_items')) || [];
+    const uniqueID = JSON.parse(localStorage.getItem("uniqueID"));
+
+    function order_of_user(e) {
+        return e.userId === uniqueID;
+    }
+
+    const user_order = orders.filter(order_of_user);
+    const main = document.querySelector('.orders');
+
+    for (let i = 0; i < user_order.length; i++) {
+
+        const order_div = document.createElement('div');
+        order_div.setAttribute('class', "user_order");
+
+        const order_head = document.createElement('div');
+        order_head.setAttribute('class', "order_head");
+        order_div.append(order_head);
+
+        const h4_div = document.createElement('div');
+        order_head.append(h4_div);
+
+        const head_h4 = document.createElement('h4');
+        head_h4.innerText = "ORDER PLACED : " + user_order[i].ordered_date + " " + user_order[i].ordered_time;
+        h4_div.append(head_h4);
+
+        const btn_div = document.createElement('div');
+        btn_div.setAttribute('class', "order_btn");
+        order_head.append(btn_div);
+
+        const btn_link = document.createElement('a');
+        btn_link.setAttribute('href', "./order_details.html?order_id=" + user_order[i].order_id);
+        btn_div.append(btn_link);
+
+
+        const order_btn = document.createElement('button');
+        order_btn.innerText = "View Details";
+        btn_link.append(order_btn);
+
+        const order_body = document.createElement('div');
+        order_body.setAttribute('class', "order_body");
+        order_div.append(order_body);
+
+        const order_h3 = document.createElement('h3');
+        order_h3.innerText = "ITEMS"
+        order_body.append(order_h3);
+
+        const order_main = document.createElement('div');
+        order_main.setAttribute('class', "order_main");
+        order_body.append(order_main);
+
+        const items = document.createElement('div');
+        items.setAttribute('class', "items");
+        order_main.append(items);
+
+        const current_item = ordered_items.filter(e => user_order[i].order_id === e.order_id);
+
+        for (let i = 0; i < current_item.length; i++) {
+            const individual_items = document.createElement('p');
+            if (current_item[i].category === "Cakes") {
+                if (current_item[i].size === 0) {
+                    individual_items.innerText = current_item[i].quantity + "x" + " " + current_item[i].product_name + " " + "(1/2 Kg)";
+                } else if (current_item[i].size === 1) {
+                    individual_items.innerText = current_item[i].quantity + "x" + " " + current_item[i].product_name + " " + "(1 Kg)";
+                } else if (current_item[i].size === 2) {
+                    individual_items.innerText = current_item[i].quantity + "x" + " " + current_item[i].product_name + " " + "(2 Kg)";
+                }
+            }
+            else {
+                individual_items.innerText = current_item[i].quantity + "x" + " " + current_item[i].product_name;
+            }
+            items.appendChild(individual_items);
+        }
+
+        const div_total = document.createElement("div");
+        div_total.setAttribute("class", "total");
+        order_main.appendChild(div_total);
+
+        const total_text = document.createElement("h3");
+        total_text.innerText = "TOTAL"
+        div_total.appendChild(total_text);
+
+        const total_amount = document.createElement("h3");
+        total_amount.innerText = "₹" + user_order[i].total_price;
+        div_total.appendChild(total_amount);
+
+        main.append(order_div);
+    }
+
+    function logOut() {
+        localStorage.removeItem("uniqueID");
+        window.location.href = "../Log in and Sign up/Log in.html";
+    }
+
+    let section = document.querySelector(".sidebar");
+
+    if (uniqueID === "admin123@gmail.com") {
+        const link = document.createElement("a");
+        link.setAttribute("href", "../admin/admin_product_list.html");
+        section.prepend(link);
+
+        const admin_div = document.createElement("div");
+        admin_div.setAttribute("id", "admin");
+        link.appendChild(admin_div);
+
+        const title = document.createElement("h4");
+        title.innerText = "ADMIN PRODUCT LIST";
+        admin_div.appendChild(title);
+    }
+
+</script>
+</body>
+
+</html>
