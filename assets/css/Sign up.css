@@ -85,7 +85,7 @@ form input:focus:invalid {
     border: 1px red solid;
 }
 
-form div:nth-of-type(8) {
+form div:nth-of-type(7) {
     display: flex;
 }
 
