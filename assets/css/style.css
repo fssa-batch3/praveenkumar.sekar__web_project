@@ -28,6 +28,23 @@ header{
     height: 62.250px;
 }
 
+.heading-2 h2 {
+    font-size: 35px;
+    margin-left: 5%;
+}
+
+.categories-head h2{
+    font-size: 35px;
+    margin-left: 5%;
+}
+
+.meet-para h2 {
+    font-size: 35px;
+}
+
+.about-para h2 {
+    font-size: 35px;
+}
 
 .bg-img {
     background-image: url(../Images/bhuwan-bansal-NBTqo3Ig73w-unsplash-overlay\ \(2\).jpg);
@@ -77,7 +94,7 @@ header{
     letter-spacing: 1px;
     text-decoration: none;
     color: #000000;
-    background: white;
+    background: rgb(255, 255, 255);
     cursor: pointer;
     transition: ease-out 0.5s;
     border: 2px solid #000000;

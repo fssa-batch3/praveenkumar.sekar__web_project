@@ -1,103 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale1.0">
-        <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600;700;800;900&family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&family=Telex&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="../../assets/css/normalize.css">
-        <link rel="stylesheet" href="../../assets/css/header.css">
-        <link rel="stylesheet" href="../../assets/css/profile_edit.css">
-        <link rel="stylesheet" href="../../assets/css/normalize.css">
-        <link rel="stylesheet" href="../../assets/css/footer.css">
-        <title>Edit Profile</title>
-    </head>
 
-    <body>
-        <header>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600;700;800;900&family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&family=Telex&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/normalize.css">
+    <link rel="stylesheet" href="../../assets/css/header.css">
+    <link rel="stylesheet" href="../../assets/css/profile_edit.css">
+    <link rel="stylesheet" href="../../assets/css/normalize.css">
+    <link rel="stylesheet" href="../../assets/css/footer.css">
+    <title>Edit Profile</title>
+</head>
+
+<body>
+    <!-- <header id ="header">
             <div class="container">
-                <img src="../../assets/Images/v1033-a-15-a-removebg-preview - Copy.svg" width="100px" alt="logo" >
-                    <nav>
-                    <ul>
-                        <li><a href="../../index.html">Home</a></li>
-                        <li><a href="../products/product_list.html">Products</a></li>
-                        <li><a href="../../assets/css/Sign up.html">Log In</a></li>
-                        <li><a href="../Cart/cart.html"><img src="../../assets/Images/icon-cart.svg" alt="cart"></a></li>
-                    </ul>
-                    </nav>
-        </header>
-        <div class="form-container">
+            <img src="../../assets/Images/v1033-a-15-a-removebg-preview - Copy.svg" width="100px" alt="logo" >
+            <nav>
+            <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../products/product_list.html">Products</a></li>
+            <li><a href="../../assets/css/Sign up.html">Log In</a></li>
+            <li><a href="../Cart/cart.html"><img src="../../assets/Images/icon-cart.svg" alt="cart"></a></li>
+            </ul>
+            </nav>
+            </header> -->
+    <div class="form-container">
         <form role="form" id="form" onsubmit="update(event)">
             <img src="../../assets/Images/v1033-a-15-a-removebg-preview - Copy.svg" width="100px" alt="logo">
-        <h1>Edit Profile</h1>
-        <div class="first_name">
-            <label>First Name:</label><br>
-            <input type="text" id="first_name" pattern="[a-zA-Z0-9]+" required>
-            <br><br>
-        </div>
-        <div class="last_name">
-            <label>Last Name:</label><br>
-            <input type="text" id="last_name" pattern="[a-zA-Z0-9]+" required>
-            <br><br>
-        </div>
-        <div class="phone">
-            <label>Phone Number:</label><br>
-            <input type="tel" id="phone" pattern="[0-9].{9}" disabled>
-            <br><br>
-        </div>
-        <div class="email">
-            <label>Email:</label><br>
-            <input type="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" disabled>
-            <br><br>
-        </div>
-        <div class="address">
-            <label>Address:</label><br>
-            <input type="text" id="address" required/>
-            <br><br>
-        </div>
-        <div class="submit"><button type="submit">Confirm Edit</button></div>
-        </form>
-        </div>
-        <footer>
-            <div class="foot">
-                <h1>HOME BAKERY</h1>
-                <div class="list">
-                <ul>
-                    <li><h2>ABOUT</h2></li>
-                    <li><a href="../../index.html">Homepage</a></li>
-                    <li><a href="../../../../index.html#about">About Us</a></li>
-                    <li><a href="../../../../index.html#history">Our History</a></li>
-                    <li><a href="../products/product_list.html">Products</a></li>
-                </ul>
-                <ul>
-                    <li><h2>PRODUCTS</h2></li>
-                    <li><a href="../products/product_list.html">Breads</a></li>
-                    <li><a href="../products/product_list.html">Cakes</a></li>
-                    <li><a href="../products/product_list.html">Breakfast Pastries</a></li>
-                </ul>
-                <ul>
-                    <li><h2>FOLLOW US</h2></li>
-                    <a href="https://www.instagram.com/"><li><img src="../../assets/Images/instagram.svg" width="40px" alt="Instagram">Instagram</li></a>
-                    <a href="https://twitter.com/"><li><img src="../../assets/Images/twitter.svg" width="40px" alt="Twitter">Twitter</li></a>
-                    <a href="https://github.com/"><li><img src="../../assets/Images/github.svg" width="40px" alt="GitHub">GitHub</li></a>
-                </ul>
-                </div>
+            <h1>EDIT PROFILE</h1>
+            <div class="first_name">
+                <label>First Name:</label>
+                <br>
+                <input type="text" id="first_name" pattern="[a-zA-Z0-9]+" required>
+                <br>
+                <br>
             </div>
-        </footer>
+            <div class="last_name">
+                <label>Last Name:</label>
+                <br>
+                <input type="text" id="last_name" pattern="[a-zA-Z0-9]+" required>
+                <br>
+                <br>
+            </div>
+            <div class="phone">
+                <label>Phone Number:</label>
+                <br>
+                <input type="tel" id="phone" pattern="[0-9].{9}" disabled>
+                <br>
+                <br>
+            </div>
+            <div class="email">
+                <label>Email:</label>
+                <br>
+                <input type="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" disabled>
+                <br>
+                <br>
+            </div>
+            <div class="submit">
+                <button type="submit">CONFIRM EDIT</button>
+            </div>
+        </form>
+    </div>
+    <footer>
+        <div class="foot">
+            <h2>HOME BAKERY</h2>
+            <div class="list">
+                <ul>
+                    <li>
+                        <h2>ABOUT</h2>
+                    </li>
+                    <li>
+                        <a href="../../index.html">Homepage</a>
+                    </li>
+                    <li>
+                        <a href="../../../../index.html#about">About Us</a>
+                    </li>
+                    <li>
+                        <a href="../../../../index.html#history">Our History</a>
+                    </li>
+                    <li>
+                        <a href="../products/product_list.html">Products</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <h2>PRODUCTS</h2>
+                    </li>
+                    <li>
+                        <a href="../products/product_list.html">Breads</a>
+                    </li>
+                    <li>
+                        <a href="../products/product_list.html">Cakes</a>
+                    </li>
+                    <li>
+                        <a href="../products/product_list.html">Breakfast Pastries</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <h2>FOLLOW US</h2>
+                    </li>
+                    <a href="https://www.instagram.com/">
+                        <li>
+                            <img src="../../assets/Images/instagram.svg" width="40px" alt="Instagram">Instagram
+                        </li>
+                    </a>
+                    <a href="https://twitter.com/">
+                        <li>
+                            <img src="../../assets/Images/twitter.svg" width="40px" alt="Twitter">Twitter
+                        </li>
+                    </a>
+                    <a href="https://github.com/">
+                        <li>
+                            <img src="../../assets/Images/github.svg" width="40px" alt="GitHub">GitHub
+                        </li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+    </footer>
 
-        <script src="../../assets/edit_profile.js"></script>
+    <script src="../../assets/js/header.js"></script>
 
-        <script>
-            let uniqueID = JSON.parse(localStorage.getItem("uniqueID"));
-            let user_cred = JSON.parse(localStorage.getItem("user_cred"));
+    <script src="../../assets/js/profile.js"></script>
+</body>
 
-            function profile_data(e){
-            return e.email == uniqueID;
-        }
-        person_data = user_cred.find(profile_data);
-        document.getElementById("first_name").value = person_data["first_name"];
-        document.getElementById("last_name").value = person_data["last_name"];
-        document.getElementById("email").value = person_data["email"];
-        document.getElementById("phone").value = person_data["phone"];
-        document.getElementById("address").value = person_data["address"];
-        </script>
-    </body>
 </html>

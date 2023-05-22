@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,107 +11,119 @@
     <link rel="stylesheet" href="../../assets/css/footer.css">
     <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
 </head>
+
 <body>
-    <header>
-        <div class="container">
-            <img src="../../assets/Images/v1033-a-15-a-removebg-preview - Copy.svg" width="100px" alt="logo" >
-                <nav>
-                <ul>
-                    <li><a href="../../index.html">Home</a></li>
-                    <li><a href="../products/product_list.html">Products</a></li>
-                    <li><a href="../../assets/css/Sign up.html">Log In</a></li>
-                    <li><a href="../Cart/cart.html"><img src="../../assets/Images/icon-cart.svg" alt="cart"></a></li>
-                </ul>
-                </nav>
-    </header>
 
     <div class="form-container">
         <form role="form" id="form" onsubmit="createProduct(event)">
             <img src="../../assets/Images/v1033-a-15-a-removebg-preview - Copy.svg" width="100px" alt="logo">
-        <h1>Create Product</h1>
-        <div class="product_name">
-            <label>Product Name:</label><br>
-            <input type="text" id="product_name" required>
-            <br><br>
-        </div>
-        <div class="description">
-            <label>Description:</label><br>
-            <textarea placeholder="Enter product description" id="description" rows="4" cols="49 "></textarea>
-            <br><br>
-        </div>
-        <div class="price">
-            <label>Price:</label><br>
-            <input type="text" id="price" required>
-            <br><br>
-        </div>
-        <div class="category">
-        <label>Category:</label>
-        <select id="category">
-            <option>Breads</option>
-            <option>Cakes</option>
-            <option>Breakfast Pastry</option>
-        </select>
-        </div>
-        <div class="add_image">
-            <label>Image:</label><br>
-            <input type="url" id="add_image" required>
-            <br><br>
-        </div>
-        <div class="submit"><button type="submit">Create</button></div>
+            <h1>Create Product</h1>
+            <div class="product_name">
+                <label>Product Name:</label>
+                <br>
+                <input type="text" id="product_name" pattern="[a-zA-Z ]+" title="Use uppercase or lowercase only."
+                    value="Wheat Bread" required>
+                <br>
+                <br>
+            </div>
+            <div class="description">
+                <label>Description:</label>
+                <br>
+                <textarea placeholder="Enter product description" id="description" rows="4" cols="49" maxlength="100"
+                    value="It is very tasty"></textarea>
+                <br>
+                <br>
+            </div>
+            <div class="category">
+                <label>Category:</label>
+                <select id="category">
+                    <option>Breads</option>
+                    <option>Cakes</option>
+                    <option>Breakfast Pastry</option>
+                </select>
+
+            </div>
+            <div class="price">
+                <label>Price:</label>
+                <br>
+                <input id="price1" pattern="[0-9]+" title="Please use numbers only" value="50" required>
+                <br>
+                <br>
+            </div>
+            <div class="add_image">
+                <label>Image:</label>
+                <br>
+                <input type="url" id="add_image" value="https://iili.io/HgN9lZ7.md.png" required>
+                <br>
+                <br>
+            </div>
+            <div class="submit">
+                <button type="submit">Create</button>
+            </div>
         </form>
-        </div>
-
-    <script>
-                function createProduct(e) {
-            let product_name = document.getElementById("product_name").value;
-            let description = document.getElementById("description").value;
-            let price = document.getElementById("price").value;
-            let category = document.getElementById("category").value;
-            let add_image = document.getElementById("add_image").value;
-                let product_uuid = uuidv4();
-            let prod_detail = JSON.parse(localStorage.getItem('prod_detail')) || [];
-
-                prod_detail.push({ "name":product_name,
-                                    "description":description,
-                                    "price":price,
-                                    "category":category,
-                                    "image":add_image,
-                                    "product_id":product_uuid});
-
-                localStorage.setItem('prod_detail',JSON.stringify(prod_detail));
-                alert('Product added');
-                window.location.href = "../admin/admin_product_list.html";
-
-                e.preventDefault();
-                }
-    </script>
-
+    </div>
     <footer>
         <div class="foot">
-            <h1>HOME BAKERY</h1>
+            <h2>HOME BAKERY</h2>
             <div class="list">
-            <ul>
-                <li><h2>ABOUT</h2></li>
-                <li><a href="../../index.html">Homepage</a></li>
-                <li><a href="../../../../index.html#about">About Us</a></li>
-                <li><a href="../../../../index.html#history">Our History</a></li>
-                <li><a href="../products/product_list.html">Products</a></li>
-            </ul>
-            <ul>
-                <li><h2>PRODUCTS</h2></li>
-                <li><a href="../products/product_list.html">Breads</a></li>
-                <li><a href="../products/product_list.html">Cakes</a></li>
-                <li><a href="../products/product_list.html">Breakfast Pastries</a></li>
-            </ul>
-            <ul>
-                <li><h2>FOLLOW US</h2></li>
-                <a href="https://www.instagram.com/"><li><img src="../../assets/Images/instagram.svg" width="40px" alt="Instagram">Instagram</li></a>
-                <a href="https://twitter.com/"><li><img src="../../assets/Images/twitter.svg" width="40px" alt="Twitter">Twitter</li></a>
-                <a href="https://github.com/"><li><img src="../../assets/Images/github.svg" width="40px" alt="GitHub">GitHub</li></a>
-            </ul>
+                <ul>
+                    <li>
+                        <h2>ABOUT</h2>
+                    </li>
+                    <li>
+                        <a href="../../index.html">Homepage</a>
+                    </li>
+                    <li>
+                        <a href="../../../../index.html#about">About Us</a>
+                    </li>
+                    <li>
+                        <a href="../../../../index.html#history">Our History</a>
+                    </li>
+                    <li>
+                        <a href="../products/product_list.html">Products</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <h2>PRODUCTS</h2>
+                    </li>
+                    <li>
+                        <a href="../products/product_list.html">Breads</a>
+                    </li>
+                    <li>
+                        <a href="../products/product_list.html">Cakes</a>
+                    </li>
+                    <li>
+                        <a href="../products/product_list.html">Breakfast Pastries</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <h2>FOLLOW US</h2>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/">
+                            <img src="../../assets/Images/instagram.svg" width="40px" alt="Instagram">Instagram
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/">
+                            <img src="../../assets/Images/twitter.svg" width="40px" alt="Twitter">Twitter
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/">
+                            <img src="../../assets/Images/github.svg" width="40px" alt="GitHub">GitHub
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
 
     </footer>
+
+    <script src="../../assets/js/header.js"></script>
+    <script src="../../assets/js/admin/admin_product_create.js"></script>
 </body>
+
 </html>

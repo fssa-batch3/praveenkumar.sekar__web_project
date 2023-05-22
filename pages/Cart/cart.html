@@ -1,200 +1,609 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale1.0">
-        <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600;700;800;900&family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&family=Telex&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="../../assets/css/cart.css">
-        <link rel="stylesheet" href="../../assets/css/header.css">
-        <link rel="stylesheet" href="../../assets/css/normalize.css">
-        <link rel="stylesheet" href="../../assets/css/footer.css">
 
-        <title>Bakery</title>
-    </head>
-    <body>
-        <header>
-            <div class="container">
-                    <img src="../../assets/Images/v1033-a-15-a-removebg-preview - Copy.svg" width="100px" alt="logo">
-                    <nav>
-                    <ul>
-                        <li><a href="../../index.html">Home</a></li>
-                        <li><a href="../products/product_list.html">Products</a></li>
-                        <li><a href="../Log in and Sign up/Log in.html">Log In</a></li>
-                        <li><a href="../Cart/cart.html"><img src="../../assets/Images/icon-cart.svg" alt="cart"></a></li>
-                        <li><a href="../Profile/profile.html"><img src="../../assets/Images/profile.svg" width="26px" alt="profile"></a></li>
-                    </ul>
-                    </nav>
-        </header>
-            <div class="cart">
-                <img src="../../assets/Images/v1033-a-15-a-removebg-preview - Copy.svg" width="100px" alt="logo">
-                <table class="table">
-                    <caption><h1>YOUR CART(3)</h1></caption>
-                    <tr>
-                        <th>Products</th>
-                        <th>Quantity</th>
-                        <th>Subtotal</th>
-                    </tr>
-                    <!-- <tr>
-                        <td>
-                            <div class="cart-info">
-                                <img src="../../assets/Images/Breads/burger-bun-removebg-preview.png" width="200px" height="200px" alt="burger bun">
-                                <div class="details">
-                                    <p>Burger Bun</p>
-                                    <small>Price:₹30.00</small>
-                                    <a href="#">Remove</a>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <input type="number" value="1">
-                        </td>
-                        <td class="price">
-                            <p>₹30.00</p>
-                        </td>
-                    </tr> -->
-                    <!-- <tr>
-                        <td>
-                            <div class="cart-info">
-                                <img src="../../assets/Images/breads/sweet-bread-removebg-preview.png" width="200px" height="200px" alt="sweet bread">
-                                <div class="details">
-                                    <p>Sweet Bread</p>
-                                    <small>Price:₹40.00</small>
-                                    <a href="#">Remove</a>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <input type="number" value="1">
-                        </td>
-                        <td class="price">
-                            <p>₹40.00</p>
-                        </td>
-                    </tr> -->
-                    <!-- <tr>
-                        <td>
-                            <div class="cart-info">
-                                <img src="../../assets/Images/breads/cereal-bread-removebg-preview.png" width="200px" height="200px" alt="cereal bread">
-                                <div class="details">
-                                    <p>Cereal Bread</p>
-                                    <small>Price:₹50.00</small>
-                                    <a href="#">Remove</a>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <input type="number" value="1">
-                        </td>
-                        <td class="price">
-                            <p>₹50.00</p>
-                        </td>
-                    </tr> -->
-                </table>
-                
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600;700;800;900&family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&family=Telex&display=swap"
+        rel="stylesheet">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="../../assets/css/cart.css">
+    <link rel="stylesheet" href="../../assets/css/header.css">
+    <link rel="stylesheet" href="../../assets/css/footer.css">
+    <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
+</head>
 
-                <div class="total-price">
-                    <table>
-                        <caption></caption>
-                        <tr>
-                            <th></th>
-                        </tr>
-                        <tr>
-                            <td><p>Subtotal</p></td>
-                            <td><p>120.00</p></td>
-                        </tr>
-                        <tr>
-                            <td><p>Tax</p></td>
-                            <td><p>₹10.00</p></td>
-                        </tr>
-                        <tr>
-                            <td><p>Total</p></td>
-                            <td><p>₹130.00</p></td>
-                        </tr>
-                    </table>
+<body>
+    <div class="full" id="blur">
+        <h1>CART</h1>
+        <div class="main">
+            <section>
+                <H2>PRODUCTS</H2>
+                <!-- product 1 -->
+                <div class="product-container">
                 </div>
-                <div class="checkout">
-                    <button>Check Out</button>
-                </div>
-            </div>
-            <footer>
-                <div class="foot">
-                    <h1>HOME BAKERY</h1>
-                    <div class="list">
-                    <ul>
-                        <li><h2>ABOUT</h2></li>
-                        <li><a href="../../index.html">Homepage</a></li>
-                        <li><a href="../../../../index.html#about">About Us</a></li>
-                        <li><a href="../../../../index.html#history">Our History</a></li>
-                        <li><a href="../products/product_list.html">Products</a></li>
-                    </ul>
-                    <ul>
-                        <li><h2>PRODUCTS</h2></li>
-                        <li><a href="../products/product_list.html">Breads</a></li>
-                        <li><a href="../products/product_list.html">Cakes</a></li>
-                        <li><a href="../products/product_list.html">Breakfast Pastries</a></li>
-                    </ul>
-                    <ul>
-                        <li><h2>FOLLOW US</h2></li>
-                        <a href="https://www.instagram.com/"><li><img src="../../assets/Images/instagram.svg" width="40px" alt="Instagram">Instagram</li></a>
-                        <a href="https://twitter.com/"><li><img src="../../assets/Images/twitter.svg" width="40px" alt="Twitter">Twitter</li></a>
-                        <a href="https://github.com/"><li><img src="../../assets/Images/github.svg" width="40px" alt="GitHub">GitHub</li></a>
-                    </ul>
+            </section>
+            <aside>
+                <div class="summary-whole">
+                    <h2>SUMMARY</h2>
+                    <div class="summary">
+                        <div class="time">
+                            <h3>DELIVERY DATE & TIME</h3>
+                            <input type="date" id="del_date">
+                            <select id="del_time">
+                                <option id="standard" value="0">Select Delivery Time</option>
+                                <option id="standard" value="1">Delivery Now (within 60 mins)</option>
+                                <option id="morning" value="2">10:00 AM - 12:00 PM</option>
+                                <option id="afternoon" value="3">12:00 PM - 04:00 PM</option>
+                                <option id="evening" value="4">04:00 PM - 07:00 PM</option>
+                                <option id="night" value="5">07:00 AM - 11:00 PM</option>
+                            </select>
+                        </div>
+                        <div class="address">
+                            <h3>ADDRESS</h3>
+                        </div>
+                        <div class="total">
+                            <b>SUB-TOTAL :&nbsp;</b>
+                            <p id="sub"></p>
+                        </div>
+                        <div class="total">
+                            <b>TAX :&nbsp;</b>
+                            <p id="tax"></p>
+                        </div>
+                        <div class="total">
+                            <b>TOTAL :&nbsp;</b>
+                            <p id="total"></p>
+                        </div>
+                        <div class="order">
+                            <button id="order">ORDER</button>
+                        </div>
                     </div>
                 </div>
-    
-            </footer>
+            </aside>
+        </div>
+    </div>
+    <div id="popup">
+        <h3>EDIT SPECIAL MESSAGE</h3>
+        <textarea rows="3" cols="25" id="cake_msg">
 
-            <script>
-                
-                    table_r = document.createElement("tr");
-                    console.log(table_r)
+        </textarea><br>
+        <button onclick="toggle();new_msg()" id="spl_msg _confirm">Confirm</button>
+    </div>
+    <footer>
+        <div class="foot">
+            <h2>HOME BAKERY</h2>
+            <div class="list">
+                <ul>
+                    <li>
+                        <h2>ABOUT</h2>
+                    </li>
+                    <li>
+                        <a href="../../index.html">Homepage</a>
+                    </li>
+                    <li>
+                        <a href="../../../../index.html#about">About Us</a>
+                    </li>
+                    <li>
+                        <a href="../../../../index.html#history">Our History</a>
+                    </li>
+                    <li>
+                        <a href="../products/product_list.html">Products</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <h2>PRODUCTS</h2>
+                    </li>
+                    <li>
+                        <a href="../products/product_list.html">Breads</a>
+                    </li>
+                    <li>
+                        <a href="../products/product_list.html">Cakes</a>
+                    </li>
+                    <li>
+                        <a href="../products/product_list.html">Breakfast Pastries</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <h2>FOLLOW US</h2>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/">
+                            <img src="../../assets/Images/instagram.svg" width="40px" alt="Instagram">Instagram
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/">
+                            <img src="../../assets/Images/twitter.svg" width="40px" alt="Twitter">Twitter
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/">
+                            <img src="../../assets/Images/github.svg" width="40px" alt="GitHub">GitHub
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="../../assets/js/header.js"></script>
 
-                    td1 = document.createElement("td");
-                    table_r.append(td1);
+<script>
 
-                    cart_info = document.createElement("div")
-                    cart_info.setAttribute("class", "cart-info");
-                    td1.append(cart_info);
+    let cart = JSON.parse(localStorage.getItem("add_to_cart")) || [];
 
-                    cart_img = document.createElement("img");
-                    cart_img.setAttribute("class", "cart-img");
-                    cart_img.setAttribute("src","../../assets/Images/Breads/burger-bun-removebg-preview.png")
-                    cart_img.setAttribute("width", "200px");
-                    cart_img.setAttribute("height", "200px");
-                    cart_info.append(cart_img);
+    const uniqueID = JSON.parse(localStorage.getItem("uniqueID"));
 
-                    detail = document.createElement("div");
-                    detail.setAttribute("class", "details");
-                    cart_info.append(detail);
-                    
-                    prod_name = document.createElement("p")
-                    prod_name.innerText = "Burger Bun";
-                    detail.append(prod_name);
+    let uuid = uuidv4();
 
-                    price = document.createElement("small");
-                    price.innerText = "Price:₹30.00";
-                    detail.append(price);
+    function user_cart(e) {
+        return e.user_id === uniqueID;
+    }
 
-                    remove = document.createElement("a")
-                    remove.setAttribute("href","#");
-                    remove.innerText = ("Remove");
-                    detail.append(remove);
+    const cart_of_user = cart.filter(user_cart);
 
-                    td2 = document.createElement("td");
-                    table_r.append(td2);
+    let container = document.querySelector(".product-container");
 
-                    inp = document.createElement("input");
-                    inp.setAttribute("type", "number");
-                    inp.setAttribute("value", "1");
-                    td2.append(inp);
+    let subtotal = 0;
+    let tax = 0;
 
-                    td3 = document.createElement("td");
-                    td3.setAttribute("class", "price");
-                    table_r.append(td3);
+    let today = new Date();
+    let dd = String(today.getDate()).padStart(2, '0');
+    let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    let yyyy = today.getFullYear();
+    let hours = today.getHours();
+    let minutes = today.getMinutes();
+    let seconds = today.getSeconds();
 
-                    price2 = document.createElement("p");
-                    price2.innerText = "Price: ₹30.00";
-                    td3.append(price2);
+    const morning = document.getElementById("morning");
+    const afternoon = document.getElementById("afternoon");
+    const evening = document.getElementById("evening");
+    const night = document.getElementById("night");
 
-                    document.querySelector("table.table").append(table_r);
-            </script> 
-        </body>
+    today = yyyy + '-' + mm + '-' + dd;
+
+    let del_date = document.getElementById("del_date");
+    del_date.setAttribute("min", today);
+
+    let del_time = document.getElementById("del_time");
+
+    del_date.addEventListener("change", function getDate() {
+        let todate = del_date.value;
+
+        if (todate === today && hours >= 12) {
+            morning.setAttribute("disabled", "disabled");
+        }
+        else {
+            morning.removeAttribute("disabled");
+        }
+
+        if (todate === today && hours >= 16) {
+            afternoon.setAttribute("disabled", "disabled");
+        }
+        else {
+            afternoon.removeAttribute("disabled");
+        }
+
+        if (todate === today && hours >= 19) {
+            evening.setAttribute("disabled", "disabled");
+        }
+        else {
+            evening.removeAttribute("disabled");
+        }
+
+        if (todate === today && hours >= 23) {
+            night.setAttribute("disabled", "disabled");
+        }
+        else {
+            night.removeAttribute("disabled");
+        }
+    })
+
+    if (cart_of_user.length === 0) {
+        const message = document.createElement("h2");
+        message.setAttribute("class", "message");
+        message.innerText = "YOUR CART IS EMPTY!"
+        container.append(message);
+    }
+
+    else {
+
+        for (let i = 0; i < cart_of_user.length; i++) {
+
+            const prod_div = document.createElement('div');
+            prod_div.setAttribute('class', 'products');
+
+            const img_div = document.createElement('div');
+            img_div.setAttribute('class', 'img');
+            prod_div.appendChild(img_div);
+
+            const img = document.createElement('img');
+            img.setAttribute('src', cart_of_user[i].image);
+            img_div.appendChild(img);
+
+            const prod_details = document.createElement('div');
+            prod_details.setAttribute('class', 'prod_details');
+            prod_details.setAttribute('data-id', cart_of_user[i].product_id);
+            prod_div.appendChild(prod_details);
+
+            const prod_name = document.createElement('h3');
+            prod_name.innerText = cart_of_user[i].product_name;
+            prod_details.appendChild(prod_name);
+
+            const prod_att = document.createElement('div');
+            prod_att.setAttribute('class', 'prod_att');
+            prod_details.appendChild(prod_att);
+
+            if (cart_of_user[i].category === "Cakes") {
+                if (cart_of_user[i].size === 0) {
+                    const cake_size1 = document.createElement("small");
+                    cake_size1.innerText = "1/2Kg ";
+                    prod_att.append(cake_size1);
+                } else if (cart_of_user[i].size === 1) {
+                    const cake_size2 = document.createElement("small");
+                    cake_size2.innerText = "1Kg ";
+                    prod_att.append(cake_size2);
+                } else if (cart_of_user[i].size === 2) {
+                    const cake_size3 = document.createElement("small");
+                    cake_size3.innerText = "2Kg ";
+                    prod_att.append(cake_size3);
+                }
+
+            }
+
+            const prod_price = document.createElement("small");
+            prod_price.innerText = `Price: ${cart_of_user[i].price}`;
+            prod_att.append(prod_price);
+
+            const remove = document.createElement("button");
+            remove.setAttribute("class", "remove");
+            remove.innerText = " " + "Remove";
+            prod_att.append(remove);
+
+            if (cart_of_user[i].category === "Cakes") {
+                let spl_msg_head = document.createElement("h4");
+                spl_msg_head.innerText = "Special Message";
+                prod_details.append(spl_msg_head);
+
+                let spl_msg = document.createElement("p");
+                if (cart_of_user[i].special_message === "") {
+                    spl_msg.innerText = "No special message";
+                }
+                else {
+                    spl_msg.innerText = cart_of_user[i].special_message;
+                }
+                prod_details.append(spl_msg);
+
+                let edit_btn = document.createElement("button");
+                edit_btn.setAttribute("class", "edit_msg_btn");
+                edit_btn.setAttribute("onclick", "toggle()");
+                edit_btn.innerText = "Edit"
+                prod_details.append(edit_btn);
+            }
+
+            const div_quan = document.createElement("div");
+            div_quan.setAttribute("class", "quantity");
+            div_quan.setAttribute("data-id", cart_of_user[i].product_cart_id);
+            prod_div.appendChild(div_quan);
+
+            const inp = document.createElement("input");
+            inp.setAttribute("class", "inp");
+            inp.setAttribute("type", "number");
+            inp.setAttribute("min", 1);
+            inp.setAttribute("value", cart_of_user[i].quantity);
+            div_quan.append(inp);
+
+            const price = document.createElement("div");
+            price.setAttribute("class", "price");
+            prod_div.append(price);
+
+            const price_text = document.createElement("p");
+            price_text.innerText = "Price:" + " " + cart_of_user[i].price * cart_of_user[i].quantity;
+            price.appendChild(price_text);
+
+            container.appendChild(prod_div);
+
+            if (cart_of_user.length !== 0) {
+                subtotal += cart_of_user[i].price * cart_of_user[i].quantity;
+            }
+
+        }
+    }
+
+    const remove_item = document.querySelectorAll("button.remove");
+
+    remove_item.forEach(function (getID) {
+        getID.addEventListener("click", function () {
+            if (confirm("Are you sure?")) {
+                const parent = this.parentNode.parentNode.parentNode;
+
+                const get_id = parent
+                    .querySelector(".quantity")
+                    .getAttribute("data-id");
+
+                function find_data(e) {
+                    return e.product_cart_id === get_id;
+                }
+
+                const product_data = cart.find(find_data);
+
+                const indexOfUser = cart.indexOf(product_data);
+
+                cart.splice(indexOfUser, 1);
+
+                localStorage.setItem("add_to_cart", JSON.stringify(cart));
+
+                window.location.reload();
+            }
+        });
+    });
+
+    const quantity = document.querySelectorAll(".inp");
+
+    quantity.forEach(function (getQuantity) {
+        getQuantity.addEventListener("click", function () {
+            const parent = this.closest(".quantity");
+            const quan = parent.querySelector(".inp").value;
+            const uuid = parent.getAttribute("data-id");
+
+            const update_cart = cart.filter((e) => e.product_cart_id === uuid);
+
+            if (update_cart) {
+                update_cart[0].quantity = parseInt(quan);
+                localStorage.setItem("add_to_cart", JSON.stringify(cart));
+            }
+            window.location.reload();
+        });
+    });
+
+    let user_address = JSON.parse(localStorage.getItem("user_address")) || [];
+    let user_id = JSON.parse(localStorage.getItem("uniqueID"));
+    const current_user_address = user_address.filter((e) => e.user_id === user_id);
+
+    const add = document.querySelector(".address");
+
+    for (let i = 0; i < current_user_address.length; i++) {
+
+        const add_card = document.createElement("div");
+        add_card.setAttribute("class", "address-card");
+
+
+        const add_radio = document.createElement("input");
+        add_radio.setAttribute("type", "radio");
+        add_radio.setAttribute("name", "address");
+        add_radio.setAttribute("class", "address-radio");
+        add_radio.setAttribute("data-id", current_user_address[i].address_uuid);
+        if (current_user_address[i].default === true) {
+            add_radio.setAttribute("checked", "checked");
+            localStorage.setItem("address-id", JSON.stringify(current_user_address[i].address_uuid));
+        }
+        add_card.appendChild(add_radio);
+
+        const add_label = document.createElement("div");
+        add_label.setAttribute("class", "address-label");
+        add_card.appendChild(add_label);
+
+        const add_head = document.createElement("div");
+        add_head.setAttribute("class", "address-head");
+        add_label.appendChild(add_head);
+
+        const add_title = document.createElement("h4");
+        if (current_user_address[i].default === true) {
+            add_title.innerText = current_user_address[i].title.toUpperCase() + " " + "(Default)";
+        }
+        else {
+            add_title.innerText = current_user_address[i].title.toUpperCase();
+        }
+        add_head.appendChild(add_title);
+
+        const add_edit = document.createElement("button");
+        add_edit.setAttribute("data-id", current_user_address[i].address_uuid);
+        add_edit.setAttribute("class", "edit_btn");
+        add_edit.innerText = "EDIT";
+        add_head.appendChild(add_edit);
+
+        const add_name = document.createElement("b");
+        add_name.innerText = current_user_address[i].first_name + " " + current_user_address[i].last_name;
+        add_label.appendChild(add_name);
+
+        const add_info = document.createElement("p");
+        add_info.innerText = current_user_address[i].house_no + " " + current_user_address[i].area;
+        add_label.appendChild(add_info);
+
+        const city = document.createElement("p");
+        city.innerText = current_user_address[i].city + " " + current_user_address[i].pincode;
+        add_label.appendChild(city);
+
+        add.append(add_card);
+    }
+
+    let add_cards = document.querySelectorAll(".address-radio");
+    add_cards.forEach(function (card) {
+        card.addEventListener("click", function () {
+            let parent = this.dataset.id;
+            localStorage.setItem("address-id", JSON.stringify(parent));
+
+        })
+    });
+
+    // address edit
+
+    const edit = document.querySelectorAll("button.edit_btn");
+
+    edit.forEach(function (getID) {
+        getID.addEventListener("click", function () {
+            const { id } = this.dataset;
+
+            localStorage.setItem("address_uuid", JSON.stringify(id));
+
+            window.location.href = "../Profile/address_edit.html";
+        })
+    });
+
+    document.querySelector("#sub").innerText = `₹ ${subtotal}`;
+    tax = subtotal / 20;
+    document.querySelector("#tax").innerText = `₹ ${tax}`;
+    const total = subtotal + tax;
+    document.querySelector("#total").innerText = `₹ ${total}`;
+
+    let order = document.getElementById("order");
+
+    function place_order() {
+
+        if (cart_of_user.length === 0) {
+            window.alert("Please add some products to cart");
+        }
+
+        else {
+            const orders = JSON.parse(localStorage.getItem('orders')) || [];
+            const ordered_items = JSON.parse(localStorage.getItem('ordered_items')) || [];
+            const order_address_id = JSON.parse(localStorage.getItem('address-id')) || [];
+
+
+
+            let delivery_time;
+            let delivery_date;
+
+            if (del_date.value === "") {
+                window.alert("Please select a date to place order");
+            }
+
+            else {
+                delivery_date = del_date.value;
+                if (parseInt(del_time.value) === 0) {
+                    window.alert("Please select a time slot to place order");
+                }
+
+                else {
+
+                    if (current_user_address.length === 0) {
+                        window.alert("Please add an address to your account");
+                        window.location.href = "../Profile/create_address.html";
+                    }
+
+                    else {
+
+                        delivery_time = parseInt(del_time.value);
+                        let time = hours + ":" + minutes + ":" + seconds;
+
+                        let order_price = document.getElementById("total").innerText;
+
+                        order_price = order_price.slice(2);
+
+                        const order_id = uuidv4();
+
+                        function order_add(e) {
+                            return e.address_uuid === order_address_id;
+                        }
+
+                        const order_address = current_user_address.filter(order_add);
+
+                        const order_address_name = order_address[0].first_name + " " + order_address[0].last_name;
+
+                        if (confirm("Confirm your order")) {
+                            orders.push({
+                                order_id: order_id,
+                                ordered_time: time,
+                                ordered_date: today,
+                                order_address: order_address_id,
+                                order_status: "Not Delivered",
+                                delivery_date: delivery_date,
+                                delivery_time: delivery_time,
+                                ordered_by: order_address_name,
+                                userId: uniqueID,
+                                total_price: parseInt(order_price),
+                                sub_total: parseInt(subtotal),
+                                tax_amount: parseInt(tax)
+                            });
+
+                            for (let i = 0; i < cart_of_user.length; i++) {
+                                let status = cart_of_user[i];
+                                status.order_id = order_id;
+                            }
+                        }
+
+                        ordered_items.push(...cart_of_user);
+
+                        // console.log(ordered_items);
+
+                        cart = cart.filter((e) => e.user_id !== uniqueID);
+
+                        localStorage.setItem("orders", JSON.stringify(orders));
+                        localStorage.setItem("ordered_items", JSON.stringify(ordered_items));
+                        localStorage.setItem("add_to_cart", JSON.stringify(cart));
+                        window.alert("order successfully placed");
+                        location.reload();
+                    }
+                }
+            }
+
+        }
+
+    }
+
+    order.addEventListener("click", place_order);
+
+    // blur function
+
+    function toggle() {
+        const blur = document.getElementById("blur");
+        blur.classList.toggle("active");
+
+        const popup = document.getElementById("popup");
+        popup.classList.toggle("active");
+    }
+
+    // get if from edit button 
+    const edit_msg = document.querySelectorAll("button.edit_msg_btn");
+
+    edit_msg.forEach(function (getID) {
+        getID.addEventListener("click", function () {
+
+            const parent = this.parentNode.parentNode;
+
+            console.log(parent);
+
+            const get_id = parent
+                .querySelector(".prod_details")
+                .getAttribute("data-id");
+
+            localStorage.setItem("product_id", JSON.stringify(get_id));
+
+            let id = JSON.parse(localStorage.getItem("product_id"));
+
+            let spl_cake = cart_of_user.find((e) => e.product_id === id);
+
+            let tarea = document.getElementById("cake_msg");
+
+            tarea.value = spl_cake.special_message;
+        })
+    });
+
+    // selecting new spl message
+
+    const spl_confirm = document.getElementById("spl_msg_confirm");
+
+    function new_msg() {
+        let id = JSON.parse(localStorage.getItem("product_id"));
+
+        let spl_cake = cart_of_user.find((e) => e.product_id === id);
+
+        let tarea = document.getElementById("cake_msg");
+
+        let new_cake_msg = tarea.value;
+
+        spl_cake.special_message = new_cake_msg;
+
+        localStorage.setItem("add_to_cart", JSON.stringify(cart));
+
+        window.location.reload();
+
+    }
+
+</script>
+
 </html>

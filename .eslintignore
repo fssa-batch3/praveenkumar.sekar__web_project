@@ -1,0 +1,6 @@
+node_modules/**
+assets/js/vendor/**
+**/*.config.js
+**/*.min.js
+assets/css/bootstrap.css
+assets/css/bootstrap.css.map

@@ -1,9 +1,9 @@
 header {
-    position: absolute;
     width: 100%;
     top: 0;
     color: black;
     z-index: 10;
+    position: absolute;
 }
 
 h1 {
@@ -20,6 +20,7 @@ p {
 
 a {
     font-family: 'Telex', sans-serif;
+    font-size: 20px;
 }
 
 .container {
@@ -93,4 +94,21 @@ nav ul li a:hover:after {
         width: 20px;
     }
 
+}
+
+.item{
+    color: rgb(255, 255, 255);
+    background-color: black;
+    border-radius: 50%;
+    padding: 2px;
+    width: 16px;
+    position:absolute;
+    font-size: 18px;
+    text-align: center;
+    left: 10px;
+    bottom: 20px;
+    
+
+    
+    
 }

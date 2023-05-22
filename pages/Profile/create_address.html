@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600;700;800;900&family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&family=Telex&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/create_address.css">
+    <link rel="stylesheet" href="../../assets/css/header.css">
+    <link rel="stylesheet" href="../../assets/css/normalize.css">
+    <link rel="stylesheet" href="../../assets/css/footer.css">
+    <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
+    <title>Create Address</title>
+</head>
+
+<body>
+
+    <div class="form-container">
+        <form role="form" id="form" onsubmit="create_address(event)">
+            <img src="../../assets/Images/v1033-a-15-a-removebg-preview - Copy.svg" width="100px" alt="logo">
+            <h1>Address</h1>
+            <div class="first_name">
+                <label>First Name:</label>
+                <br>
+                <input type="text" id="first_name" pattern="[a-zA-Z]+"
+                    title="Use only aplabets. Exclude spaces and special characters" Value="John" required>
+                <br>
+                <br>
+            </div>
+            <div class="last_name">
+                <label>Last Name:</label>
+                <br>
+                <input type="text" id="last_name" pattern="[a-zA-Z]+"
+                    title="Use only aplabets. Exclude spaces and special characters" value="Doe" required>
+                <br>
+                <br>
+            </div>
+            <div class="title">
+                <label>Title:</label>
+                <br>
+                <input type="text" id="title" value="Home" required>
+                <br>
+                <br>
+            </div>
+            <div class="house_no">
+                <label>Flat, House no., Building, Company, Apartment:</label>
+                <br>
+                <input type="text" id="house_no" value="123, John house, Doe street" required>
+                <br>
+                <br>
+            </div>
+            <div class="area">
+                <label>Area, Street, Sector, Village:</label>
+                <br>
+                <input type="text" id="area" value="Jane Doe city" required>
+                <br>
+                <br>
+            </div>
+            <div class="city">
+                <label>City:</label>
+                <br>
+                <input type="text" id="city" value="Chennai" disabled>
+                <br>
+                <br>
+            </div>
+            <div class="pincode">
+                <label>Pincode:</label>
+                <br>
+                <input type="number" id="pincode" min="600001" max="643253" pattern="[6]{1}[0-4]{2}[0-9]{4}"
+                    value="600050" required>
+                <br>
+                <br>
+            </div>
+            <div class="chkbox">
+                <input type="checkbox" id="chkbox">
+                <label>Default address</label>
+            </div>
+            <div class="submit">
+                <button type="submit">Create</button>
+            </div>
+            <div>
+                <p>note: We only deliver to places in Chennai</p>
+            </div>
+        </form>
+    </div>
+
+    <footer>
+        <div class="foot">
+            <h2>HOME BAKERY</h2>
+            <div class="list">
+                <ul>
+                    <li>
+                        <h2>ABOUT</h2>
+                    </li>
+                    <li>
+                        <a href="../../index.html">Homepage</a>
+                    </li>
+                    <li>
+                        <a href="../../../../index.html#about">About Us</a>
+                    </li>
+                    <li>
+                        <a href="../../../../index.html#history">Our History</a>
+                    </li>
+                    <li>
+                        <a href="../products/product_list.html">Products</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <h2>PRODUCTS</h2>
+                    </li>
+                    <li>
+                        <a href="../products/product_list.html">Breads</a>
+                    </li>
+                    <li>
+                        <a href="../products/product_list.html">Cakes</a>
+                    </li>
+                    <li>
+                        <a href="../products/product_list.html">Breakfast Pastries</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <h2>FOLLOW US</h2>
+                    </li>
+                    <a href="https://www.instagram.com/">
+                        <li>
+                            <img src="../../assets/Images/instagram.svg" width="40px" alt="instagram">Instagram
+                        </li>
+                    </a>
+                    <a href="https://twitter.com/">
+                        <li>
+                            <img src="../../assets/Images/twitter.svg" width="40px" alt="twitter">Twitter
+                        </li>
+                    </a>
+                    <a href="https://github.com/">
+                        <li>
+                            <img src="../../assets/Images/github.svg" width="40px" alt="GitHub">GitHub
+                        </li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/header.js"></script>
+
+    <script>
+        // function signup(){
+        function create_address(e) {
+            e.preventDefault();
+            let first_name = document.getElementById("first_name").value;
+            let last_name = document.getElementById("last_name").value;
+            let title = document.getElementById("title").value;
+            let house_no = document.getElementById("house_no").value;
+            let area = document.getElementById("area").value;
+            let city = document.getElementById("city").value;
+            let pincode = document.getElementById("pincode").value;
+            let checkbox = document.getElementById("chkbox").checked;
+
+            console.log(checkbox);
+
+            let user_address = JSON.parse(localStorage.getItem("user_address")) || [];
+            let user_id = JSON.parse(localStorage.getItem("uniqueID"));
+            let uuid = uuidv4();
+
+            if (user_address.length === 0) {
+                user_address.push({
+                    first_name,
+                    last_name,
+                    title,
+                    house_no,
+                    area,
+                    city,
+                    pincode,
+                    address_uuid: uuid,
+                    user_id,
+                    "default": true
+                });
+            }
+
+            else {
+
+                const current_user = user_address.filter((e) => e.user_id === user_id);
+
+                if (current_user.length === 0) {
+                    user_address.push({
+                        first_name,
+                        last_name,
+                        title,
+                        house_no,
+                        area,
+                        city,
+                        pincode,
+                        address_uuid: uuid,
+                        user_id,
+                        default: true
+                    });
+                }
+
+                else {
+
+                    if (checkbox === true) {
+
+                        let default_address = current_user.find((e) => e.default === true);
+                        default_address.default = false;
+                        localStorage.setItem("user_address", JSON.stringify(user_address));
+
+                        user_address.push({
+                            first_name,
+                            last_name,
+                            title,
+                            house_no,
+                            area,
+                            city,
+                            pincode,
+                            address_uuid: uuid,
+                            user_id,
+                            default: true
+                        });
+                    }
+
+                    else {
+                        user_address.push({
+                            first_name,
+                            last_name,
+                            title,
+                            house_no,
+                            area,
+                            city,
+                            pincode,
+                            address_uuid: uuid,
+                            user_id,
+                            "default": false
+                        });
+                    }
+
+                }
+
+            }
+
+            localStorage.setItem("user_address", JSON.stringify(user_address));
+            document.querySelector("form").reset();
+            alert("Address has been added to your profile");
+            window.location.href = "../../index.html";
+        }
+    </script>
+
+</body>
+
+</html>
