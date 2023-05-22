@@ -58,7 +58,7 @@ let cartCounter = document.querySelector(".item")
 
 function cartCount() {
     const userEmail = JSON.parse(localStorage.getItem("uniqueID"));
-    const cartData = JSON.parse(localStorage.getItem("add_to_cart"));
+    const cartData = JSON.parse(localStorage.getItem("add_to_cart")) || [];
     const userCart = cartData.filter((item) => item.user_id == userEmail)
     console.log(userCart)
     if (userCart.length !== 0) { return cartCounter.innerHTML = userCart.length }

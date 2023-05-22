@@ -134,7 +134,7 @@
 
 <script>
 
-    let cart = JSON.parse(localStorage.getItem("add_to_cart"));
+    let cart = JSON.parse(localStorage.getItem("add_to_cart")) || [];
 
     const uniqueID = JSON.parse(localStorage.getItem("uniqueID"));
 
@@ -174,28 +174,28 @@
     del_date.addEventListener("change", function getDate() {
         let todate = del_date.value;
 
-        if (todate === today && hours > 12) {
+        if (todate === today && hours >= 12) {
             morning.setAttribute("disabled", "disabled");
         }
         else {
             morning.removeAttribute("disabled");
         }
 
-        if (todate === today && hours > 16) {
+        if (todate === today && hours >= 16) {
             afternoon.setAttribute("disabled", "disabled");
         }
         else {
             afternoon.removeAttribute("disabled");
         }
 
-        if (todate === today && hours > 19) {
+        if (todate === today && hours >= 19) {
             evening.setAttribute("disabled", "disabled");
         }
         else {
             evening.removeAttribute("disabled");
         }
 
-        if (todate === today && hours > 23) {
+        if (todate === today && hours >= 23) {
             night.setAttribute("disabled", "disabled");
         }
         else {
@@ -360,7 +360,7 @@
         });
     });
 
-    let user_address = JSON.parse(localStorage.getItem("user_address"));
+    let user_address = JSON.parse(localStorage.getItem("user_address")) || [];
     let user_id = JSON.parse(localStorage.getItem("uniqueID"));
     const current_user_address = user_address.filter((e) => e.user_id === user_id);
 
@@ -479,60 +479,68 @@
                 }
 
                 else {
-                    delivery_time = parseInt(del_time.value);
-                    let time = hours + ":" + minutes + ":" + seconds;
 
-                    let order_price = document.getElementById("total").innerText;
-
-                    order_price = order_price.slice(2);
-
-                    const order_id = uuidv4();
-
-                    function order_add(e) {
-                        return e.address_uuid === order_address_id;
+                    if (current_user_address.length === 0) {
+                        window.alert("Please add an address to your account");
+                        window.location.href = "../Profile/create_address.html";
                     }
 
-                    const order_address = current_user_address.filter(order_add);
+                    else {
 
-                    const order_address_name = order_address[0].first_name + " " + order_address[0].last_name;
+                        delivery_time = parseInt(del_time.value);
+                        let time = hours + ":" + minutes + ":" + seconds;
 
-                    console.log(order_address_name);
+                        let order_price = document.getElementById("total").innerText;
 
-                    if (confirm("Confirm your order")) {
-                        orders.push({
-                            order_id: order_id,
-                            ordered_time: time,
-                            ordered_date: today,
-                            order_address: order_address_id,
-                            order_status: "Not Delivered",
-                            delivery_date: delivery_date,
-                            delivery_time: delivery_time,
-                            ordered_by: order_address_name,
-                            userId: uniqueID,
-                            total_price: parseInt(order_price),
-                            sub_total: parseInt(subtotal),
-                            tax_amount: parseInt(tax)
-                        });
+                        order_price = order_price.slice(2);
 
-                        for (let i = 0; i < cart_of_user.length; i++) {
-                            let status = cart_of_user[i];
-                            status.order_id = order_id;
+                        const order_id = uuidv4();
+
+                        function order_add(e) {
+                            return e.address_uuid === order_address_id;
                         }
+
+                        const order_address = current_user_address.filter(order_add);
+
+                        const order_address_name = order_address[0].first_name + " " + order_address[0].last_name;
+
+                        if (confirm("Confirm your order")) {
+                            orders.push({
+                                order_id: order_id,
+                                ordered_time: time,
+                                ordered_date: today,
+                                order_address: order_address_id,
+                                order_status: "Not Delivered",
+                                delivery_date: delivery_date,
+                                delivery_time: delivery_time,
+                                ordered_by: order_address_name,
+                                userId: uniqueID,
+                                total_price: parseInt(order_price),
+                                sub_total: parseInt(subtotal),
+                                tax_amount: parseInt(tax)
+                            });
+
+                            for (let i = 0; i < cart_of_user.length; i++) {
+                                let status = cart_of_user[i];
+                                status.order_id = order_id;
+                            }
+                        }
+
+                        ordered_items.push(...cart_of_user);
+
+                        // console.log(ordered_items);
+
+                        cart = cart.filter((e) => e.user_id !== uniqueID);
+
+                        localStorage.setItem("orders", JSON.stringify(orders));
+                        localStorage.setItem("ordered_items", JSON.stringify(ordered_items));
+                        localStorage.setItem("add_to_cart", JSON.stringify(cart));
+                        window.alert("order successfully placed");
+                        location.reload();
                     }
-
-                    ordered_items.push(...cart_of_user);
-
-                    // console.log(ordered_items);
-
-                    cart = cart.filter((e) => e.user_id !== uniqueID);
-
-                    localStorage.setItem("orders", JSON.stringify(orders));
-                    localStorage.setItem("ordered_items", JSON.stringify(ordered_items));
-                    localStorage.setItem("add_to_cart", JSON.stringify(cart));
-                    window.alert("order successfully placed");
-                    location.reload();
                 }
             }
+
         }
 
     }

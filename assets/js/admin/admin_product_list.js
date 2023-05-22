@@ -77,6 +77,7 @@ for (let i = 0; i < prod_detail.length; i++) {
         // a delete
 
         const butdel = document.createElement("button");
+        butdel.setAttribute("data-id", prod.product_id);
         butdel.setAttribute("class", "delete");
         butdel.innerText = "Delete";
         td7.append(butdel);
@@ -102,6 +103,11 @@ const del_prod = document.querySelectorAll("button.delete");
 del_prod.forEach(function (getID) {
     getID.addEventListener("click", function () {
         if (window.confirm("Are you sure?")) {
+
+            const { id } = this.dataset;
+
+            localStorage.setItem("product_id", JSON.stringify(id));
+
             const uuid = JSON.parse(localStorage.getItem("product_id"));
             const product = JSON.parse(localStorage.getItem("prod_detail"));
 
@@ -110,6 +116,8 @@ del_prod.forEach(function (getID) {
             }
 
             const product_data = product.find(find_data);
+
+            console.log(product_data);
 
             const indexOfUser = product.indexOf(product_data);
 

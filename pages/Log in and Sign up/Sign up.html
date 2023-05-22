@@ -38,7 +38,7 @@
                 <label>First Name:</label>
                 <br>
                 <input type="text" id="first_name" pattern="[a-zA-Z]+"
-                    title="Use only aplabets. Exclude spaces and special characters" required>
+                    title="Use only aplabets. Exclude spaces and special characters" value="John" required>
                 <br>
                 <br>
             </div>
@@ -46,7 +46,7 @@
                 <label>Last Name:</label>
                 <br>
                 <input type="text" id="last_name" pattern="[a-zA-Z]+"
-                    title="Use only aplabets. Exclude spaces and special characters" required>
+                    title="Use only aplabets. Exclude spaces and special characters" value="Doe" required>
                 <br>
                 <br>
             </div>
@@ -55,14 +55,15 @@
                 <br>
                 <input type="tel" id="phone" pattern="[0-9].{9}"
                     title="Use only numbers. Exclude spaces and special characters. You must enter 10 characters"
-                    required>
+                    value="9345209293" required>
                 <br>
                 <br>
             </div>
             <div class="email">
                 <label>Email:</label>
                 <br>
-                <input type="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                <input type="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                    value="johndoe123@gmail.com" required>
                 <br>
                 <br>
             </div>
@@ -71,7 +72,7 @@
                 <br>
                 <input type="password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                     title="Password must contain(Uppercase, Lowercase, Special character, Number) and min 8 characters."
-                    required>
+                    value="John@123" required>
                 <br>
                 <br>
             </div>
@@ -79,7 +80,7 @@
                 <label>Confirm Password:</label>
                 <br>
                 <input type="password" id="confirm_pw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                    title="Please match the password" required>
+                    title="Please match the password" value="John@123" required>
                 <br>
                 <br>
             </div>
