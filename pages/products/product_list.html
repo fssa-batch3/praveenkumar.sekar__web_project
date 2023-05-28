@@ -16,106 +16,106 @@
     <title>Bakery</title>
 </head>
 
-<body>
+<body onload="all_products()">
     <div class="product-container">
         <h1>OUR PRODUCTS</h1>
-        <div class="categories">
-            <div>
-                <a href="#cake">
-                    <p>Cakes</p>
-                </a>
-            </div>
-            <div>
-                <a href="#bread">
-                    <p>Breads</p>
-                </a>
-            </div>
-            <div>
-                <a href="#breakfast_pastries">
-                    <p>Breakfast Pastries</p>
-                </a>
-            </div>
+        <div class="prod_nav">
+            <button onclick="all_products()">
+                <p>ALL</p>
+            </button>
+            <button onclick="filter_bread()">
+                <p>BREADS</p>
+            </button>
+            <button onclick="filter_cake()">
+                <p>CAKES</p>
+            </button>
+            <button onclick="filter_bp()">
+                <p>BREAKFAST-PASTRIES</p>
+            </button>
         </div>
-        <!-- Cakes -->
-        <div class="category-section" id="cake">
-            <h2 class="product_head"> Cakes</h2>
-            <div class="products1">
-            </div>
-        </div>
-        <!-- Breads -->
-        <div class="category-section" id="bread">
-            <h2 class="product_head"> Breads</h2>
-            <div class="products2">
-            </div>
-        </div>
-        <!-- Breakfast pastries -->
-        <div class="category-section" id="breakfast_pastries">
-            <h2 class="product_head"> Breakfast Pastries</h2>
-            <div class="products3">
-            </div>
-        </div>
-        <footer>
-            <div class="foot">
-                <h2>HOME BAKERY</h2>
-                <div class="list">
-                    <ul>
-                        <li>
-                            <h2>ABOUT</h2>
-                        </li>
-                        <li>
-                            <a href="../../index.html">Homepage</a>
-                        </li>
-                        <li>
-                            <a href="../../../../index.html#about">About Us</a>
-                        </li>
-                        <li>
-                            <a href="../../../../index.html#history">Our History</a>
-                        </li>
-                        <li>
-                            <a href="../products/product_list.html">Products</a>
-                        </li>
-                    </ul>
-                    <ul>
-                        <li>
-                            <h2>PRODUCTS</h2>
-                        </li>
-                        <li>
-                            <a href="../products/product_list.html">Breads</a>
-                        </li>
-                        <li>
-                            <a href="../products/product_list.html">Cakes</a>
-                        </li>
-                        <li>
-                            <a href="../products/product_list.html">Breakfast Pastries</a>
-                        </li>
-                    </ul>
-                    <ul>
-                        <li>
-                            <h2>FOLLOW US</h2>
-                        </li>
-                        <li>
-                            <a href="https://www.instagram.com/">
-                                <img src="../../assets/Images/instagram.svg" width="40px" alt="Instagram">Instagram
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://twitter.com/">
-                                <img src="../../assets/Images/twitter.svg" width="40px" alt="Twitter">Twitter
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/">
-                                <img src="../../assets/Images/github.svg" width="40px" alt="GitHub">GitHub
-                            </a>
-                        </li>
-                    </ul>
+        <div class="product-box">
+            <!-- Cakes -->
+            <!-- <div class="category-section" id="cake">
+                <h2 class="product_head"> CAKES</h2>
+                <div class="products1">
+                </div> -->
+            <!-- </div> -->
+            <!-- Breads -->
+            <!-- <div class="category-section" id="bread">
+                <h2 class="product_head"> BREADS</h2>
+                <div class="products2">
                 </div>
+            </div> -->
+            <!-- Breakfast pastries -->
+            <!-- <div class="category-section" id="breakfast_pastries">
+                <h2 class="product_head"> BREAKFAST PASTRIES</h2>
+                <div class="products3">
+                </div>
+            </div> -->
+        </div>
+    </div>
+    <footer>
+        <div class="foot">
+            <h2>HOME BAKERY</h2>
+            <div class="list">
+                <ul>
+                    <li>
+                        <h2>ABOUT</h2>
+                    </li>
+                    <li>
+                        <a href="../../index.html">Homepage</a>
+                    </li>
+                    <li>
+                        <a href="../../../../index.html#about">About Us</a>
+                    </li>
+                    <li>
+                        <a href="../../../../index.html#history">Our History</a>
+                    </li>
+                    <li>
+                        <a href="../products/product_list.html">Products</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <h2>PRODUCTS</h2>
+                    </li>
+                    <li>
+                        <a href="../products/product_list.html">Breads</a>
+                    </li>
+                    <li>
+                        <a href="../products/product_list.html">Cakes</a>
+                    </li>
+                    <li>
+                        <a href="../products/product_list.html">Breakfast Pastries</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <h2>FOLLOW US</h2>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/">
+                            <img src="../../assets/Images/instagram.svg" width="40px" alt="Instagram">Instagram
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/">
+                            <img src="../../assets/Images/twitter.svg" width="40px" alt="Twitter">Twitter
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/">
+                            <img src="../../assets/Images/github.svg" width="40px" alt="GitHub">GitHub
+                        </a>
+                    </li>
+                </ul>
             </div>
+        </div>
 
-        </footer>
+    </footer>
 
-        <script src="../../assets/js/header.js"></script>
-        <script src="../../assets/js/product/product_list.js"></script>
+    <script src="../../assets/js/header.js"></script>
+    <script src="../../assets/js/product/product_list.js"></script>
 </body>
 
 </html>

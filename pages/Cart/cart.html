@@ -174,28 +174,28 @@
     del_date.addEventListener("change", function getDate() {
         let todate = del_date.value;
 
-        if (todate === today && hours >= 12) {
+        if (todate === today && hours >= 11) {
             morning.setAttribute("disabled", "disabled");
         }
         else {
             morning.removeAttribute("disabled");
         }
 
-        if (todate === today && hours >= 16) {
+        if (todate === today && hours >= 15) {
             afternoon.setAttribute("disabled", "disabled");
         }
         else {
             afternoon.removeAttribute("disabled");
         }
 
-        if (todate === today && hours >= 19) {
+        if (todate === today && hours >= 18) {
             evening.setAttribute("disabled", "disabled");
         }
         else {
             evening.removeAttribute("disabled");
         }
 
-        if (todate === today && hours >= 23) {
+        if (todate === today && hours >= 22) {
             night.setAttribute("disabled", "disabled");
         }
         else {
@@ -445,7 +445,7 @@
     });
 
     document.querySelector("#sub").innerText = `₹ ${subtotal}`;
-    tax = subtotal / 20;
+    tax = 18 / 100 * subtotal;
     document.querySelector("#tax").innerText = `₹ ${tax}`;
     const total = subtotal + tax;
     document.querySelector("#total").innerText = `₹ ${total}`;

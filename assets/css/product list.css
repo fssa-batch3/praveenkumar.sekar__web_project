@@ -20,6 +20,10 @@ a {
     font-family: 'Telex', sans-serif;
 }
 
+p {
+    font-family: 'Telex', sans-serif;
+}
+
 header {
     box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
     background-color: white;
@@ -27,7 +31,7 @@ header {
 
 .product_head {
     font-size: 38px;
-    margin-left: 5%;
+    text-align: center;
 }
 
 .product-container {
@@ -36,64 +40,33 @@ header {
 }
 
 .product-container h1 {    
-    text-align: left; 
-    font-size: 50px;  
-    margin-left: 5%;
+    text-align: center; 
+    font-size: 50px; 
     padding-top: 2%;
+
 }
 
-/* Category */
-
-.categories h1 {     
-    text-align: left; 
-    font-size: 50px;  
-    margin-left: 5%;
-    padding-top: 2%;
-}
-
-.categories {
+.prod_nav {
     display: flex;
-    justify-content: space-evenly;
-    margin: 30px 0 50px 0;
-    margin-top: 10px;
-    padding-bottom: 50px;
+    justify-content: center;
+    margin: 30px;
 }
 
-.categories a {
-    text-decoration: none;
+.prod_nav button {
+    background-color: #000000;
+    color: white;
+    border:none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    border:1px solid black;
+    margin: 10px;
 }
 
-.categories div {
-    display: flex;
-    background-color: rgba(255, 255, 255, 0.148);
-    margin-top: 50px;
-}
-
-.categories p {     
-    font-size: 50px;
-    width: 400px;
-    height: 400px;
-    text-align: center;
-    color:white;
-    position:relative;
-}
-
-.categories div:nth-of-type(1){
-    background-image: url(../Images/Categories/assortment-pieces-cake\ \(1\).jpg);
-    background-size: contain;
-    border-radius: 500px;
-}
-
-.categories div:nth-of-type(2){
-    background-image: url(../Images/Categories/close-up-view-black-bread-slices-nude-color-towel-spikes-flower-cutting-boards-mixed-colors-background\ \(1\).jpg);
-    background-size: contain;
-    border-radius: 500px;
-}
-
-.categories div:nth-of-type(3){
-    background-image: url(../Images/Categories/croissant-flat-lay-food-photography.jpg);
-    background-size: contain;
-    border-radius: 500px;
+.prod_nav button:hover {
+    color: black;
+    background-color: white;
+    transition: 0.3s;
+    border:1px solid black;
 }
 
 .categories div:nth-of-type(1) p{
@@ -120,7 +93,7 @@ header {
 
 /* Cakes */
 
-.products h1 {
+.products h2 {
     margin-top: 5%;
 }
 

@@ -36,9 +36,24 @@ caption{
     text-align: center;
 }
 
+.th_price {
+    width: 140px;
+}
+
 .table-container {
     display: flex;
     width: 100%;
+}
+
+.table_header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.table_header select {
+    position: relative;
+    top: 16%;
+    accent-color: black;
 }
 
 .sub-container {
