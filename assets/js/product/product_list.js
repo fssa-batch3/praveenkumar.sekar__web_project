@@ -38,6 +38,27 @@ function render(object) {
     price.innerText = `₹${find_default_price.price}`;
     div_prod.append(price);
 
+    // veg or non veg
+
+    if (object.category !== "Cakes") {
+        if (object.v_label === "Veg") {
+            const veg = document.createElement("img");
+            veg.setAttribute("src", "../../assets/Images/icons8-vegetarian-food-symbol-48.png")
+            veg.setAttribute("alt", "vegetarian-food-symbol");
+            veg.setAttribute("class", "v_label");
+            div_prod.append(veg);
+        }
+
+        else if (object.v_label === "Non veg") {
+            const non_veg = document.createElement("img");
+            non_veg.setAttribute("src", "../../assets/Images/Web_Photo_Editor.jpg")
+            non_veg.setAttribute("alt", "non-vegetarian-food-symbol");
+            non_veg.setAttribute("class", "v_label");
+            div_prod.append(non_veg);
+        }
+
+    }
+
     // img
     const prod_img = document.createElement("img");
     prod_img.setAttribute("src", object.image.src);

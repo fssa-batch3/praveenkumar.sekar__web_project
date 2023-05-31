@@ -98,6 +98,7 @@ cate.addEventListener("change", prices);
 function createProduct(e) {
     const product_name = document.getElementById("product_name").value.trim();
     const description = document.getElementById("description").value;
+    const veg_non_veg = document.getElementById("v").value
     const category = document.getElementById("category").value;
     const add_image = document.getElementById("add_image").value;
     const product_uuid = uuidv4();
@@ -137,6 +138,7 @@ function createProduct(e) {
         name: product_name,
         description,
         price_details: array,
+        v_label: veg_non_veg,
         category,
         image: {
             src: add_image,

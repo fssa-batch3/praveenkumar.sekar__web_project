@@ -239,6 +239,9 @@
             prod_details.appendChild(prod_att);
 
             if (cart_of_user[i].category === "Cakes") {
+
+                prod_name.innerText += " " + "(" + cart_of_user[i].cake_type + ")";
+
                 if (cart_of_user[i].size === 0) {
                     const cake_size1 = document.createElement("small");
                     cake_size1.innerText = "1/2Kg ";

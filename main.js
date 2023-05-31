@@ -16,7 +16,7 @@ if (!prod) {
                     bananas, cake flour, baking soda, vanilla extract, milk, eggs, sugar, salt, water, butter.
 
                 Allergens:
-                    Contains Eggs.
+                    May Contain Eggs (based on your order).
 
                 Nutritional values:
                 Calories: 349, Fat: 19g, Saturated Fat: 10g, Cholesterol: 44mg, Sodium: 300mg, Carbohydrates: 37g, Dietary Fiber: 3g. Sugar: 34g, Protein: 4g`,
@@ -25,6 +25,7 @@ if (!prod) {
                     { size: 1, price: "750" },
                     { size: 2, price: "1500" },
                 ],
+                v_label: "Customizable",
                 image: {
                     src: "https://iili.io/HvHP9Sf.png",
                     alt: "Salted Banana Caramel Cake",
@@ -41,7 +42,7 @@ if (!prod) {
                     bananas, cake flour, baking soda, vanilla extract, milk, eggs, sugar, salt, water, butter.
 
                 Allergens:
-                    Contains Eggs.
+                    May Contain Eggs (based on your order).
 
                 Nutritional values:
                 Calories: 349, Fat: 19g, Saturated Fat: 10g, Cholesterol: 44mg, Sodium: 300mg, Carbohydrates: 37g, Dietary Fiber: 3g. Sugar: 34g, Protein: 4g`,
@@ -50,6 +51,7 @@ if (!prod) {
                     { size: 1, price: "1000" },
                     { size: 2, price: "1800" },
                 ],
+                v_label: "Customizable",
                 image: {
                     src: "https://iili.io/HgwiBat.png",
                     alt: "Salted Banana Caramel Cake",
@@ -66,7 +68,7 @@ if (!prod) {
                     bananas, cake flour, baking soda, vanilla extract, milk, eggs, sugar, salt, water, butter.
 
                 Allergens:
-                    Contains Eggs.
+                    May Contain Eggs (based on your order).
 
                 Nutritional values:
                 Calories: 349, Fat: 19g, Saturated Fat: 10g, Cholesterol: 44mg, Sodium: 300mg, Carbohydrates: 37g, Dietary Fiber: 3g. Sugar: 34g, Protein: 4g`,
@@ -75,6 +77,7 @@ if (!prod) {
                     { size: 1, price: "700" },
                     { size: 2, price: "1300" },
                 ],
+                v_label: "Customizable",
                 image: {
                     src: "https://iili.io/HgwP84S.png",
                     alt: "Salted Banana Caramel Cake",
@@ -91,7 +94,7 @@ if (!prod) {
                     bananas, cake flour, baking soda, vanilla extract, milk, eggs, sugar, salt, water, butter.
 
                 Allergens:
-                    Contains Eggs.
+                    May Contain Eggs (based on your order).
 
                 Nutritional values:
                 Calories: 349, Fat: 19g, Saturated Fat: 10g, Cholesterol: 44mg, Sodium: 300mg, Carbohydrates: 37g, Dietary Fiber: 3g. Sugar: 34g, Protein: 4g`,
@@ -100,6 +103,7 @@ if (!prod) {
                     { size: 1, price: "800" },
                     { size: 2, price: "1400" },
                 ],
+                v_label: "Customizable",
                 image: {
                     src: "https://iili.io/HgwPyyg.png",
                     alt: "Salted Banana Caramel Cake",
@@ -116,7 +120,7 @@ if (!prod) {
                     bananas, cake flour, baking soda, vanilla extract, milk, eggs, sugar, salt, water, butter.
 
                 Allergens:
-                    Contains Eggs.
+                    May Contain Eggs (based on your order).
 
                 Nutritional values:
                 Calories: 349, Fat: 19g, Saturated Fat: 10g, Cholesterol: 44mg, Sodium: 300mg, Carbohydrates: 37g, Dietary Fiber: 3g. Sugar: 34g, Protein: 4g`,
@@ -125,6 +129,7 @@ if (!prod) {
                     { size: 1, price: "800" },
                     { size: 2, price: "1500" },
                 ],
+                v_label: "Customizable",
                 image: {
                     src: "https://iili.io/HvH6ycG.png",
                     alt: "Vanilla Sprinkle Cake",
@@ -141,7 +146,7 @@ if (!prod) {
                     bananas, cake flour, baking soda, vanilla extract, milk, eggs, sugar, salt, water, butter.
 
                 Allergens:
-                    Contains Eggs.
+                    May Contain Eggs (based on your order).
 
                 Nutritional values:
                 Calories: 349, Fat: 19g, Saturated Fat: 10g, Cholesterol: 44mg, Sodium: 300mg, Carbohydrates: 37g, Dietary Fiber: 3g. Sugar: 34g, Protein: 4g`,
@@ -150,6 +155,7 @@ if (!prod) {
                     { size: 1, price: "600" },
                     { size: 2, price: "1100" },
                 ],
+                v_label: "Customizable",
                 image: {
                     src: "https://iili.io/HvHPJ94.png",
                     alt: "Chocolate raspberry cake",
@@ -173,6 +179,7 @@ if (!prod) {
                 Nutritional values:
                 Calories: 246, Fat: 2g, Saturated Fat: 0.5g, Cholesterol: 0mg, Sodium: 180mg, Carbohydrates: 46g, Dietary Fiber: 6g. Sugar: 2g, Protein: 9g`,
                 price_details: [{ size: 0, price: "45" }],
+                v_label: "Veg",
                 image: {
                     src: "https://iili.io/HvH6X3b.md.png",
                     alt: "country loaf",
@@ -194,6 +201,7 @@ if (!prod) {
                 Nutritional values:
                 Calories: 246, Fat: 2g, Saturated Fat: 0.5g, Cholesterol: 0mg, Sodium: 180mg, Carbohydrates: 46g, Dietary Fiber: 6g. Sugar: 2g, Protein: 9g`,
                 price_details: [{ size: 0, price: "40" }],
+                v_label: "Veg",
                 image: {
                     src: "https://iili.io/HgN9lZ7.md.png",
                     alt: "country loaf",
@@ -215,6 +223,7 @@ if (!prod) {
                 Nutritional values:
                 Calories: 246, Fat: 2g, Saturated Fat: 0.5g, Cholesterol: 0mg, Sodium: 180mg, Carbohydrates: 46g, Dietary Fiber: 6g. Sugar: 2g, Protein: 9g`,
                 price_details: [{ size: 0, price: "45" }],
+                v_label: "Veg",
                 image: {
                     src: "https://iili.io/HgN9hyQ.md.png",
                     alt: "country loaf",
@@ -236,6 +245,7 @@ if (!prod) {
                 Nutritional values:
                 Calories: 246, Fat: 2g, Saturated Fat: 0.5g, Cholesterol: 0mg, Sodium: 180mg, Carbohydrates: 46g, Dietary Fiber: 6g. Sugar: 2g, Protein: 9g`,
                 price_details: [{ size: 0, price: "30" }],
+                v_label: "Veg",
                 image: {
                     src: "https://iili.io/HgN9CTN.md.png",
                     alt: "country loaf",
@@ -257,6 +267,7 @@ if (!prod) {
                 Nutritional values:
                 Calories: 246, Fat: 2g, Saturated Fat: 0.5g, Cholesterol: 0mg, Sodium: 180mg, Carbohydrates: 46g, Dietary Fiber: 6g. Sugar: 2g, Protein: 9g`,
                 price_details: [{ size: 0, price: "55" }],
+                v_label: "Veg",
                 image: {
                     src: "https://iili.io/HvH6haj.md.png",
                     alt: "cereal bread",
@@ -278,6 +289,7 @@ if (!prod) {
                 Nutritional values:
                 Calories: 246, Fat: 2g, Saturated Fat: 0.5g, Cholesterol: 0mg, Sodium: 180mg, Carbohydrates: 46g, Dietary Fiber: 6g. Sugar: 2g, Protein: 9g`,
                 price_details: [{ size: 0, price: "60" }],
+                v_label: "Veg",
                 image: {
                     src: "https://iili.io/HvH6V6u.md.png",
                     alt: "Garlic Bread",
@@ -300,6 +312,7 @@ if (!prod) {
                 Nutritional values:
                 Calories: 246, Fat: 2g, Saturated Fat: 0.5g, Cholesterol: 0mg, Sodium: 180mg, Carbohydrates: 46g, Dietary Fiber: 6g. Sugar: 2g, Protein: 9g`,
                 price_details: [{ size: 0, price: "45" }],
+                v_label: "Veg",
                 image: {
                     src: "https://iili.io/HvHiYI2.png",
                     alt: "chocolate croissant",
@@ -321,6 +334,7 @@ if (!prod) {
                 Nutritional values:
                 Calories: 246, Fat: 2g, Saturated Fat: 0.5g, Cholesterol: 0mg, Sodium: 180mg, Carbohydrates: 46g, Dietary Fiber: 6g. Sugar: 2g, Protein: 9g`,
                 price_details: [{ size: 0, price: "40" }],
+                v_label: "Veg",
                 image: {
                     src: "https://iili.io/HvHiaXS.png",
                     alt: "multigrain butter croissant",
@@ -342,6 +356,7 @@ if (!prod) {
                 Nutritional values:
                 Calories: 246, Fat: 2g, Saturated Fat: 0.5g, Cholesterol: 0mg, Sodium: 180mg, Carbohydrates: 46g, Dietary Fiber: 6g. Sugar: 2g, Protein: 9g`,
                 price_details: [{ size: 0, price: "50" }],
+                v_label: "Veg",
                 image: {
                     src: "https://iili.io/HvHicL7.md.png",
                     alt: "traditional croissant",
@@ -363,6 +378,7 @@ if (!prod) {
                 Nutritional values:
                 Calories: 246, Fat: 2g, Saturated Fat: 0.5g, Cholesterol: 0mg, Sodium: 180mg, Carbohydrates: 46g, Dietary Fiber: 6g. Sugar: 2g, Protein: 9g`,
                 price_details: [{ size: 0, price: "50" }],
+                v_label: "Veg",
                 image: {
                     src: "https://iili.io/HgN3nqP.md.png",
                     alt: "traditional croissant",
@@ -384,6 +400,7 @@ if (!prod) {
                 Nutritional values:
                 Calories: 246, Fat: 2g, Saturated Fat: 0.5g, Cholesterol: 0mg, Sodium: 180mg, Carbohydrates: 46g, Dietary Fiber: 6g. Sugar: 2g, Protein: 9g`,
                 price_details: [{ size: 0, price: "50" }],
+                v_label: "Veg",
                 image: {
                     src: "https://iili.io/HgN3ddu.md.png",
                     alt: "traditional croissant",
@@ -405,6 +422,7 @@ if (!prod) {
                 Nutritional values:
                 Calories: 246, Fat: 2g, Saturated Fat: 0.5g, Cholesterol: 0mg, Sodium: 180mg, Carbohydrates: 46g, Dietary Fiber: 6g. Sugar: 2g, Protein: 9g`,
                 price_details: [{ size: 0, price: "50" }],
+                v_label: "Veg",
                 image: {
                     src: "https://iili.io/HgN3Amv.md.png",
                     alt: "traditional croissant",

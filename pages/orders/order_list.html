@@ -172,11 +172,11 @@
             const individual_items = document.createElement('p');
             if (current_item[i].category === "Cakes") {
                 if (current_item[i].size === 0) {
-                    individual_items.innerText = current_item[i].quantity + "x" + " " + current_item[i].product_name + " " + "(1/2 Kg)";
+                    individual_items.innerText = current_item[i].quantity + "x" + " " + current_item[i].product_name + " " + "(1/2 Kg)" + " " + current_item[i].cake_type;
                 } else if (current_item[i].size === 1) {
-                    individual_items.innerText = current_item[i].quantity + "x" + " " + current_item[i].product_name + " " + "(1 Kg)";
+                    individual_items.innerText = current_item[i].quantity + "x" + " " + current_item[i].product_name + " " + "(1 Kg)" + " " + current_item[i].cake_type;
                 } else if (current_item[i].size === 2) {
-                    individual_items.innerText = current_item[i].quantity + "x" + " " + current_item[i].product_name + " " + "(2 Kg)";
+                    individual_items.innerText = current_item[i].quantity + "x" + " " + current_item[i].product_name + " " + "(2 Kg)" + " " + current_item[i].cake_type;
                 }
             }
             else {

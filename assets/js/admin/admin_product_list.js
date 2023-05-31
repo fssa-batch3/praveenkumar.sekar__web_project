@@ -65,13 +65,17 @@ for (let i = 0; i < prod_detail.length; i++) {
         // td 5
 
         const td5 = document.createElement("td");
-        td5.innerText = prod.category;
+        td5.innerText = prod.v_label;
         tr.append(td5);
+
+        const td6 = document.createElement("td");
+        td6.innerText = prod.category;
+        tr.append(td6);
 
         // a update
 
-        const td6 = document.createElement("td");
-        tr.append(td6);
+        const td7 = document.createElement("td");
+        tr.append(td7);
 
         // a update
 
@@ -79,12 +83,12 @@ for (let i = 0; i < prod_detail.length; i++) {
         butup.setAttribute("data-id", prod.product_id);
         butup.setAttribute("class", "update");
         butup.innerText = "Edit";
-        td6.append(butup);
+        td7.append(butup);
 
         // a delete
 
-        const td7 = document.createElement("td");
-        tr.append(td7);
+        const td8 = document.createElement("td");
+        tr.append(td8);
 
         // a delete
 
@@ -92,7 +96,7 @@ for (let i = 0; i < prod_detail.length; i++) {
         butdel.setAttribute("data-id", prod.product_id);
         butdel.setAttribute("class", "delete");
         butdel.innerText = "Delete";
-        td7.append(butdel);
+        td8.append(butdel);
     }
 }
 

@@ -18,6 +18,8 @@ const price_list = [];
 
 let size = 0;
 
+let cake_type = "Egg";
+
 // creating elements
 
 const find_default_price = prod_data.price_details.find((e) => e.size === 0);
@@ -72,6 +74,23 @@ price1.append(price_p);
 // start
 
 if (prod_data.category === "Cakes") {
+
+    const type = document.createElement("div");
+    type.setAttribute("id", "type");
+    side.append(type);
+
+    const type_select = document.createElement("select");
+    type_select.setAttribute("id", "cake_t");
+    type.append(type_select);
+
+    const option_1 = document.createElement("option");
+    option_1.innerText = "Egg";
+    type_select.append(option_1);
+
+    const option_2 = document.createElement("option");
+    option_2.innerText = "Eggless";
+    type_select.append(option_2);
+
     const spec = document.createElement("div");
     spec.setAttribute("class", "spec");
     side.append(spec);
@@ -196,6 +215,13 @@ if (prod_data.category === "Cakes") {
 
         size = 2;
     }
+
+    type_select.addEventListener("change", get_cake_type);
+
+    function get_cake_type() {
+        cake_type = type_select.value;
+    }
+
 }
 
 // end
@@ -266,6 +292,7 @@ add_item.addEventListener("click", function (e) {
                     product_description: prod_data.product_description,
                     special_message: spl_msg,
                     size,
+                    cake_type,
                     product_id: prod_unique_id,
                     quantity: 1,
                     price: prod_price,
@@ -312,6 +339,7 @@ add_item.addEventListener("click", function (e) {
                 product_description: prod_data.product_description,
                 special_message: spl_msg,
                 size,
+                cake_type,
                 product_id: prod_unique_id,
                 quantity: 1,
                 price: prod_price,
